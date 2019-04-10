@@ -1,0 +1,42 @@
+/* @author Jonathan Simmons
+* Student Id: u3141072
+*/
+
+body {
+    /* Padding needed so that the .fixed-top .navbar doesn't cover the content.
+    .sticky-top gets around this but doesn't work with IE (what a surprise) */
+    /* EDIT: No longer being used (switched back to .sticky-top), but kept here just in case I decide to switch back */
+    /* padding-top: 56px; */
+    background-color: #4f4639;
+}
+
+/* Changing the colour of the body isn't working so this is a workaround */
+#bgcolour-wrapper {
+    background-color: #4f4639;
+    color: white;
+}
+
+/* Scroll progress bar container */
+#progress-bar {
+    height: 10px;
+    background-color: grey;
+    width: 100%;
+    position: fixed;
+}
+
+/* Actual scroll bar indication */
+#progress-indicator {
+    height: 10px;
+    background-color: yellowgreen;
+    width: 0%;
+}
+
+/* Fullpage navigation dots */
+#fp-nav ul li a span {
+    background: white;
+}
+
+/* Divide each section up */
+.section {
+    border-top: 1px solid white
+}

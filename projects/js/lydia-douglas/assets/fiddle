@@ -1,0 +1,32 @@
+var vm = new Vue({
+  el: '#example',
+  data: {
+    message: ''
+  },
+  computed: {
+    reversedMessage: {
+      get() {
+        return this.message / 2;
+      },
+      set(newVal) {
+        this.message = newVal;
+      }
+    }
+  }
+})
+
+
+<div id="example">
+  <p>Original message: "{{ message }}"</p>
+  <p>Computed reversed message: "{{ reversedMessage }}"</p>
+  <input type="string" v-model="message">
+</div>
+
+
+.hover-on {
+  background-color: #555;
+}
+
+.hover-off {
+  background-color: #999;
+}

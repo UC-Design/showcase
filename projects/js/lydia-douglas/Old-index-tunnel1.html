@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- Colour Quiz by Lydia Douglas -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--styles-->
+    <link href="assets/css/styles_reset.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/styles-tunnel.css" rel="stylesheet" type="text/css">
+    <link href="assets/sripts/aos/aos.css" rel="stylesheet" type="text/css">
+    <!--scripts-->
+    <script src="assets/scripts/jquery-3.3.1.min.js"></script>
+    <script src="assets/scripts/app-tunnel.js" type="text/javascript"></script>
+    <script src="assets/scripts/aos/aos.js" type="text/javascript"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    <!--fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Gochi+Hand|Short+Stack" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Handlee|Indie+Flower|La+Belle+Aurore|League+Script|Sacramento"
+        rel="stylesheet">
+
+    <!-- aos scrolling library-->
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+
+    <!-- vue -->
+    <script type="text/javascript" src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+
+    <!-- for animation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+
+    <title>Ball / Call</title>
+</head>
+
+<body>
+    <!-- using animate.css3 libary -->
+    <div class="slide" id="slidemarginleft">
+        <div class="inner">
+            <!-- <div id="orient-panel"> -->
+            <button id="b-small" class="b-action">Small</button>
+            <button id="b-hole" class="b-action">Hole</button>
+            <button id="b-tall" class="b-action">Tall</button>
+            <button id="b-colour" class="b-action">Colour Call</button>
+            <button id="b-black" class="b-action">Black All</button>
+            <button id="b-troll" class="b-action">Troll</button>
+            <button id="b-hall" class="b-action">Hall</button>
+            <button id="b-repeat" class="b-action">Repeat All</button>
+            <!-- </div> -->
+        </div>
+        <div id="app-name">
+            <button class="b-slide invisible"> &lt;&lt;</button>
+        </div>
+        <!-- <button class="b-slide"> </button> -->
+    </div>
+
+    <section id="welcome-section">
+        <div id="welcome-text" class="lets-text">
+            <div id="lets-div" class="textright">
+                <span id="lets-span">Lets take a </span>
+            </div>
+            <div class="t-circle-left">circle</div>
+            <div class="t-ball-left">ball</div>
+        </div>
+        </div>
+    </section>
+
+    <section id="action-section">
+
+        <div id="small-text" class="action-call-text">
+            <div>And</div>
+            <div> make it</div>
+            <div>small</div>
+        </div>
+        <div id="hole-text" class="action-call-text">Drop down the hole</div>
+        <div id="tall-text" class="action-call-text">Then make it tall</div>
+        <div id="colour-text" class="action-call-text">And Colour call</div>
+        <div id="black-text" class="action-call-text">Then Black it all</div>
+        <div id="troll-text" class="action-call-text">Is it a troll?</div>
+        <div id="hall-text" class="action-call-text">Run down the hall</div>
+        <div id="repeat-text" class="action-call-text">Repeat it all</div>
+
+    </section>
+
+    <!-- <div id="small-helper" class="helper"> Touch<br> Me </div>  -->
+
+    <div id="circle" class="circle-div"></div>
+    <div id="ball" class="ball jball"></div>
+    <!-- <img src="/assets/images/troll.png" height="600" width="600" alt="troll" id="pictroll" />
+                   <button id="shrink" >Shrink</button>
+                   <button id="unshrink" >Unshrink</button> -->
+
+
+    <section id="colour-section" class="c-section invisible">
+        <div id="app">
+            <div id="controls-panel2">
+                <!-- <input type="number" v-model="radiusNumber"> -->
+                <label id="size">Size</label>
+                <input type="number" v-model="sizeNumber">
+                <label id="hue">Hue</label>
+                <input type="number" v-model="hueNumber">
+                <label id="hue">Saturation</label>
+                <input type="number" v-model="satNumber">
+                <label id="hue">Lightness</label>
+                <input type="number" v-model="lightNumber">
+            </div>
+            <div id="stage">
+                <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black', 'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }">
+                    <!-- <span class="shadow"></span> -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="action-section">
+        <div id="text">
+            <p id="small-text" class="action-call-text">And make it small</p>
+            <p id="hole-text" class="action-call-text">Drop down the hole</p>
+            <p id="tall-text" class="action-call-text">Then make it tall</p>
+            <p id="colour-text" class="action-call-text">And Colour call</p>
+            <p id="black-text" class="action-call-text">Then Black it all</p>
+            <p id="troll-text" class="action-call-text">Is it a troll?</p>
+            <p id="hall-text" class="action-call-text">Run down the hall</p>
+            <p id="repeat-text" class="action-call-text">Repeat it all</p>
+        </div>
+    </section>
+
+
+
+</body>
+
+
+</html>

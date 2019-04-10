@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Page Info
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Weather API Sketch</title>
+	<meta name="description" content="Experimental Weather API Sketch – Design for Dynamic Data 9394">
+	<meta name="author" content="Lauren Schilling">
+	
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+	<!-- Google Fonts
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+	
+	<!-- Acknowledgements 
+	–––––––––––––––––––––––––––––––––––––––––––––––––– 
+	Powered by Dark Sky API: https://darksky.net/
+	OpenCage Geocoder API: https://geocoder.opencagedata.com/api
+	Moment.js: http://momentjs.com
+	Climacons Icons: http://adamwhitcroft.com/climacons/	
+	Arrow Icon: https://thenounproject.com/search/?q=arrow&i=1172615
+	Cross Icon: https://thenounproject.com/search/?q=cross&i=1201299
+	Calendar Icon: https://thenounproject.com/search/?q=calendar&i=1052625 -->
+		
+</head>
+
+<body>
+	<!-- Link to scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="scripts/moment.min.js"></script>
+	<script src="scripts/moment-timezone-with-data.min.js"></script>
+	<script src="scripts/script.js"></script>
+	
+	<!-- Mobile landscape orientation screen -->
+	<div id="landscape">
+		<div>
+			<p class="bigger">I only work in portrait mode</p>
+			<h1>Please rotate your device</h1>
+		</div>
+	</div> <!-- close #landscape -->
+	
+	<div class="container">
+		<!-- Link to location search -->
+		<header>
+			<p class="city-name"></p><a data-link="location" class="icon compass-icon nav-link"></a>
+			<a class="icon close-icon nav-link" data-link="beginning">Close</a>
+			
+			<!-- Screen 1: Current weather condition -->			
+				<div id="section1" data-link="initial">
+					<!-- Summary -->
+					<h1 class="summary"></h1>
+					
+					<!-- Temperatures -->
+					<ul id="temps">
+						<li id="min-temp"></li>
+						<li id="temp"></li>
+						<li id="max-temp"></li>
+					</ul>
+				</div>	
+		</header>
+		
+		<!-- Main content -->
+		<main>		
+			<div class="screen" id="currently">
+	
+				<!-- Screen 2: Today's rain forecast -->
+				<div data-link="rain-forecast" id="rain-forecast"> 
+					<p id="rain-chance">There's a...</p>
+				</div>
+										
+				<!-- Screen 3: Today's sunrise and sunset times -->
+				<div data-link="sunrise" id="sunrise">
+					<div id="rise-time">
+						<p id="sunrise-icon" class="icon2">Sunrise</p>
+						<p id="rise"></p>
+					</div>
+					<div id="set-time">	
+						<p id="sunset-icon" class="icon2">Sunset</p>
+						<p id="set"></p>
+					</div>
+				</div>
+			
+				<!-- Screen 4: Weekly forecast -->	
+				<div data-link="week" id="week">			
+					<table id="forecast">
+						<tr>
+							<th>day</th>
+							<th>date</th>
+							<th>max</th>
+							<th>icon</th>
+						</tr>
+					</table>
+				</div>
+			
+				<!-- Screen 5: Location search -->
+				<div data-link="location" id="location">
+					<div id="location-found">
+						<p class="loc-intro">You're in</p>
+						<h1 class="loc-name"></h1>
+					</div>
+					<form>
+						<label>Search for another city</label>
+						<input type="text" id="search-city">
+					</form>
+				</div>	
+	
+				<!-- Animated CSS shapes -->	
+				<div class="anim" data-link="beginning">
+					<div class="moon">
+						<span class="moon1 layer"></span>
+						<span class="moon2 layer"></span>
+					</div>
+					
+					<div class="sun">
+						<span class="sun1 layer"></span>
+						<span class="sun2 layer"></span>
+					</div>
+					
+					<div class="clouds">
+						<div class="clouds-left">
+							<span class="cloud1 layer"></span>
+							<span class="cloud2 layer"></span>
+						</div>
+						<div class="clouds-right">
+							<span class="cloud3 layer"></span>
+							<span class="cloud4 layer"></span>
+						</div>
+					</div>
+					
+					<div class="rain">
+						<div class="rain-left">
+							<span class="rain1 layer"></span>
+							<span class="rain2 layer"></span>
+						</div>
+						<div class="rain-right">
+							<span class="rain3 layer"></span>
+							<span class="rain4 layer"></span>
+						</div>						
+					</div>
+				</div>
+
+				<!-- Buttons -->	
+				<p class="btn"><a id="submit" data-link="search-location">Take me there</a></p>
+				<p class="btn go-btn"><a data-link="beginning">See the weather</a></p>					
+			</div> <!-- .screen #currently -->
+		</main>
+		
+		<footer>
+			<div id="section2">
+				<!-- Menu items -->
+				<ul id="menu">
+					<li><a data-link="rain-forecast" class="icon menu-item nav-link" id="rain-icon">Rain forecast</a></li>
+					<li><a data-link="sunrise" class="icon menu-item nav-link" id="sun-icon">Sunrise and sunset</a></li>
+					<li><a data-link="week" class="icon menu-item nav-link" id="cal-icon">This week</a></li>
+				</ul>
+				
+				<!-- Day and time -->	
+				<h3 class="time" data-link="initial"></h3>
+				<h3 class="date" data-link="initial"></h3>
+			</div>
+		</footer>
+	</div> <!-- close .container -->	
+</body>
+</html>

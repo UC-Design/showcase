@@ -1,0 +1,41 @@
+/*Colours #CCDBDC #003249 #FFF8F0 #212922 #BA2D0B*/
+
+#login {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-width: thin;
+    border-color: #003249;
+    border-top-width: thick;
+    border-radius: 5px;
+    padding: 2px;
+    max-width: 330px;
+    margin:auto;
+}
+#login div {
+     margin: 2px 0px;
+    display: flex;
+    flex-direction: column;
+    grid-column: repeat(2, 1fr);
+}
+#mainContent {
+    padding:2px;
+}
+#login > * {
+    margin: 2px 0px;
+}
+#mainContent h2 {
+    font-size: 1em;
+    text-align: center;
+}
+#centerLogin {
+    margin:auto;
+}
+#centerLogin input {
+    text-align: center;
+}
+#loginStatus {
+    max-width: 330px;
+    margin:auto;
+    color: #BA2D0B;
+}

@@ -1,0 +1,513 @@
+/* custom font imports go here*/
+@import url('https://fonts.googleapis.com/css?family=Lora:400,700');
+/* Font initially being used for the h1: @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700');
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: disc;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Beginning */
+
+/* developed a horizontal scrollbar at one stage, used overflow-x: hidden; taking it out doesn't seem to be problematic but left it in case */
+/* included a web safe font in addition to the custom font import, attempted to select a similar style */
+body {
+	background: #f8f8f8;
+	font-family: 'Lora', Georgia, serif;
+	font-size: 100%;
+	overflow-x: hidden;
+	overflow-y: visible;
+}
+
+/* wrappers */
+
+/* these enable full width elements */
+.header-wrapper {
+	background: transparent;
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	z-index: 1;
+}
+
+.main-wrapper {
+	background: #f2f2f2;
+	width: 100%;
+	height: auto;
+	/*display: block;*/
+}
+/* hero content dimensions similar to those observed in project 1. Using a background image in this instance */
+.hero-content-wrapper {
+	background-image: url(../images/norfolk-island-11-edit4.jpg);
+	background-size: cover;
+	display: block;
+	width: 100%;
+	height: 700px;
+    position: relative;
+}
+
+.page-banner-wrapper {
+	width: 100%;
+	height: 400px;
+	display: block;
+    position: relative;
+    overflow: hidden;
+}
+/* had an issue where the content was being cut off, so set a min-hight (but this had its own problems), but taking it out now everything seems to work fine */
+.content-wrapper {
+	background: #f8f8f8;
+	width: 100%;
+	/*min-height: 1500px; */
+	position: relative;
+	z-index: 1;
+}
+
+/* this provides the set width for the site content. followed that of the NGA site as the RISD was narrower, however i still don't feel like there's enough space for the content */
+.inner-wrapper {
+	max-width: 1100px;
+	display: block;
+	margin: 0 auto;
+}
+
+/* again, enabling full width */
+/* issue: less than 300px of padding and the footer separates from the bottom of the page */
+.footer-wrapper {
+	background: #232323;
+	width: 100%;
+	padding: 150px 0px;
+	clear: both;
+	position: static;
+	bottom: 0;
+}
+
+header {
+	background: transparent;
+	width: 100%;
+	padding: 30px 0px;
+}
+
+header h1 {
+	/*font-family: 'Open Sans Condensed', sans-serif;*/
+	text-align: left;
+	width: 70px;
+	float: left;
+	position: relative;
+}
+
+.logo {
+	width: 200%;
+	float: left;
+	position: relative;
+	bottom: 40px;
+}
+
+.mini-logo {
+	width: 5%;
+	position: relative;
+}
+
+/* setting opacity for the logo image so that i can achieve the same hover effects as other textual links */
+h1 a {
+	color: #f1f1f1;
+	text-decoration: none;
+	opacity: 0.7;
+}
+
+h1 a:hover {
+	opacity: 0.9;
+}
+
+/* primary navigation styles */
+
+nav {
+	text-align: center;
+	padding: 10px 0px 10px 100px;
+}
+
+nav ul li {
+	font-size: 90%;
+	text-transform: none;
+	display: inline;
+	padding-left: 130px;
+}	
+
+nav ul li a {
+	color: #f1f1f1;
+	text-decoration: none;
+}
+
+nav ul li a:hover {
+	color: #fff;
+}
+
+/* main content styles */ 
+
+main {
+	background: #f2f2f2;
+}
+
+.page-banner-image {
+	position: absolute;
+    width: 100%;
+}
+
+.hero-text {
+	max-width: 700px;
+	color: #f2f2f2;
+	font-size: 20px;
+	line-height: 2em;
+	text-align: center;
+	word-wrap: break-word;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding: 70px 150px;
+	position: relative;
+	top: 220px;
+}
+
+/* the idea to use buttons was taken from the NGA site, and is styled similarly */
+.button {
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+	color: #1e2c39;
+	background: #909aa4;
+	border: 5px solid #909aa4;
+	border-radius: 5px;
+	margin-left: 490px;
+	margin-right: 100px;
+	padding: 0 6px;
+	position: relative;
+	top: 165px;
+}
+
+.button:hover {
+	background: #f2f2f2;
+	color: #1e2c39;
+	border-color: #f2f2f2;
+	text-decoration: none;	
+}
+
+img {
+	width: 900px;
+}
+
+h2 {
+	color: #2a3a47;
+	font-size: 40px;
+	letter-spacing: 1px;
+	text-align: left;
+	padding: 40px 0px 90px 0px;
+	position: relative;
+}
+
+/* there are variations in the different 'block' elements */
+/* whereas the RISD site used many different colour variations in their text-box overlays, i was only able to incorporate 2 */
+.block-1 {
+	max-width: 550px;
+	height: 500px;
+	float: right;
+	padding: 5px 0px;
+	position: relative;
+	z-index: 2;
+}
+
+.block-1-image {
+	width: 500px;
+	height: 500px;
+	float: right;
+	position: absolute;
+	right: 0px;
+	z-index: 2;
+}
+
+a .block-1-text {
+	background: #fff;
+	opacity: 0;
+	color: #000;
+	font-size: 24px;
+	line-height: 1.5em;
+	letter-spacing: 0.1em;
+	text-align: center;
+	text-transform: uppercase;
+	width: 400px;
+	height: 50px;
+	padding: 225px 50px;
+	position: absolute;
+	left: 50px;
+	z-index: 3;
+}
+
+a .block-1-text:hover {
+	opacity: 0.9;
+}
+
+.block-2 {
+	width: 100%;
+	height: 550px;
+	float: left;
+	padding: 5px 0px;
+	background: #f1f1f1;
+	position: relative;
+	z-index: 2;
+}
+
+.block-2-image {
+	width: 550px;
+	height: 550px;
+	float: left;
+	position: absolute;
+	z-index: 2;
+}
+
+.block-2-text {
+	background: #7ca598;
+	color: #fff;
+	opacity: 0;
+	font-size: 24px;
+	line-height: 1.5em;
+	letter-spacing: 0.1em;
+	text-align: center;
+	text-transform: uppercase;
+	width: 450px;
+	height: 100px;
+	padding: 225px 50px;
+	position: absolute;
+	z-index: 3;
+}
+
+a .block-2-text:hover {
+	opacity: 0.9;
+}
+
+.block-3 {
+	width: 100%;
+	background-image: url(../images/norfolk-island-8-edit22.jpg);
+	background-size: cover;
+	height: 550px;
+	float: left;
+	position: relative;
+	z-index: 7;
+}
+
+.block-3-text {
+	background: #232323;
+	color: #f1f1f1;
+	font-size: 20px;
+	letter-spacing: 7px;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 205px 150px;
+	position: relative;
+	top: 10px;
+}
+
+.block-4 {
+	width: 100%;
+	background-image: url(../images/norfolk-island-4-edit2.jpg);
+	background-size: cover;
+	min-height: 550px;
+	float: left;
+	padding: 0px 0px;
+	position: relative;
+	z-index: 4;
+}
+
+.text-box-1 {
+	background: #fff;
+	color: #000;
+	font-size: 18px;
+	line-height: 1.5em;
+	letter-spacing: 0.07em;
+	text-align: left;
+	float: left;
+	height: 200px;
+	width: 355px;
+	padding: 150px 120px 150px 120px;
+	position: relative;
+	right: 550px;
+	z-index: 5;
+}
+
+.text-box-2 {
+	background: #fff;
+	color: #000;
+	font-size: 18px;
+	line-height: 1.5em;
+	letter-spacing: 0.07em;
+	text-align: left;
+	float: right;
+	height: 350px;
+	width: 345px;
+	padding: 100px;
+	position: relative;
+	z-index: 5;
+}
+
+.text-box-3 {
+	background: #fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	opacity: 0.8;
+	color: #000;
+	font-size: 22px;
+	line-height: 1.5em;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	text-align: center;
+	height: 20px;
+	width: 500px;
+	padding: 100px;
+	position: relative;
+	top: 150px;
+	left: 230px;
+	z-index: 5;
+}
+
+/* secondary navigation styles */
+.page-nav {
+	float: left;
+	padding: 0px 2px;
+	position: relative;
+	right: 50px;
+	bottom: 40px;
+	z-index: 3;
+}
+
+.page-nav ul li {
+	display: inline;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding-left: 50px;
+}
+
+.page-nav ul li a {
+	text-decoration: none;
+	color: grey;
+}
+
+.page-nav ul li a:hover {
+	color: #000;
+}
+
+.page-text p {
+	float: left;
+	text-align: left;
+	line-height: 1.5em;
+	letter-spacing: 0.2px;
+	padding-bottom: 40px;
+	margin-right: 170px;
+}
+
+.page-list {
+	float: left;
+	text-align: left;
+	line-height: 1.6em;
+	letter-spacing: 0.2px;
+	padding-bottom: 40px;
+	margin-right: 170px;
+	margin-left: 60px;
+}
+
+figcaption {
+	font-size: 12px;
+	text-align: left;
+	padding: 20px 0px;
+}
+
+p a, h3 a {
+	color: #8c9994;
+	text-decoration: none;
+}
+
+p a, h3 a:hover {
+	color: #aab7b5;
+} 
+
+	
+/* the design of the footer is based on the NGA site, but is more clearly defined from the main content with a darker background colour. */
+
+.footer-text p {
+	width: 350px;
+	color: #aeafaf;
+	font-size: 70%;
+	line-height: 1.7em;
+	letter-spacing: 1.5px;
+	text-align: left;
+}
+
+/* footer navigation styles */
+/* navigation is aligned to the right for quicker to access when scrolling */
+.footer-nav {
+	float: right;
+	position: relative;
+	bottom: 120px;
+	z-index: 1;
+}
+
+.footer-nav ul li {
+	display: block;
+	text-align: right;
+	font-size: 90%;
+	line-height: 1.7em;
+	letter-spacing: 1.5px;
+}
+
+.footer-nav ul li a {
+	text-decoration: none;
+	color: #f8f8f8;
+	padding: 1px;
+}
+
+/* decided to use border-bottom to act as an underline to achieve a cleaner effect */
+.footer-nav ul li a:hover {
+	color: #f8f8f8;
+	border-bottom: 1px dotted #f8f8f8;
+}

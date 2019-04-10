@@ -1,0 +1,393 @@
+ 
+/*Australian wildlife map | B.Rowe 3114634 | University of Canberra, 2018*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*
+
+1. Colours for App
+    Gold --> #C0B283 
+    Blush --> #DCD0C0
+    Paper --> #F4F4F4
+    Almost black --> #373737
+*/
+
+body {
+    margin: o auto;
+    padding: 0;
+    background-image:linear-gradient( #F4F4F4, #DCD0C0);
+    font-family: "Source Sans Pro", "Arial", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #373737;
+    }
+       
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+    padding: 0;
+            }
+
+h1 {
+    font-size: 3em;
+    line-height: 1em;
+    text-align: center;
+    margin: 0.5em 0;
+    }
+
+h2 {
+    font-size: 2em;
+    line-height: 1em;
+    text-align: center;
+    margin: 0.5em 0;
+    }
+
+h3 {
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: 300;
+    }
+
+h4 {
+    font-size: .7em;
+    }
+
+h5 {
+    font-size: .6em;        
+    }
+
+h6 {
+    font-size: .5em;
+    line-height: 1em;
+    margin: 1.5 1em;
+    padding: 1em 0;
+    }
+
+
+/* Header */ 
+
+header {
+    padding: .5em 0em;
+    background-color: #373737;
+    color: #C0B283;
+    justify-content: space-between;
+    height: auto;
+    position:inherit;
+    width: 100%;
+    }
+
+header p {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 300;
+    text-transform: uppercase;
+    }
+
+
+/* Date Line */ 
+
+#wet {
+    padding: .2em 0em;
+    background-color: #C0B283;
+    color: #373737;
+    justify-content: space-between;
+    height: 1em;
+    width: 100%;
+    font-size: .5em;
+    text-transform: uppercase;
+    text-align: center;
+    }
+
+
+/* tin shed */
+
+#container {
+    width: 95%;
+    margin: auto;
+    }
+    
+
+/* Search bar */ 
+
+#aniSearch {
+    width: 100%;
+    z-index: 10;
+    text-align: center;
+    margin-top: 1em;
+    }
+
+#aniQuery,
+.aniSubmit {
+    margin: 0;
+    padding: .4em;
+    border-radius: .3em;
+    font-size: 1em;
+    font-weight: 400;
+    }
+
+#aniQuery {
+    color: #373737;
+    background-color: rgba(250,250,250,.2);
+    border: .05em solid #DCD0C0; 
+    }
+
+#aniQuery:focus,
+.aniSubmit:focus {
+    outline: none;
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color:darkgrey;
+    }
+
+.aniSubmit {
+    color: #C0B283;
+    cursor: pointer;
+    background-color: #373737;
+    }
+
+.aniSubmit:hover {
+    background-color: #C0B283;
+    color: #373737;
+    }
+
+
+/* Animal Title, animal information tag, animal image section */
+
+#aniBio {
+    margin: .2em .2em 4em .2em;
+    padding: .4em;
+    height: 20em;
+    background-color: #F4F4F4; 
+    width: 35%;
+    float: left;
+    align-items: center;
+    text-align: center;
+    }
+
+.bio {
+    margin: .5em 0;
+    }
+
+.bio img{
+    max-height: 10em;
+    }
+
+.realname{
+    text-align: center;
+    font-style: italic;
+    }
+
+.desc1 {
+    background-color: #373737;
+    text-align: center;
+    margin: .5em 0;
+    padding: .5em;
+    border-radius: .3em;
+    color: #F4F4F4;
+    font: .5em;
+    font-weight:300;
+    }
+
+.desc1 a{
+    color: #F4F4F4;
+    text-decoration: none;
+    }
+
+.desc1 a:hover{
+     color: #C0B283;
+    }
+
+
+/* Heat map section */
+
+#aniHeat{
+    margin: .2em;
+    padding: .4em;
+    height: 20em;
+    background-color: #DCD0C0;   
+    float: left;
+    width: 35%;
+    }
+
+#aniHeat img {
+    width: 100%;
+    }
+
+/* search result section */
+
+#aniResult{
+    margin: .2em;
+    padding: .4em;
+    background-color: #C0B283;   
+    float: left;
+    width: 20%;
+    height: 20em;
+    }
+
+
+/* footer section */
+
+footer{
+	background:#373737;
+	height:auto;
+	padding:.1em;
+    font-weight: 400;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #C0B283;
+    margin-top: 2em;
+    }
+
+
+@media screen and (min-width: 641px) and (max-width: 1007px) {	
+    
+#container {
+    width: 70%;
+    margin: auto;
+    }
+    
+/* Animal Title, animal information tag, animal image section */
+#aniBio {
+    padding: .4em;
+    background-color: #F4F4F4; 
+    width: 100%;
+    height: auto;
+    margin:.2em;
+    }  
+        
+.bio img{
+    width: 100%;
+    max-height:none;
+    }
+    
+/* Heat map section */
+#aniHeat {
+    margin: .2em;
+    padding: .4em;
+    height: auto;
+    width:100%;
+    }
+    
+#aniHeat img {
+    width: 100%;    
+    }
+        
+/* search result section */
+#aniResult{
+    margin: .2em .2em 5em .2em;
+    padding: .4em;
+    width: 100%;
+    height: auto;
+    }
+       
+}
+
+@media screen and (min-width: 321px) and (max-width: 640px) {	
+
+    
+#container {
+    width: 100%;
+    margin: auto;
+    }
+    
+#aniQuery,
+.aniSubmit {
+    margin: 0;
+    padding: .4em;
+    border-radius: .3em;
+    font-size: 1em;
+    font-weight: 400;
+    width: 100%;
+    }  
+    
+#aniResult{
+    margin: .2em .2em 15em .2em;
+    margin: auto;
+    padding: .4em;
+    background-color: #C0B283;   
+    width: 100%;
+    height: auto;
+    }
+
+#aniBio {
+    padding: 0em;
+    height:auto;
+    width: 100%;
+    margin: auto;
+    } 
+    
+.bio {    
+    margin: 0;
+    }
+    
+.bio img{
+    width: 100%;
+    max-height:none;
+    }  
+    
+
+#aniHeat {
+    margin: 0em;
+    padding: .4em;
+    background-color: #DCD0C0;   
+    width:98%;
+    height: auto;
+    }   
+    
+#aniHeat img{
+    width: 95%;
+    margin: 0em;
+    }    
+
+}
+

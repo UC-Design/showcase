@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta:400,800');
+
+// Global variable and config
+@import "global/index";
+
+// Global defaults
+@import "default";
+@import "global-classes";
+@import "navigation";
+
+// Global Components
+@import "components/progression-circle";

@@ -1,0 +1,10 @@
+# redirect to public directory
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^$ /public [L]
+
+#block access to config file
+<files config.php>
+order allow,deny
+deny from all
+</files>

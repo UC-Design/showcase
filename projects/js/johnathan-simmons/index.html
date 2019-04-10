@@ -1,0 +1,92 @@
+<!-- @author Jonathan Simmons -->
+<!-- Student id: u3141072 -->
+<!-- As a software engineering student, this is definitely not my finest work. -->
+<!-- I'm also no good at making things look pretty. -->
+<!-- NOTE: If not running on a http server, you must run this in firefox as chrome doesn't allow local json files to be opened -->
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+        
+        <!-- fullPage.js CSS file -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css">
+        
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+        <!-- My own CSS file -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <!-- Bootstrap files -->
+        <!-- Bootstrap JQuery and JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+
+            
+            <!-- fullPage.js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+            
+            <!-- Vue.js -->
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            
+            <!-- Chart.js -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+        <!-- My own JS file -->
+        <script src="home.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Scroll progress bar -->
+        <div id="progress-bar">
+            <div id="progress-indicator"></div>
+        </div>
+        
+        <div id="bgcolour-wrapper">
+            <div id="fullpage"> <!-- id needed for fullpage to work-->
+                <div class="container">
+                    <!-- Intro section -->
+                    <div class="section row col-md-12 text-center" id="intro-section">
+                        <h1 class="display-1 animated" id="KH-heading">Kingdom Hearts Timeline</h1>
+                        <div class="animated" id="intro">
+                            <h4>In 2002, a legendary video game series was born. This series combined two ideas that nobody would have ever thought would work together - Final Fantasy and Disney, and it took the world by storm.</h4>
+                            <h4>Over the years however, it has created a convoluted plot which can scare away newcomers with over 10 entries across different consoles. Never fear, for I have created this to help.</h4>
+                            <h4>You <i>could</i> buy and play them individual in order of release across all different platforms...</h4>
+                        </div>
+                    </div>
+                    <!-- Bundled games section -->
+                    <div class="section text-center" id="bundle-order">
+                        <h2>Or, you could just buy the bundles and play them in order (which is <i>far</i> easier)</h2>
+                        <div class="row">
+                            <div class="col-md-6 animated bundle-image" v-for="game in bundledGames">
+                                <img class="img-fluid" v-bind:src="'images/'+game.image">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 animated bundle-info" v-for="bundle in bundledGames">
+                                <h2>{{ bundle.name }}</h2>
+                                <h4>Year: {{ bundle.year}} </h4>
+                                <h4>Platform: {{ bundle.platform }} </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Stats -->
+                    <div class="section text-center" id="stats">
+                        <h1 class="animated display-3" id="stats-heading">Here's how many copies each game sold globally</h1>
+                        <div class="row" id="chart-container">
+                            <!-- Pie Chart -->
+                            <canvas class="col-md-12" id="pie-chart"> </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

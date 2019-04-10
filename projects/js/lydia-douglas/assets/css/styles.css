@@ -1,0 +1,594 @@
+ /* Circle/Ball app created by Lydia Douglas 2018 */
+
+ /* This ia a playful app created in cooperation with my daughter(6years)
+ It is meant to educate in creative fun way
+ She is starting to read and work with larger numbers (hundreds)
+ 
+ This app is meant to tap into kids curiousity and while they have fun pick up 
+ a few skills on the way (well it was fun for me too)*/
+
+ /* Everything revolves around a rhyme(short small words)
+    the animations and interaction support the words in rhyme
+    the ball color/size change- made her try larger numbers 
+    - she kept coming back to it many many times*/
+
+/* mainly color variables */
+ :root {
+     --color-border: black;
+     --text-color: lightgrey;
+     --ball-gradient-lt: hsl(243, 31%, 62%);
+     --ball-gradient-dk: hsl(0, 10%, 20%);
+     --ball-shadow: hsl(180, 15%, 26%);
+     --color-footer: hsl(40, 6%, 91%);
+     --font-size: 18px;
+     --text-color-neutral: lightgrey;
+     --text-color-dark: #17a7ac;
+     --color-header: transparent;
+     --font-playful: 'Gochi Hand';
+     --font-cursive: 'Caveat';
+     --font-choppy: 'Short Stack';
+     --purple-glass: hsla(257, 24%, 47%, 0.32);
+     --purple-glass-active: hsla(175, 56%, 68%, 0.32);
+     --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     --background1-fallback: hsl(243, 31%, 62%);
+
+ }
+/* background set  */
+ html {
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#706da0+0,90c0ce+63,97c1c9+67,c497ac+100 */
+background: #706da0; /* Old browsers */
+background: -moz-linear-gradient(top, #706da0 0%, #90c0ce 63%, #97c1c9 67%, #c497ac 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #706da0 0%,#90c0ce 63%,#97c1c9 67%,#c497ac 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #706da0 0%,#90c0ce 63%,#97c1c9 67%,#c497ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#706da0', endColorstr='#c497ac',GradientType=0 ); /* IE6-9 */
+   
+     background-attachment: fixed;
+     height: 100%;
+ }
+
+ *, *:before, *:after {
+     -webkit-box-sizing: inherit;
+     box-sizing: inherit;
+ }
+
+ /* general setting */
+ body {
+     font-size: var(--font-size);
+     color: var(--text-color-neutral);
+     /* height: 10000px; */
+     width: 100%;
+     margin-top: -5px;
+     font-family: var(--font-choppy), var(--font-playful), var(--default-font);
+     transition: background-color .5s ease-in-out;
+     -moz-transition: background-color .5s ease-in-out;
+     -webkit-transition: background-color .5s ease-in-out;
+     -o-transition: background-color .5s ease-in-out;
+ }
+
+ /*>>>>>>>>>>>>>>>>>>> helper classes  >>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+ .position-fixed {
+     position: fixed;
+ }
+
+ .position-unfixed {
+     position: relative;
+ }
+
+ .invisible {
+     visibility: hidden;
+ }
+
+ .visible {
+     visibility: visible;
+ }
+
+ .hidden {
+    display: none;
+}
+
+ .black-all {
+     background-color: rgb( 0, 0, 0);
+ }
+
+ /* related animation css plugin */
+
+ .animated {
+     -webkit-animation-duration: 2s;
+     animation-duration: 2s;
+     /* visibility:visible; */
+ }
+
+ /* ********************* slider  **********************************/
+
+ /* this is the nav slider */
+
+ #slider-wrapper {
+     width: 93%;
+     margin-left: 7%;
+     margin-top: 5px;
+ }
+
+ .slide {
+     position: relative;
+     overflow: hidden;
+     width: 100%;
+     margin-top: .3%;
+ }
+
+ .slide .inner {
+     position: absolute;
+     left: 13%;
+     top: 0;
+     width: 100%;
+ }
+
+ .js .slide .inner {
+     display: none;
+ }
+
+ /* slider buttons styles */
+ .b-action {
+     cursor: pointer;
+     background-color: var(--purple-glass);
+     border: 2px solid #17a7ac;
+     color: #17a7ac;
+     font-size: 22px;
+     font-family: var(--font-choppy), var(--default-font);
+     min-width: 2.5%;
+     -webkit-transition: background-color 0.5s, color 0.8s, -webkit-transform 0.5s;
+     transition: background-color 0.5s, color 0.8s, -webkit-transform 0.5s;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s, -webkit-transform 0.5s;
+     padding-top: 10px;
+     min-width: 120px;
+     margin: 0 5px;
+     z-index: 2;
+ }
+
+ .b-action:hover {
+     background-color: #4d9da0;
+     /* #1b75f7;*/
+     color: #9dd9e4ef;
+     -webkit-transform: scale(1.1) translate(1px, 1px);
+     transform: scale(1.1) translate(1px, 1px);
+ }
+
+ .b-action:active {
+     outline: none;
+     border: none;
+ }
+
+ .b-action:focus {
+     outline: 0;
+ }
+
+ #app-name {
+     float: right;
+     /* padding-right: 20%; */
+ }
+/* slider button to control the slider roll in roll out */
+ .b-slide {
+     cursor: pointer;
+     border: 2px;
+     font-size: 2em;
+     color: var(--text-color-neutral);
+     font-family: var(--font-choppy), var(--default-font);
+     -webkit-transition: background-color 0.5s, color 0.8s, -webkit-transform 0.5s;
+     transition: background-color 0.5s, color 0.8s, -webkit-transform 0.5s;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s, -webkit-transform 0.5s;
+     background-color: transparent;
+     margin-right: 5px;
+     z-index: 4;
+ }
+
+ .b-slide:hover {
+     background-color: hsla(257, 24%, 47%, 0.32);
+     color: white;
+     -webkit-transform: scale(1.1) translate(1px, 1px);
+     transform: scale(1.1) translate(1px, 1px);
+ }
+
+ .b-slide:active {
+     outline: none;
+     border: none;
+ }
+
+ .b-slide:focus {
+     outline: 0;
+ }
+
+ .selected-action {
+     color: #ffffff;
+ }
+
+ /* <<<<<<<<<<<<<<<<<<<<<<<<<  slider >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+ /******************************* welcome text area ****************** */
+
+ #welcome-text {
+     min-width: 65%;
+     min-height: 80px;
+     margin: 0 auto;
+     z-index: 3;
+ }
+/* text at begging of the app */
+ .lets-text {
+     font-family: var(--font-cursive), var(--default-font);
+     font-size: 8em;
+     min-width: 65%;
+     letter-spacing: 0.1em;
+     text-align: center;
+     color: var(--text-color);
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     padding-left: 17%;
+     padding-top: 3%;
+ }
+
+ #lets-div {
+     text-align: right;
+     margin-right: 1em;
+     font-size: 0.3em;
+     font-family: var(--font-choppy), var(--font-choppy), var(--default-font);
+     bottom: 50%;
+ }
+
+ /* for scroll animation */
+ #spacer {
+     width: 20%;
+     height: 85vh;
+ }
+
+ /***************** end welcome text area***************************** */
+/* circle that appears in the begining */
+ #circle {
+     width: 400px;
+     height: 400px;
+     border-radius: 50%;
+     background-color: var(--background1-fallback);
+     border: 8px;
+     border-color: var(--color-border);
+     margin: 0 auto;
+     margin-top: 5%;
+ }
+
+ .circle-div {
+     width: 100%;
+     min-height: 300px;
+     display: none;
+ }
+
+/* ball styles */
+ .ball {
+     display: inline-block;
+     width: 400px;
+     height: 400px;
+     border-radius: 50%;
+     position: relative;
+     margin: 0 auto;
+     background: radial-gradient(circle at 50% 120%, var(--ball-gradient-lt), var(--ball-gradient-lt) 80%, var(--ball-gradient-lt) 90%);
+     z-index: 2;
+     background-color: green;
+     transition: background-color .5s ease-in-out;
+     -webkit-transition: width 1s ease-in-out;
+     transition: width 1s ease-in-out;
+     -webkit-transition: height 1s ease-in-out;
+     transition: height 1s ease-in-out;
+     -moz-transition: background-color .5s ease-in-out;
+     -webkit-transition: background-color .5s ease-in-out;
+     -o-transition: background-color .5s ease-in-out;
+ }
+
+ .ball:before {
+     content: "";
+     position: absolute;
+     background: radial-gradient(circle at 50% 120%, rgba(185, 184, 184, 0.5), rgba(128, 127, 127, 0) 70%);
+     border-radius: 50%;
+     bottom: 2.5%;
+     left: 5%;
+     opacity: 0.6;
+     height: 100%;
+     width: 90%;
+     -webkit-filter: blur(10px);
+     filter: blur(10px);
+     z-index: 3;
+ }
+
+ .ball:after {
+     content: "";
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 5%;
+     left: 10%;
+     border-radius: 50%;
+     background: radial-gradient(circle at 50% 50%, rgba(226, 226, 226, 0.7), rgba(226, 226, 226, 0.6) 14%, rgba(226, 226, 226, 0) 24%);
+     -webkit-transform: translateX(-28%) translateY(-32%) skewX(-20deg);
+     transform: translateX(-28%) translateY(-32%) skewX(-20deg);
+     -webkit-filter: blur(10px);
+     filter: blur(10px);
+ }
+
+ .ball .shadow {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+     -webkit-transform: rotateX(90deg) translateZ(-150px);
+     transform: rotateX(90deg) translateZ(-150px);
+     z-index: 1;
+ }
+
+ #tall-slider {
+     clear: both;
+     display: block;
+     width: 50%;
+     background-color: #4d9da0;
+ }
+
+ .invisible {
+     opacity: 0;
+ }
+
+ /* animations for the text  and slider button */
+ @-webkit-keyframes fade-in-right {
+     from {
+         opacity: 0;
+         -webkit-transform: translateX(-200px);
+         transform: translateX(-200px);
+     }
+     to {
+         opacity: 1;
+         -webkit-transform: translateX(0);
+         transform: translateX(0);
+     }
+ }
+
+ @keyframes fade-in-right {
+     from {
+         opacity: 0;
+         -webkit-transform: translateX(-200px);
+         transform: translateX(-200px);
+     }
+     to {
+         opacity: 1;
+         -webkit-transform: translateX(0);
+         transform: translateX(0);
+     }
+ }
+
+ @-webkit-keyframes fade-in-left {
+     from {
+         opacity: 0;
+         -webkit-transform: translateX(200px);
+         transform: translateX(200px);
+     }
+     to {
+         opacity: 1;
+         -webkit-transform: translateX(0);
+         transform: translateX(0);
+     }
+ }
+
+ @keyframes fade-in-left {
+     from {
+         opacity: 0;
+         -webkit-transform: translateX(200px);
+         transform: translateX(200px);
+     }
+     to {
+         opacity: 1;
+         -webkit-transform: translateX(0);
+         transform: translateX(0);
+     }
+ }
+
+ @-webkit-keyframes grow-left {
+     from {
+         -webkit-transform: scaleX(0);
+         transform: scaleX(0);
+     }
+     to {
+         -webkit-transform: scaleX(1);
+         transform: scaleX(1);
+     }
+ }
+
+ @keyframes grow-left {
+     from {
+         -webkit-transform: scaleX(0);
+         transform: scaleX(0);
+     }
+     to {
+         -webkit-transform: scaleX(1);
+         transform: scaleX(1);
+     }
+ }
+
+ @-webkit-keyframes shrink-ball {
+     from {
+         -webkit-transform: scaleX(1);
+         transform: scaleX(1);
+     }
+     to {
+         -webkit-transform: scaleX(0);
+         transform: scaleX(0);
+     }
+ }
+
+ @keyframes shrink-ball {
+     from {
+         -webkit-transform: scaleX(1);
+         transform: scaleX(1);
+     }
+     to {
+         -webkit-transform: scaleX(0);
+         transform: scaleX(0);
+     }
+ }
+
+ .shrink {
+     -webkit-transition: width 1s, height 1s;
+     transition: width 1s, height 1s;
+ }
+
+ .t-circle-left {
+     display: none;
+ }
+
+ .t-ball-left {
+     display: none;
+ }
+
+ /* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+ #scroller-wrapper {
+     width: 20%;
+     z-index: -1;
+ }
+
+ #vue-wrapper {
+     width: 80%;
+     left: 25%;
+     float: right;
+ }
+
+ #app {
+     position: relative;
+     width: 100%;
+     height: 70vh;
+ }
+
+/* the abll manipulation panels live here */
+ #controls-panel2 {
+     color: hsl(0, 0%, 100%);
+     width: 28%;
+     height: 100%;
+     float: right;
+     margin-right: 6%;
+     margin-top: 6%;
+     padding: 1%;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     box-orient: vertical;
+     -webkit-box-orient : vertical;
+     box-direction: normal;
+     -webkit-box-direction : normal;
+     -ms-flex-direction: column;
+     flex-direction: column;
+     -ms-flex-pack: distribute;
+     justify-content: space-around;
+ }
+
+ /* control-panel where there manipulation of the ball happens */
+ .mini-panel, .mini-panel2 {
+     background-color: var(--purple-glass);
+     border: 2px solid #17a7ac;
+     color: var(--text-color);
+     text-align: center;
+     padding: 5%;
+     margin-right: 20px;
+     font-size: 1.2em;
+     /* width:100%; */
+     min-height: 80px;
+     /* min-width: 100px; */
+ }
+
+ .mini-panel:hover, .mini-panel2:hover {
+     -webkit-transform: scale(1.1) translate(1px, 1px);
+     transform: scale(1.1) translate(1px, 1px);
+ }
+
+ label, input {
+     background-color: transparent;
+     color: inherit;
+     width: 100%;
+     min-height: 20px;
+     border: none;
+     font-size: 1em;
+     text-align: center;
+     margin-top: 5%;
+ }
+/* /stage where abll and troll appear */
+ #stage {
+     width: 600px;
+     height: 600px;
+     position: relative;
+ }
+/* the trollpic */
+ #pictroll {
+     width: 600px;
+     height: 600px;
+     position: absolute;
+     pointer-events: none;
+     margin: 0 auto;
+     z-index: 7;
+ }
+
+ #stage .ball {
+     position: absolute;
+     margin: 0 auto;
+     top: 24.5%;
+     left: 15.5%;
+ }
+
+ /* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+  /* <<<<<<<<<<<<<<<<<<<<<<<<< start rhyme scroll Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+ h4 {
+     font-family: var(--font-cursive), var(--default-font);
+     font-size: 3em;
+     font-weight: 300;
+     background-color: rgba(107, 91, 149, 0.315);
+     width: 100%;
+     text-align: center;
+     margin: 0 auto;
+ }
+
+ .action-call-text {
+     padding-left: 10%;
+     font-family: var(--playful), var(--default-font);
+     font-size: 2em;
+     margin-bottom: 5%;
+     margin-left: 5%;
+     padding: 30px 10px;
+     z-index: 10;
+ }
+/* types of font used on the rhyme */
+ .shortstreach {
+     font-style: var(--cursive), var(--default-font);
+     font-size: 1.8em;
+     letter-spacing: 0.02em;
+ }
+
+ .blackish-bold {
+     font-style: var(--choppy), var(--default-font);
+     font-weight: bold;
+     font-size: 2.5em;
+ }
+
+ .streachLow {
+     font-style: var(--cursive), var(--default-font);
+     font-weight: bold;
+     font-size: 0.5em;
+     letter-spacing: 0.2em;
+ }
+
+ .streachHigh {
+     font-style: var(--font-playful), var(--default-font);
+     font-weight: 300;
+     font-size: 1.5em;
+     letter-spacing: 0.07em;
+ }
+
+ .blackish-med {
+     font-style: var(--choppy), var(--default-font);
+     font-weight: bold;
+     font-size: 1em;
+ }

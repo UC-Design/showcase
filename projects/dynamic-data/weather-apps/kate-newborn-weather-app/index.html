@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Welcome to my world</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+    
+<body>
+    
+    <section id="intro">
+        <h1>WELCOME<br />TO MY WORLD</h1>
+        <p id="tagline">See what the sky looks like around the globe</p>
+    </section>
+    
+    <section id="loadScreen">
+        <div id="loader">
+            <div id="loader1"></div>
+            <div id="loader2"></div>
+        </div>
+    </section>
+    
+    <section id="locSearch">
+        <form role="search">
+            <input id="locQuery" type="search" placeholder="Where to?" autofocus required autocomplete="off" /><input id="locSubmit" type="submit" value="GO" />
+        </form>
+        <p id="locError">Can't find that place - try another!</p>
+    </section>
+    
+    <section id="weatherAnimation">
+        <div id="skyLayer"></div>
+        <div id="nightFilter"></div>
+        <div id="sunMoonLayer">
+            <div id="sun"></div>
+            <div id="moon"></div>
+        </div>
+        <div id="cloudLayer"></div>
+        <div id="precipLayer"></div>
+        <div id="visFilter"></div>
+        <div id="attribution">
+            <p>Powered by <a href="https://developers.google.com/maps/" target="_blank">Google</a> and <a href="https://darksky.net/poweredby/" target="_blank">Dark Sky</a></p> 
+        </div>
+    </section>
+    
+    <section id="locDisplay">
+        <p id="time"></p>
+        <h2 id="currentLoc"></h2>
+        <p id="currentLocLong"></p>
+    </section>
+    
+    <!-- SCRIPTS-->
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

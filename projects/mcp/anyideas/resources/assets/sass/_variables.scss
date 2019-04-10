@@ -1,0 +1,136 @@
+// Body
+$pure: #ffffff;
+$white: #fafafa;
+$grey-med: #BFBFBF;
+$grey-dark: #707070;
+$black: #010101;
+$black-light: #2C2C2C;
+$accent: #FFE6A0;
+$primary: #FCB045;
+
+// Typography
+$font-family-sans-serif: "PT Sans", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+$w-bold: 700;
+$w-regular: 400;
+
+$size-h1: 2rem;
+$size-h2: 1.4rem;
+$size-h3: 1rem;
+$size-h4: 1rem;
+$size-h5: 1rem;
+$size-h6: 0.75rem;
+$size-p: 1rem;
+$size-12: 12 / 16 + 'px';
+
+
+// Colors
+//text
+$text-title-color: #000000;
+$p-color: #2C2C2C; 
+$error-color: #f03d3d;
+
+// categories
+$ideation: #F45F5F;
+$planning: #F5DB2F;
+$creating: #7CCB1F;
+$evaluating: #1FCBBE;
+$refining: #3BABDD;
+$completed: #C682D6;
+$on-hold: #FC64D9;
+$abandoned: #989898;
+
+
+
+// global classes
+.fixed_width {
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+}
+// used on sub routes on the idea page (not timeline)
+.sub_width {
+  width: 60%;
+  margin: 48px auto;
+}
+// to be placed on the element directly above the IdeaCard component (usually in a loop)
+.idea_wrapper {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+.page-wrapper {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: $size / 16px;
+}
+
+@mixin category($color) {
+  color: $color;
+  * {
+    fill: $color;
+    stroke: $color;
+  }
+}
+
+@mixin bg_category($color) {
+  background-color: $color;
+}
+
+
+
+.Ideation, .ideation {
+  @include category($ideation)
+};
+.Planning, .planning {
+  @include category($planning)
+};
+.Creating, .creating {
+    @include category($creating)
+};
+.Evaluating, .evaluating {
+  @include category($evaluating)
+};
+.Refining, .refining {
+  @include category($refining)
+};
+.Completed, .completed {
+  @include category($completed)
+};
+.On-hold, .on-hold {
+  @include category($on-hold)
+};
+.Abandoned, .abandoned {
+  @include category($abandoned)
+};
+
+.bg_ideation {
+  @include bg_category($ideation)
+};
+.bg_planning {
+  @include bg_category($planning)
+};
+.bg_creating {
+    @include bg_category($creating)
+};
+.bg_evaluating {
+  @include bg_category($evaluating)
+};
+.bg_refining {
+  @include bg_category($refining)
+};
+.bg_completed {
+  @include bg_category($completed)
+};
+.bg_on-hold {
+  @include bg_category($on-hold)
+};
+.bg_abandoned {
+  @include bg_category($abandoned)
+};

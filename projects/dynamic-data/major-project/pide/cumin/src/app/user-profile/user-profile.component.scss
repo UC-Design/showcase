@@ -1,0 +1,29 @@
+// Super Globals
+@import "../../../../scss/global/index";
+
+.user-profile {
+    text-align: center;
+    h3 {
+        margin: 0;
+        color: get-colour('black');
+    }
+    .profile-image {
+        width: 250px;
+        height: 250px;
+        margin: 50px auto 0;
+        border-radius: 50%;
+        border: 5px solid get-colour('green');
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    p {
+        @include breakpoint(xlarge) {
+            font-size: em(21px);
+        }
+    }
+    .get-started {
+        margin-top: 100px;
+    }
+}

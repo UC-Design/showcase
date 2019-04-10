@@ -1,0 +1,37 @@
+@import '../variables';
+
+body {
+    .editor-contents {
+        font-size: 1em;
+        color: $black;
+        h1, h2, h3, h4, h5, h6 {
+            padding: 0;
+            border: none;
+        }
+        * {
+            color: inherit;
+            box-sizing: border-box;
+        }
+
+        hr {
+            max-width: 320px;
+            margin: 40px auto;
+            border-color: $black;
+        }
+
+        blockquote {
+            margin: 30px 0 30px 0;
+            border-color: $black;
+            * {
+                font-style: italic;
+            }
+        }
+    
+        > *:first-child {
+            margin-top: 0;
+        }
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

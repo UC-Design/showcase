@@ -1,0 +1,131 @@
+<!-- Stephanie Brink 3072445 -->
+<!doctype html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contempo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">
+    <script src="jquery-3.2.1.min.js" defer></script>
+    <script src="jquery-ui.min.js" defer></script>
+    <script src="moment.min.js" defer></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/PoeHaH/devicedetector/master/devicedetector-min.js"></script>
+    <script src="javascript.js" defer></script>
+</head>
+
+<body>
+    
+    <div id="change-to-portrait">
+        <div id="change-inner">
+            <img src="images/rotate-device.svg" alt="">
+            <p>Please rotate your device to use Contempo</p>
+        </div>
+    </div>
+    
+    <div id="wrapper">
+        
+        <!-- current temperature -->
+        <div id="temp-wrapper">
+            <div id="current-temp"></div>
+            <div id="feels-like"></div>
+        </div>
+        
+        <!-- current location -->
+        <div id="location"></div>
+        
+        <!-- clock including time indicator, max and min temps -->
+        <div id="clock">
+            <!-- white background overlay beige to form beige ring shape -->
+            <div id="ring">
+                <!-- blue fill to indicate sunrise (left) -->
+                <div id="sunrise-fill" class="blue-fill"></div>
+                <!-- REMOVE THIS FOR DESKTOP -->
+                <div id="sunrise-fill-extend" class="fill-extend"></div>
+
+                <!-- blue fill to indicate sunset (right) -->
+                <div id="sunset-fill" class="blue-fill"></div>
+                <!-- REMOVE THIS FOR DESKTOP -->
+                <div id="sunset-fill-extend" class="fill-extend"></div>
+
+                <!-- partial circle fill, for background -->
+                <div id="remainder-fill"></div>
+                
+                <!-- icon and summary -->
+                <div id="icon"></div>
+                <p>12am</p>
+            </div>
+
+            <!-- dot indicating current time -->
+            <div id="time-container">
+                <div id="time">
+                </div>
+            </div>
+
+            <!-- marker indicating max temp of the day -->
+            <div id="max-temp-container" class="temp-container">
+                <div id="max-temp" class="temp"></div>
+            </div>
+
+            <!-- marker indicating min temp of the day -->
+            <div id="min-temp-container" class="temp-container">
+                <div id="min-temp" class="temp"></div>
+            </div>
+            
+        </div>
+    
+        <!-- wind, rain and humidity -->
+        <div id="stats-container">
+            <div id="wind">
+                <img class="mobile" src="images/white-wind.svg" alt="wind">
+                <img id="wind-icon" class="hide desktop" src="images/blue-wind.svg" alt="wind">
+            </div>
+            <div id="rain">
+                <img src="images/white-rain-drop+.svg" alt="rain">
+            </div>
+            <div id="humidity">
+                <img class="mobile" src="images/white-humidity.svg" alt="humidity">
+                <img id ="humid" class="hide desktop" src="images/blue-humidity.svg" alt="humidity">
+            </div>
+            <div id="rain-desktop">
+                <img src="images/blue-rain-drop.svg" alt="rain">
+            </div>
+        </div>
+        
+        <!-- hourly rain forecast -->
+        <div id="rain-chance" class="hide">
+            <div id="close" class="mobile">
+                <img id="close-icon" src="images/white-close.svg" alt="close">
+            </div>
+            <div id="inner-rain">
+                <ul></ul>
+            </div>
+        </div>
+    
+        <!-- down arrow to show the daily forecast for week (as more content) -->
+        <div id="more">
+            <img src="images/white-down-arrow.svg" alt="more">
+        </div>
+        
+        <!-- daily forecast for week -->
+        <div id="forecast" class="hide">
+            <div id="close-forecast">
+                <img src="images/white-down-arrow.svg" alt="close">
+            </div>
+            <table id="daily-forecast">
+                <tr class="hide">
+                    <th>Day</th>
+                    <th>Summary</th>
+                    <th>Min</th>
+                    <th>Max</th>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+    <!-- bottom gradient of colour -->
+    <div id="bottom"></div>
+    
+</body>
+</html>

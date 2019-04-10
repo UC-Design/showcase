@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css?family=Philosopher');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS file by u3158678 */
+
+/* Basic Styling */
+
+body {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 100%;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 5px 0px;
+}
+
+i {
+    font-size: 0.8em;
+    line-height: 2.6em;
+    font-style: italic;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: 1em;
+    color: #ffebd2;
+    text-shadow: 1px 1px 1px #333;
+}
+
+h2 {
+    font-size: 1.8em;
+    line-height: 1em;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #333;
+}
+
+h3 {
+    font-size: 1em;
+    line-height: 1em;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #333;
+}
+
+/* Wrapper Styling */
+
+.header-wrapper {
+    background-color: #7d899a;
+    border-bottom: 2px solid #b5b7b4;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+.image-wrapper {
+    background-color: transparent;
+}
+
+.image-wrapper p {
+    color: #332f2a;
+}
+
+.fill-wrapper {
+    background-color: #ffebd2;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+.fill-wrapper p {
+    color: #2C2A2F;
+    /*text-shadow: 0px 0px 1px #333;*/
+}
+
+.secondary-navigation-wrapper {
+    background-color: transparent;
+    /*box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);*/
+}
+
+.google-map-wrapper {
+    background-color: transparent;
+    height: 350px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+footer {
+    display: block;
+}
+
+.footer-wrapper {
+    background-color: #5b6678;
+    margin-top: auto;
+    /*position: absolute;*/
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+}
+
+.inner-wrapper {
+    width: 980px;
+    margin: 0 auto;
+    padding: 20px 0px;
+}
+
+.columns {
+    display: flex;
+}
+
+.column-half-text {
+    width: 448px;
+    margin: 0 auto;
+    display: inline-flex;
+}
+
+.column-half-text a {
+    margin: 0 auto;
+    font-size: 2em;
+    line-height: 3em;
+    /* mouse staying default for unknown reason */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.column-half-image {
+    width: 448px;
+    margin: 0 auto;
+    display: inline-flex;
+    overflow: hidden;
+    background-color: #fff5e8;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  background-color: black;  
+}
+
+.container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+}
+
+.container:hover img {
+  opacity: 0.3;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  opacity: 1;
+  color: white;
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.column-thirds {
+    width: 326px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.column-thirds-image {
+    width: 300px;
+    margin: 0 auto;
+    display: inline-flex;
+    overflow: hidden;
+    background-color: #fff5e8;
+}
+
+.column-thirds p {
+    padding-right: 2em;
+}
+
+/* Have the image appear behind the content */
+.content {
+  overflow: auto;
+  position: relative;
+}
+
+.content:before {
+  content: "";
+  position: fixed;
+  left: -5%;
+  right: 0;
+  top: -5%;
+  z-index: -1;
+
+  display: block;
+  background-image: url('/assets/images/naa/tocumwal-naa-10.jpg');
+  background-size:cover;
+  width: 110%;
+  height: 110%;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.content h2 {
+    width: 125px; 
+    border-bottom: 4px solid #ffb8b8;
+    line-height: 1.5em;
+}
+
+/* Link Styling */
+
+a {
+    color: #ff6c6c;
+    text-shadow: 0.5px 0.5px 1px #afbfed;
+    line-height: 1.5em;
+}
+a:hover {
+    color: #96d4c5;
+}
+/*a:visited {
+    color: #6c6cff;
+    color: #ff6c6c;
+    text-shadow: 0.5px 0.5px 1px #deafed
+}*/
+a:active {}
+
+/* Navigation Styles */
+
+nav ul {
+    text-align: justify;
+    margin-bottom: -35px;
+}
+
+nav ul:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+nav ul li a h1 {
+    display: inline;
+    text-transform: initial;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #b5b7b4;
+    text-transform: uppercase;
+    font-size: 1.3em;
+}
+
+nav ul li a:hover {
+    color: #ffb8b8;
+}
+
+.current-page {
+    border-bottom: 4px solid #ffb8b8;
+    padding-bottom: 22px;
+}
+
+/* Misc */
+
+/* original iframe contained 'style="border:0"' */
+.google-map {
+    border: 0px;
+    width: 100%;
+}
+
+.start-quotation {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+.start-quotation:before {
+    font-size: 3em;
+    content: open-quote;
+    display: inline;
+    line-height: 1em;
+}
+
+.end-quotation {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+.end-quotation::after {
+    font-size: 3em;
+    content: close-quote;
+    display: inline;
+    line-height: 1em;
+}
+
+.start-quotation-small {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+.start-quotation-small:before {
+    font-size: 1.5em;
+    content: open-quote;
+    display: inline;
+    line-height: 1em;
+}
+
+.end-quotation-small {
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+.end-quotation-small::after {
+    font-size: 1.5em;
+    content: close-quote;
+    display: inline;
+    line-height: 1em;
+}
+
+.image-tile {
+    -webkit-filter: brightness(100%);
+    z-index: 3;
+}
+
+.image-tile-hidden {
+    -webkit-filter: brightness(50%);
+    z-index: 2;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.image-tile:hover {
+    -webkit-filter: opacity(0);
+    -moz-filter: opacity(0);
+    -o-filter: opacity(0);
+    -ms-filter: opacity(0);
+    /*filter: opacity(0.5);*/
+    
+    transition: filter 2s linear;
+    filter: blur(3vh) brightness(0.5);
+    
+    
+    
+    /*-webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    transition: all 1s linear;*/
+}

@@ -1,0 +1,101 @@
+.lyric-select-wrapper {
+    @include grid(stretch);
+    @include grid-column(auto em(400px), 60px);
+    .lyric-wrapper {
+        width: 100%;
+        padding: em(40px);
+        border-radius: $border-radius;
+        background-color: get-colour('footer');
+        position: relative;
+        user-select: none;
+        span {
+            cursor: pointer;
+            line-height: 1.5;
+            border-radius: 3px;
+            transition: background $transition-time $transition-easing, box-shadow $transition-time $transition-easing;
+            &:hover {
+                background: get-colour('word-highlight');
+                box-shadow: 2px 0 0 get-colour('word-highlight'), -2px 0 0 get-colour('word-highlight');
+            }
+        }
+        > p {
+            margin: 0;
+        }
+    }
+    .lyric-data {
+        .user-direction {
+            margin: 0 0 calc-em(35px, get-heading-size('h5'));
+            &.highlight {
+                margin-bottom: calc-em(35px, get-heading-size('h2'));
+            }
+        }
+        .selected-words {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            @include clearfix();
+            .pill {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                padding-right: 4px;
+                box-shadow: none;
+                svg {
+                    width: 8px;
+                    height: 8px;
+                    display: block;
+                    margin-left: 5px;
+                }
+            }
+        }
+        &.fixed {
+            position: fixed;
+            top: 25px;
+            right: 0;
+            width: em(400px);
+        }
+    }
+
+    .lyric-actions {
+        margin-top: em(100px);
+        padding: em(15px) 0;
+        border-top: 1px solid get-colour('border');
+        display: flex;
+        justify-content: flex-end;
+        align-content: center;
+        &.has-key {
+            justify-content: space-between;
+        }
+        .cancel {
+            font-weight: $w-bold;
+            color: get-colour('caption');
+            text-decoration: none;
+        }
+        .generated-key {
+            h3 {
+                margin: 0;
+            }
+        }
+    }
+
+    .mixlab-cta {
+        display: block;
+        border-color: get-colour('highlight');
+        margin-top: em(25px);
+        font-size: em(get-heading-size('h5'));
+        text-align: center;
+        font-weight: $w-bold;
+        text-transform: uppercase;
+        border-width: 3px;
+        &:hover {
+            background-color: get-colour('highlight');
+        }
+    }
+    
+    @each $i, $colour in $lyrics-active-colours {
+        .no-#{$i} {
+            background: $colour;
+            box-shadow: 2px 0 0 $colour, -2px 0 0 $colour;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<html lang="en">
+	<head>
+        
+        <meta charset="utf-8">
+        <title>Australian wildlife map</title>
+        <meta name="author" content="B Rowe">    
+        <meta name="description" content="Final project - Design for Dynamic Data 9394">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <!-- Styles-->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,600,700" rel="stylesheet">
+        
+    </head> 
+    
+	<body>
+        <!-- Link to scripts -->   
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+        <script src="scripts/script.js"></script>
+        
+        <header> 
+            <p>Australian wildlife map</p>
+        </header>
+    
+        <!-- time location -->    
+        <div id="wet">
+        </div> 
+        
+        <div id="container">
+            
+            <!--Search bar that looks up animal and outputs bio, Heat-map location and results from search from the ALA website -->
+            <div id="aniSearch">
+                <input id="aniQuery" type="search" placeholder="Animal Name" autofocus required autocomplete="off" />   
+                <button class="aniSubmit" type="submit" value="Search">Go Find </button>
+                <h6> eg. Little Penguin, Dingo, Australian Raven, Red Kangaroo, Rosella, and Goanna</h6>
+            </div> 
+        
+            <!--Animal name, bio, image -->
+            <div id="aniBio">
+                <div class="bio"></div>
+            </div>
+                
+            <!--Animal name, bio, image -->
+            <div id="aniHeat">
+                 <h3> Heat map of species location<hr></h3>
+            </div>
+            
+            <!--top 10 results from query search -->
+            <div id="aniResult">
+                <h3>Top search results <hr></h3>
+                <div class="results">
+                </div>
+            </div>
+              
+        </div>  <!-- end of maincontainer -->  
+        
+        <footer>
+            <h6>9394 SEM-2 Project 3 | B.Rowe 3114634 | University of Canberra, 2018.<br>
+            Information supplied by Atlas of Living Australia website at http://www.ala.org.au. Accessed 29 October 2018.
+            </h6>
+        </footer>
+        
+    </body>
+</html>

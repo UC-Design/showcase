@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <!-- head contains link to my styles.css file and individualised title for each separate html file -->
+    <head>
+        <title>KAVHA - Kingston and Arthur's Vale Historic Area - Home</title>
+        <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <!-- the header contains the logo/title and primary navigation -->
+        <div class="header-wrapper">
+            <header class="inner-wrapper">
+                <!-- h1 is used for the website title. textual logo was replaced with an image. functions as link to the homepage -->
+                <h1><a href="index.html"><img class="logo" src="assets/images/kavha-logo.png" alt="KAVHA"/></a></h1>
+                <!-- basic navigation. 3 links function, take the user directly to the corresponding page. the history page has additional navigation within it -->
+                <nav>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="history-polynesian.html">History</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="#">Visitor Information</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <!-- main-wrapper (among others) enables full width elements -->
+        <div class="main-wrapper">
+            <main>
+                <!-- located here is the hero content: image as background with overlapping text linking to the corresponding page -->
+                <div class="hero-content-wrapper">
+                    <!-- inner-wrapper contains everything within to a set width, specified in the css -->
+                    <!-- validation warned that "Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections." so i ended up supplementing the p tags with h3 tags -->
+                    <section class="inner-wrapper">
+                        <!-- found it necessary to use class specifications as a means of targeting elements more specifically -->
+                        <h3 class="hero-text">Kingston and Arthur's Vale Historic Area, referred to as KAVHA, is situated on the southern side of Norfolk Island.</h3>
+                        <p><a class="button" href="about.html">Find out more</a></p>
+                    </section>
+                </div>
+
+                <!-- main page content here -->
+                <div class="content-wrapper">
+                    <div class="inner-wrapper">
+                        <!-- 'blocks' of content are used on the home page, in this instance, the 'block-text' functions as a link, providing a coloured text-box overlay for the images when hovered over -->
+                        <!-- i noticed that rearranging <a> and <p> into the proper order meant that the text-box overlay no longer functioned, i wasn't able to find a solution -->
+                        <section class="block-1">
+                           <img class="block-1-image" src="assets/images/norfolk-island-7-edit2.jpg" alt="Emily Bay">
+                           <a href="history-polynesian.html"><h3 class="block-1-text"><em>Discover the full History...</em></h3></a>
+                           <p class="text-box-1">Discovered by Captain James Cook RN in 1774, Norfolk Island was settled on 6 March 1788, six weeks after the First Fleet landed in Sydney. However, Europeans were not the first people to inhabit Norfolk Island…</p>
+                       </section> 
+                    </div>
+                    <!-- in this instance, the section tag has not been contained within the <div class="inner-wrapper"> as the one before, so the contents of this section tag will stretch to the extent of the content-wrapper. the inner-wrapper is positioned within, and influences the behavior of the h3 element -->
+                    <section class="block-3">
+                        <div class="inner-wrapper">
+                            <h3 class="block-3-text">KAVHA is rich in aesthetic qualities due to the combination of spatial structure, visual quality and the strong relationship between built elements and their setting.</h3>
+                        </div>
+                    </section>
+                    <section class="block-2">
+                        <div class="inner-wrapper">
+                           <img class="block-2-image" src="assets/images/norfolk-island-12-edit1.jpg" alt="Gaol wall">
+                           <a href="history-secondsettlement.html"><h3 class="block-2-text"><em>Hell on earth: The Second Settlement</em></h3></a>
+                           <p class="text-box-2">KAVHA developed a reputation as one of the harshest and cruelest of Australia’s penal settlements.The Second Settlement’s role as a place of secondary punishment defined its character for the thirty years of this settlement period.</p>
+                        </div>
+                    </section>
+                     <div class="inner-wrapper">
+                        <section class="block-1">
+                           <img class="block-1-image" src="assets/images/norfolk-island-5-edit1.jpg" alt="Gaol and barracks plan">
+                           <a href="#"><h3 class="block-1-text"><em>The KAVHA Collection</em></h3></a>
+                           <p class="text-box-1">The Sirius wreck (1790) remains on the seabed off the reef in Slaughter Bay. The first anchor raised was in 1903. Artefacts have been recovered from the wreck, some of which form part of the collection housed in the Norfolk Island Museum.</p>
+                        </section>
+                    </div>
+                    <section class="block-4">
+                        <div class="inner-wrapper">
+                            <h3 class="text-box-3"><a href="#">Visitor's Guide</a></h3>
+                        </div>
+                       </section>
+                    <section class="block-2">
+                        <div class="inner-wrapper">
+                           <img class="block-2-image" src="assets/images/norfolk-island-6-edit1.jpg" alt="Soldier barracks and Commissariat Store ">
+                           <a href="explore.html"><h3 class="block-2-text"><em>Explore KAVHA</em></h3></a>
+                           <p class="text-box-2">A place significant for its richness of settlement history and array of extant features. The intact layout, form and fabric of KAVHA illustrate the patterns of human occupation, ways of life, and perceptions and values of the landscape.</p>
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
+        <!-- as I did not implement a fixed header the navigation is being repeated in the footer to make getting around the site easier and quicker -->
+        <div class="footer-wrapper footer-text">
+            <footer class="inner-wrapper">
+                <img class="mini-logo" src="assets/images/kavha-logo.png" alt="KAVHA">
+                <p>Kingston and Arthur's Vale Historic Area</p>
+                <p><em>Site by Natasha Murray for Web Design and Production, UC, 2018.</em></p>
+                <!-- footer navigation -->
+                <div class="footer-nav">
+                    <ul >
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="history-polynesian.html">History</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="#">Visitor Information</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>  
+            </footer>
+        </div>
+    </body>
+</html>

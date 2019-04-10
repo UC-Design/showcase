@@ -1,0 +1,33 @@
+@import 'scss/variables';
+@import 'scss/mixins';
+@import 'scss/default';
+@import 'scss/global-classes';
+
+// globals
+@import 'scss/components/grid';
+@import 'scss/components/buttons';
+@import 'scss/components/header';
+@import 'scss/components/footer';
+@import 'scss/components/modal';
+@import 'scss/components/error-popup';
+
+// components
+@import 'scss/components/auth/second_chance_auth';
+
+@import 'scss/components/webform/input';
+@import 'scss/components/webform/range';
+@import 'scss/components/webform/search-form';
+
+@import 'scss/components/pages/page-wrapper';
+@import 'scss/components/pages/page-title';
+@import 'scss/components/pages/homepage';
+@import 'scss/components/pages/profile';
+
+@import 'scss/components/branding/social-media';
+
+@import 'scss/components/creation/lyric-select';
+@import 'scss/components/creation/artist-select';
+@import 'scss/components/creation/mixlab';
+
+@import 'scss/components/phrases/phrase-collection';
+@import 'scss/components/phrases/single-phrase';

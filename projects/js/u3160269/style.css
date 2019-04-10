@@ -1,0 +1,467 @@
+/* main div specification */
+#div1 {
+    background: linear-gradient(#94CEF2, lightblue);
+    max-height: 100%;
+    position: fixed;
+    margin-top: 0;
+    width: 100%;
+}
+
+/* intro paragraph specifications */
+.intro {
+	text-align: justify;
+	font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    height: 100;
+    padding-top: 10%;
+    color: #445811;
+    margin-left: 32%;
+    margin-right: 32%;
+    padding-bottom: 900px;
+}
+
+/* earth image at bottom of page specifications */
+#earth {
+	position: fixed; 
+	bottom: 0;
+	background: transparent;
+    width: 100%;
+    height: 110px;
+}
+
+/* body specifications */
+body {
+    margin: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 1800px;
+}
+
+/*code taken from https://codepen.io/crismanNoble/pen/bGzqu */
+
+/*main title*/
+.knockout {
+	color: #072040;
+	font-weight: bold;
+	font-size: 6vw;
+	font-family: arial, helvetica;
+	text-align: center;
+    position: fixed;
+    margin-left: 10%;
+}
+
+/*troposphere title*/
+.knockout2 {
+	color: #072040;
+	font-weight: bold;
+	font-size: 6vw;
+	font-family: arial, helvetica;
+	text-align: center;
+    display: none;
+    position: fixed;
+    margin-left: 32%;
+}
+
+/*stratosphere title*/
+.knockout3 {
+	color: #072040;
+	font-weight: bold;
+	font-size: 6vw;
+	font-family: arial, helvetica;
+	text-align: center;
+    display: none;
+    position: fixed;
+    margin-left: 32%;
+}
+
+/*mesosphere title*/
+.knockout4 {
+	color: #072040;
+	font-weight: bold;
+	font-size: 6vw;
+	font-family: arial, helvetica;
+	text-align: center;
+    display: none;
+    position: fixed;
+    margin-left: 32%;
+}
+
+/*thermosphere title*/
+.knockout5 {
+	color: #072040;
+	font-weight: bold;
+	font-size: 6vw;
+	font-family: arial, helvetica;
+	text-align: center;
+    display: none;
+    position: fixed;
+    margin-left: 32%;
+}
+
+/*exoosphere title*/
+.knockout6 {
+	color: #072040;
+	font-weight: bold;
+	font-size: 6vw;
+	font-family: arial, helvetica;
+	text-align: center;
+    display: none;
+    position: fixed;
+    margin-left: 32%;
+}
+/*end of code taken from https://codepen.io/crismanNoble/pen/bGzqu */
+
+/* troposphere intro specifications */
+.tropintro {
+	text-align: justify;
+	font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2vw;
+    color: #445811;
+    height: 100;
+    padding-top: 10%;
+    margin-left: 32%;
+    margin-right: 32%;
+    padding-bottom: 900px;
+    position: fixed;
+	align-content: center;
+}
+
+/* homer gif specifications */
+.human {
+    height: 150px;
+    position: fixed;
+    top: 72%;
+    left: 23%;
+}
+
+/*homer popup specifications */
+.popup {
+    position: absolute;      /* lets us position the element anywhere */
+    background-color: #E3F4FF;
+    padding: 5px;
+    pointer-events: none;    /* see note [1] below */
+    width: 100px;
+    font-family: sans-serif;
+    color: #163E73;
+}
+
+/*bird popup specifications */
+.popup2 {
+    position: absolute;      /* lets us position the element anywhere */
+    background-color: #E3F4FF ;
+    padding: 5px;
+    pointer-events: none;    /* see note [1] below */
+    width: 100px;
+	font-family: sans-serif;
+    color: #163E73;
+}
+
+/*show popup on hover*/
+show {
+    display: inline-block;
+}
+
+/* hide gets applied to a popup when we want to hide it */
+.hide {
+    display: none;
+}
+
+/*bird gif specifications */
+.bird {
+    position: fixed;
+    margin-top: 40%;
+    margin-left: 53%;
+    height: 150px;
+}
+
+/*cloud png specifications */
+.cloud {
+    height: 150px;
+    position: fixed;
+    margin-top: 20%;
+    margin-left: 6%;
+}
+
+/*cloud popup specifications */
+.popup3{
+   position: absolute;  /* lets us position the element anywhere */
+   background-color: #E3F4FF;
+   padding: 5px;
+   pointer-events: none;    /* see note [1] below */
+   width: 100px;
+   font-family: sans-serif;
+   color: #163E73;
+}
+
+/*hot air ballon popup specifications */
+.popup4{
+   position: absolute;  /* lets us position the element anywhere */
+   background-color: #E3F4FF;
+   padding: 5px;
+   pointer-events: none;    /* see note [1] below */
+   width: 100px;
+   font-family: sans-serif;
+   color: #163E73;
+}
+
+/*ballon png specifications */
+.ballon {
+    height: 150px;
+    position: fixed;
+    margin-top: 25%;
+    margin-left: 80%;
+}
+
+/* km measure specifications 1 */
+.measure1 {
+    position: fixed;
+    border-left: solid black 1pt;
+    background-color: transparent;
+    height: 100%;
+    margin-left: 3%;
+    width: 200px;
+    font-size: 20px;
+    color: #163E73;
+	font-family: sans-serif;
+}
+
+/* km measure specifications 2 */
+.measure2 {
+    position: fixed;
+    border-left: solid black 1pt;
+    background-color: transparent;
+    height: 100%;
+    margin-left: 3%;
+    width: 200px;
+    font-size: 20px;
+    color: #163E73;
+	font-family: sans-serif;
+}
+
+/* stratosphere intro paragraph */
+.sintro {
+	text-align: justify;
+	font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.8vw;
+    color: #445811;
+    height: 100px;
+    padding-top: 10%;
+    margin-left: 21%;
+    margin-right: 32%;
+    padding-bottom: 900px;
+    position: fixed;
+	align-content: center;
+    width: 800px;
+}
+
+/* ozone image specification*/
+.ozone {
+    position: fixed;
+    top: 50%;
+    width: 85%;
+    height: 180px;
+    left: 10%;
+    background-color: transparent;
+}
+
+/* ozone popup specifications */
+.popup5 {
+   position: fixed;  /* lets us position the element anywhere */
+   background-color: #E3F4FF;
+   padding: 5px;
+   pointer-events: none;    
+   width: 200px;
+   font-family: sans-serif;
+   align-content: center;
+   color: #163E73;
+}
+
+/* plane popup specifications */
+.popup6 {
+   position: fixed;  /* lets us position the element anywhere */
+   background-color: #E3F4FF;
+   padding: 5px;
+   pointer-events: none;    
+   width: 150px;
+   font-family: sans-serif;
+   align-content: center;
+   color: #163E73;
+}
+
+/*plane image specifications */
+.plane {
+    position: fixed;
+    top: 65%;
+    right: 40%;
+    height: 15vw;
+}
+
+/* stratosphere intro paragraph */
+.mintro {
+	text-align: justify;
+	font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.8vw;
+    color: #445811;
+    height: 100px;
+    padding-top: 10%;
+    margin-left: 21%;
+    margin-right: 32%;
+    padding-bottom: 900px;
+    position: fixed;
+	align-content: center;
+    width: 800px;
+}
+
+
+
+/* km measure specifications 3 */
+.measure3 {
+    position: fixed;
+    border-left: solid black 1pt;
+    background-color: transparent;
+    height: 100%;
+    margin-left: 3%;
+    width: 200px;
+    font-size: 20px;
+    color: #163E73;
+	font-family: sans-serif;
+}
+
+/* thermosphere intro */
+.tintro {
+	text-align: justify;
+	font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2vw;
+    color: #445811;
+    height: 100;
+    padding-top: 10%;
+    margin-left: 32%;
+    margin-right: 32%;
+    padding-bottom: 900px;
+    position: fixed;
+	align-content: center;
+}
+
+/* km measure specifications 4 */
+.measure4 {
+    position: fixed;
+    border-left: solid black 1pt;
+    background-color: transparent;
+    height: 100%;
+    margin-left: 3%;
+    width: 200px;
+    font-size: 20px;
+    color: #163E73;
+	font-family: sans-serif;
+}
+
+/* satelite image specifications */
+#sat {
+    height: 200px;
+    position: fixed;
+    margin-left: 30%;
+    top: 55%;
+}
+
+/* exosphere intro */
+.eintro {
+	text-align: justify;
+	font-family: sans-serif;
+    font-weight: bold;
+    font-size: 2vw;
+    color: #445811;
+    height: 100;
+    padding-top: 10%;
+    margin-left: 32%;
+    margin-right: 32%;
+    padding-bottom: 900px;
+    position: fixed;
+	align-content: center;
+}
+
+/* km measure specifications 5 */
+.measure5 {
+    position: fixed;
+    border-left: solid black 1pt;
+    background-color: transparent;
+    height: 100%;
+    left: 3%;
+    width: 200px;
+    font-size: 20px;
+    color: #163E73;
+	font-family: sans-serif;
+    top: 1%;
+    bottom: 2%;
+}
+
+/* sat popup specifications */
+.popup7 {
+   position: fixed;  /* lets us position the element anywhere */
+   background-color: #E3F4FF;
+   padding: 5px;
+   pointer-events: none;    
+   width: 150px;
+   font-family: sans-serif;
+   align-content: center;
+   color: #163E73;   
+}
+
+.meteor {
+    background-image: url(images/star.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 250px;
+    position: fixed;
+    display: inline-block;
+    z-index: 99 !important;
+    top: -20px;
+    left: 500px;
+}
+
+/* ufo popup specifications */
+.popup8 {
+   position: fixed;  /* lets us position the element anywhere */
+   background-color: #E3F4FF;
+   padding: 5px;
+   pointer-events: none;    
+   width: 150px;
+   font-family: sans-serif;
+   align-content: center;
+   color: #163E73;
+}
+
+/* ufo popup specifications */
+.popup9 {
+   position: fixed;  /* lets us position the element anywhere */
+   background-color: #E3F4FF;
+   padding: 5px;
+   pointer-events: none;    
+   width: 150px;
+   font-family: sans-serif;
+   align-content: center;
+   color: #163E73; 
+}
+
+/* ufo image specifications */
+.ufo {
+    height: 200px;
+    position: fixed;
+    left: 5%;
+    top: 25%;
+    width: 300px;
+}
+
+/* astronaut image specifications */
+.ast {
+    height: 200px;
+    position: fixed;
+    left: 70%;
+    top: 25%;
+    width: 300px;
+}

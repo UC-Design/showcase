@@ -1,0 +1,76 @@
+@each $name, $val in $colours {
+    .c-#{$name} {
+        color: $val;
+    }
+    .bg-#{$name} {
+        background-color: $val;
+    }
+}
+
+.text {
+    &--bold {
+        font-weight: $w-bold;
+    }
+    &--normal {
+        font-weight: $w-normal;
+    }
+    &--center {
+        text-align: center;
+    }
+    &--left {
+        text-align: left;
+    }
+    &--right {
+        text-align: right;
+    }
+    &--uppercase {
+        text-transform: uppercase;
+    }
+}
+
+.highlight {
+    border-bottom: 5px solid get-colour('highlight');
+    display: inline-block;
+}
+
+.pill {
+    font-size: em($caption);
+    font-weight: $w-bold;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 10px 10px 0;
+    border-radius: $border-radius;
+    line-height: 1;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.separator {
+    width: 100%;
+    height: 1px;
+    background: get-colour('grey-blue');
+    margin: em(10px) 0;
+    display: block;
+}
+
+.load-more {
+    text-align: center;
+    margin-top: 50px;
+    a {
+        display: block;
+        max-width: 320px;
+        margin: 0 auto;
+        height: 52px;
+        position: relative;
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            svg {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}

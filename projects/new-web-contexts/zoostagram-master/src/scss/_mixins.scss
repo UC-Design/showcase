@@ -1,0 +1,39 @@
+/**
+    Includes only mixin declarations
+    See documentation: https://sass-lang.com/guide#topic-6
+*/
+
+@mixin clearfix() {
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin placeholder($color, $size:"") {
+    &::-webkit-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &:-moz-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &::-moz-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        @if $size != "" {
+            font-size: $size;
+        }
+    }
+}

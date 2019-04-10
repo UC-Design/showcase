@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,500,600,700,900');
+
+/*The above line of code specifies the type family I decided upon*/
+
+/* http://meyerweb.com/eric/tools/css/reset/v2.0 | 20110126 License: none (public domain)*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* css file for mysite rogg */
+
+body {
+    background-color: #e6d389;
+    
+}
+
+/*My wrappers specifications*/
+
+.header-wrapper {
+    background-color: #fff;
+    border-bottom-style: solid;
+    border-width: 10px;
+    border-color: #b3b3b3;
+    
+}
+
+.main-wrapper {
+    background-color: #fff;
+}
+
+.aside-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-wrapper {
+    background-color: #3c3c3c;
+    clear: both; 
+}
+
+.inner {
+    width: 1200px;
+    margin: 0 auto;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #fff;
+    height: 215px;
+}
+
+/*Main navigation specifications*/
+
+ nav ul li {
+     font-weight: 700;
+     font-size: 12px;
+     letter-spacing: 2.5px;
+     margin-left: 75px;
+     display: inline;
+}
+
+ nav ul li a {
+     text-decoration: none;
+     color: #b3b3b3;
+    text-transform: uppercase;
+     letter-spacing: 2.5px:
+}
+
+nav ul li a:hover {
+    color: #d6b53b;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+nav ul li:hover {
+    position: relative;
+}
+
+nav ul li:hover ul {
+    color: #d6b53b;
+    left: 10px;
+    top: 5px;
+    margin-top: 5px;
+    line-height: 10px;
+}
+
+nav ul li:hover ul li a {
+    width: 400px;
+    display: block;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+header img {
+    padding-right: 60px;
+    margin-top: 20px;
+    float: right;
+}
+
+main {
+    width: 800px;
+    float: left;
+    padding-top: 10px;
+}
+
+img {
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+
+/*After applying the opacity code I didn't like it so I applied the same logic and used a change of scale state */
+
+.logo img:hover {
+/*	opacity: 0.8;*/
+    width: 10%;
+}
+
+
+/* .intext-images styled to appear like an old black+white photograph */
+/* Note I have used the abrevaition of the hexadecimal color specification*/
+
+.intext-image {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 30px;
+    width: 800px;
+}
+
+/*Note I have floated this aside element to the right of my main text element*/
+
+aside {
+    line-height: 30px;
+    background-color: #3c3c3c;
+    width: 270px;
+    height: 450px;
+    padding-left: 20px;
+    margin-top: 100px;
+    margin-left: 30px;
+    
+    float: right;
+}
+
+h1 {
+    font-weight: 700;
+    color: #414042;
+    font-size: 40px;
+    letter-spacing: 6.8px;
+    text-transform: uppercase;
+    padding-left: 77px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background-color: #3c3c3c;
+    width: 660px;
+    padding-left: 50px;
+    margin-left: 20px;
+    padding-right: 150px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    border-bottom-style: solid;
+    border-bottom-color: #b3b3b3;
+    border-width: 10px;
+}
+
+h4 {
+    font-weight: 900;
+    font-size: 30px;
+    color: #3c3c3c;
+    text-transform: uppercase;
+    letter-spacing: 5.5px;
+    background-color: #eee;
+    padding-left: 77px;
+    margin-top: 30px;
+}
+
+h5 {
+    color: #b3b3b3;
+    font-weight: 200;
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding-left: 0px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+    clear: both;
+}
+
+aside h3 {
+    font-size: 15px;
+    font-weight: 200;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background-color: #d6b53b;
+    width: 110px;
+    padding-left: 10px;
+    padding-right: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+}
+
+aside nav ul li a {
+    background-color: #3c3c3c;
+    font-weight: 400;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-left: 0px;
+    text-decoration: none;
+    letter-spacing: 4px;
+    float: left;
+}
+
+/*Note in this snippet of code 'p' below I have seperated the type specs from the positioning specs*/
+/*From a previous learning from a typographer colleauge, the font-size and width were governed by the character counter, which shouldn't exceed one and a half alphabets (39 characters/line)*/
+
+p {
+    background-color: #f1f2f2;
+    font-weight: 200;
+    font-size: 12px;
+    width: 760px;
+    line-height: 20px;
+    letter-spacing: 1.5px;
+	
+    padding-left: 50px;
+    margin-left: 20px;
+    padding-top: 20px;
+    padding-right: 50px;
+    float: left;     
+}
+
+p2 {
+    font-weight: 600;
+    font-size: 15px;
+    color: #d6b53b;
+    text-transform: uppercase;
+}
+
+/* I as a desinger prefer not to use italics, therefore I have opted for a very light cut of the typeface*/
+
+p3 {
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 5px;
+
+}
+
+/*Pseudo selector specifications for Google link*/
+
+a {
+	font-weight: 600;
+	text-decoration: none;
+	color: #3c3c3c;
+}
+
+a:hover {
+	color: #d6b53b;
+}
+
+/*As recommended I have used the darkest tone of the grey as my footer*/
+
+footer {
+    background-color: #3c3c3c;
+    height: 180px;
+    clear: both;
+}
+
+/* Because of the nature of a cascading script I have opted to overide the background color and typeface color 'p'*/
+
+footer p  {
+    
+    background-color: #d6b53b;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+footer img {
+    padding: 20px;
+    padding-right: 90px;
+    padding-bottom: 20px;
+    float: right;
+}

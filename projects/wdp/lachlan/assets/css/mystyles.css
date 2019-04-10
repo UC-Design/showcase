@@ -1,0 +1,198 @@
+/* Imports 'Vollkorn' font */
+@import url('https://fonts.googleapis.com/css?family=Vollkorn');
+
+/* Sets global body styling */
+body {
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Sets global underline to blue */
+u {
+    text-decoration: underline;
+    text-decoration-color: #0090ff;
+}
+
+/* Wrapper to centre all content within a 1100px wide section */
+.wrapper {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+/* Imports and styles home page hero content image */
+.homepage {
+    background-image: url('../images/heroimage.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Imports and styles background image for navigation bar */
+header {
+    background-image: url('../images/navbackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 105px;
+}
+
+/* Navigation styling */
+/* ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ */
+
+nav {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 40px;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    width: 1060px;
+    margin-top: 25px;
+    border-radius: 5px;
+    border-top: white 1.5px solid;
+    border-bottom: #bebebe 3px solid;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    float: left;
+}
+
+nav ul li a {
+    color: black;
+    display: block;
+    text-decoration: none;
+    padding-right: 60px;
+    position: relative;
+}
+
+nav ul li a.current {
+    font-weight: bold;
+}
+
+nav ul li a.currentlocation {
+    text-decoration: underline;
+}
+
+/* Hover underline animation */
+nav ul li a:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    bottom: 0;
+    left: 0;
+    transition: 0.2s;
+    border-bottom: 4px solid #0090ff;
+}
+
+/* Width of underline animation */
+nav ul li a:hover:after {
+    width: 65%;
+}
+
+nav ul li ul {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+nav ul li:hover {
+    position: relative;
+}
+
+nav ul li:hover ul {
+    left: 0px;
+    top: 50px;
+    border-radius: 3px;
+    border-bottom: #bebebe 3px solid;
+}
+
+nav ul li:hover ul li a {
+    font-size: 12px; 
+    display: block;
+    width: 150px;
+    padding-left: 25px;
+    background-color: #f0f0f0;
+}
+
+/* Home page content styling */
+/* ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ */
+
+header h1 {
+    color: white;
+    font-family: 'Vollkorn', serif;
+    font-size: 42px;
+    padding-top: 150px;
+}
+
+header h2 {
+    color: white;
+    padding-bottom: 30px;
+    font-size: 26px;
+}
+
+header p {
+    color: white;
+    padding-top: 35px;
+    width: 25vw;
+    max-width: 1100px;
+}
+
+/* Information page content styling */
+/* ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ */
+
+main h1 {
+    font-family: 'Vollkorn', serif;
+    font-size: 32px;
+    padding-top: 30px;
+    padding-bottom: 0px;
+}
+
+main h2 {
+    font-size: 14px;
+    padding-bottom: 25px;
+}
+
+main h3 {
+    font-weight: bold;
+    padding-bottom: 10px;
+    padding-top: 15px;
+}
+
+main p {
+    padding-bottom: 10px;
+}
+
+main ul li {
+    padding-left: 15px;
+    padding-bottom: 10px;
+}
+
+/* Sets floats and padding for images */
+/* ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼ */
+
+.floatright {
+    float: right;
+    padding-left: 15px;
+}
+
+.fullwidth {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    font-size: 14px;
+    margin-top: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: #bebebe 3px solid;
+}

@@ -1,0 +1,40 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "cross-env": "^5.1",
+        "sass-loader": "^7.1.0"
+    },
+    "dependencies": {
+        "animejs": "^2.2.0",
+        "axios": "^0.18",
+        "hero-patterns": "^2.0.1",
+        "laravel-mix": "^2.0",
+        "marked": "^0.5.1",
+        "node-sass": "^4.9.3",
+        "typeface-pt-sans": "0.0.54",
+        "vue": "^2.5.7",
+        "vue-clipboard2": "^0.2.1",
+        "vue-cookie": "^1.1.4",
+        "vue-input-tag": "^2.0.1",
+        "vue-lottie": "^0.2.1",
+        "vue-perfect-scrollbar": "^0.1.0",
+        "vue-router": "^3.0.1",
+        "vue-select": "^2.5.1",
+        "vue-simplemde": "^0.4.9",
+        "vuedraggable": "^2.16.0",
+        "vuex": "^3.0.1"
+    },
+    "engines": {
+        "node": "10.x",
+        "npm": "6.x"
+    }
+}

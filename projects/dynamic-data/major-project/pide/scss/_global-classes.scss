@@ -1,0 +1,121 @@
+.clearfix, .cf {
+    @include clearfix();
+}
+
+.hide-element {
+    @include hide-element();
+}
+
+.hide-text {
+    @include hide-text();
+}
+
+@each $name, $val in $colours {
+    .c-#{$name} {
+        color: $val;
+    }
+    .bg-#{$name} {
+        background-color: $val;
+    }
+}
+
+@each $className, $property in $props {
+    @each $name, $val in $sizings {
+        .#{$className}-#{$name} {
+            #{$property}: calc-em($val, $base-font-size);
+        }
+        .#{$className}-h-#{$name} {
+            #{$property}-right: calc-em($val, $base-font-size);
+            #{$property}-left: calc-em($val, $base-font-size);
+        }
+        .#{$className}-v-#{$name} {
+            #{$property}-top: calc-em($val, $base-font-size);
+            #{$property}-bottom: calc-em($val, $base-font-size);
+        }
+        @each $dir, $prop in $directions {
+            .#{$className}-#{$dir}-#{$name} {
+                #{$property}-#{$prop}: calc-em($val, $base-font-size);
+            }
+        }
+    }
+}
+
+.header-text {
+    font-size: calc-em(50px, $base-font-size);
+    margin-top: calc-em(30px, 50px);
+    margin-bottom: calc-em(20px, 50px);
+    @include breakpoint(xlarge) {
+        font-size: calc-em($header-size, $base-font-size);
+        margin-top: calc-em(30px, $header-size);
+        margin-bottom: calc-em(20px, $header-size);
+    }
+}
+
+.sub-header-text {
+    font-size: calc-em(45px, $base-font-size);
+    margin-top: calc-em(30px, 45px);
+    margin-bottom: calc-em(20px, 45px);
+    @include breakpoint(xlarge) {
+        font-size: calc-em($subheader-size, $base-font-size);
+        margin-top: calc-em(30px, $subheader-size);
+        margin-bottom: calc-em(20px, $subheader-size);
+    }
+}
+
+.header-text,
+.sub-header-text {
+    color: get-colour('white');
+    line-height: 1.2;
+    font-weight: $font-weight-bold;
+}
+
+.text {
+    &--bold {
+        font-weight: $font-weight-bold;
+    }
+    &--normal {
+        font-weight: $font-weight-normal;
+    }
+    &--center {
+        text-align: center;
+    }
+    &--left {
+        text-align: left;
+    }
+    &--right {
+        text-align: right;
+    }
+    &--uppercase {
+        text-transform: uppercase;
+    }
+}
+
+.container {
+    max-width: calc(#{$grid-width} - (15px * 2));
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    @include breakpoint(medium) {
+        max-width: calc(#{$grid-width} - (#{$grid-padding} * 2));
+        padding-right: $grid-padding;
+        padding-left: $grid-padding;
+    }
+}
+
+.wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @include breakpoint(large) {
+        padding-top: 75px;
+        padding-bottom: 75px;
+    }
+}
+
+.separator {
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin: em(25px) 0;
+    background: get-colour('grey');
+}

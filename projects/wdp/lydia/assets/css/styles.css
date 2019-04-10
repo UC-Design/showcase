@@ -1,0 +1,710 @@
+/* Slider styles from W3 website */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1280px;
+  background-color: #63555d;
+  margin: 0;
+  font-size: 18px;
+  font-family: 'Muli', Arial, Helvetica, sans-serif;
+  color: lightgray;
+}
+
+h1 h2 h3 h4 h5 h6 {
+  color: lightgrey;
+}
+
+h1 {
+  /* //change to arhivo */
+  font-size: 4em;
+  color: white;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 3em;
+  font-family:  Courier, monospace, Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  padding: 10px 0;
+}
+
+h4 {
+  font-size: 2em;
+  font-family:  Courier, monospace, Arial, Helvetica, sans-serif;
+  color: rgb(0, 0, 0);
+  padding-top: 1em;
+  line-height: 1.8em;
+}
+
+h5 {
+  font-size: 1.6em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  line-height: 1.6em;
+  font-weight: 200;
+  font: bold;
+  color: #818181;
+}
+
+h6 {
+  font-size: 1.4em;
+  padding-top: 1em;
+  line-height: 1.6em;
+  color: lightgray;
+}
+
+/* p{
+  color: #333;
+} */
+
+p {
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  line-height: 1.8em;
+  padding-top: 15px;
+}
+
+ul {
+  list-style-type: square;
+  padding: 0 5%;
+}
+
+ul li,
+ol li {
+  font-size: 1.1em;
+  line-height: 2.5em;
+}
+
+/* these are the firstimage and text pairs seen on title page */
+
+.hero-top {
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-top>img {
+  width: 100%;
+  height: 90vh;
+}
+
+.splash {
+  width: 100%;
+  height: 95vh;
+}
+
+.hero-heading {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+  width: 50%;
+  height: 100%;
+  background-color: #63555d;
+  /* background: linear-gradient(transparent,  #63555d, black); */
+  padding: 40px 10px;
+}
+
+.hero-heading h2 {
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #63555d;
+  color: #0f0f1a;
+  margin: 0 auto;
+  padding-top: 20%;
+  width: 95%
+}
+
+#p {
+  width: 70%;
+  font-size: 1.15em;
+  margin: 2% auto;
+  line-height: 2em;
+  font-weight: 400;
+  text-align: justify;
+  font-family:  Courier, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+#intro-box {
+  height: 10vh;
+  padding-top: 20px;
+  background-color: #393238;
+}
+
+#hero-wrap a {
+  color: rgb(140, 160, 154);
+  font-family: Courier, monospace, sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  display: inline-block;
+  padding-top: 10px;
+  width: 49%;
+}
+
+#hero-wrap a:hover,
+#hero-wrap a:active {
+  color: white;
+}
+
+#hero-wrap a:nth-child(odd) {
+  text-align: left;
+}
+
+#hero-wrap a:nth-child(even) {
+  text-align: right;
+}
+
+/* heritage page related css */
+
+#heritage-article,
+#heritage-article h4 {
+  color: lightgray;
+}
+
+#heritage-article {
+  padding-bottom: 5%;
+}
+
+aside {
+  background-color: rgb(140, 160, 154);
+  color: #0f0f1a;
+  width: 45%;
+  float: right;
+  margin: 5%;
+  padding: 3%;
+}
+
+aside ol {
+  width: 90%;
+  font-size: .9em;
+  margin: 0 auto;
+  color: #0f0f1a;
+}
+
+li {
+  font-size: .9em;
+  margin: 0 auto;
+}
+
+aside p {
+  color: #0f0f1a;
+}
+
+/* there are the firstimage and text pairs seen on each page */
+
+.module-top {
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  position: relative;
+  height: 65%;
+  background-color: grey;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.module-top>image {
+  width: 100%;
+}
+
+.page-heading {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 40%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black));
+  background: linear-gradient(transparent, black);
+  padding: 20px 10px;
+}
+
+.page-heading h2 {
+  padding-bottom: 0px;
+  padding-top: 13%;
+  padding-left: 4%;
+  font-size: 3.5em;
+  text-align: left;
+  text-shadow: 0 1px 0 black;
+  z-index: 4;
+  color: white;
+}
+
+.color-block {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 5%;
+}
+
+.color-block h4 {
+  width: 100%;
+  float: left;
+}
+
+.color-block summary {
+  float: left;
+  padding: 10px 0;
+}
+
+#summary-text {
+  margin: 0;
+  padding: 0;
+}
+
+summary {
+  color: rgb(84, 113, 150);
+  font-size: 1.5em;
+  width: 45%;
+}
+
+.color-block-right {
+  width: 100%;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.color-block-right h4 {
+  /* padding-top:7%; */
+  width: 100%;
+  float: right;
+}
+
+.details {
+  float: right;
+}
+
+.color-block-right summary {
+  float: right;
+}
+
+.image-right {
+  float: right;
+  width: 50%;
+  height: auto;
+  margin-left: 2%;
+}
+
+.image-left {
+  float: left;
+  width: 50%;
+  min-height: auto;
+  margin-right: 2%;
+}
+
+.text-block h4 {
+  width: 100%;
+}
+
+.text-block p {
+  padding-top: 0;
+}
+
+.column-text {
+  -webkit-column-count: 3;
+  /* Chrome, Safari, Opera */
+  /* Firefox */
+  column-count: 2;
+  padding-bottom: 5%;
+}
+
+.text-column-right {
+  width: 47%;
+  float: right;
+}
+
+.text-format {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.wrapper-text-45 {
+  width: 45%;
+}
+
+.wrapper-text-right {
+  width: 47%;
+  float: right;
+}
+
+.wrapper-text-45-right {
+  width: 45%;
+  float: right;
+}
+
+.wrapper-text-45-left {
+  width: 45%;
+  float: left;
+}
+
+/* setting block colours */
+
+.darkpink h4 {
+  color: lightgray;
+}
+
+.blue h4 {
+  color: lightgray;
+}
+
+.midpink h4 {
+  color: lightgray;
+}
+
+.contrast-green {
+  background-color: rgb(140, 160, 154);
+  color: #0f0f1a;
+}
+
+.midpink {
+  background-color: #63555d;
+  color: lightgray;
+}
+
+#block0 {
+  background-color: #63555d;
+  color: lightgray;
+}
+
+.blue {
+  background-color: hsl(209, 17%, 18%);
+  color: lightgray;
+}
+
+.darkpink {
+  background-color: #393238;
+  color: lightgray;
+}
+
+.site {
+  background-color: #63555d;
+  color: lightgray;
+}
+
+/* navigation bar */
+
+.navbar {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(transparent));
+  background: linear-gradient(black, transparent);
+  padding-top: 1%;
+  z-index: 20;
+}
+
+.navbar-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+#website-title,
+#website-title2,
+#website-title-h,
+#website-title-h2 {
+  color: rgba(254, 252, 252, 0.9);
+  font-family: 'Archivo Black', Arial, sans-serif;
+  font-size: 2.2em;
+  text-align: left;
+}
+
+#website-title-h{
+  font-size: 1.8em;
+}
+
+#website-title2,
+#website-title-h2 {
+  font-family:  Courier, monospace, Arial, sans-serif;
+  font-size: 1.1em;
+}
+
+.content-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.main {
+  min-height: 700px;
+}
+
+/* quotation
+
+.quotation {
+  font-size: 30px;
+  margin: 0 auto;
+  quotes: "\201C""\201D""\2018""\2019";
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+
+.quotation:before {
+  content: open-quote;
+  display: inline;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 30px;
+  color: #ccc;
+  font-size: 3em;
+}
+
+.quotation::after {
+  content: close-quote;
+  display: inline;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 35px;
+  color: #ccc;
+  font-size: 3em;
+}*/
+
+footer {
+  clear: both;
+  margin: 0;
+  text-align: center;
+  font-size: 1.5em;
+  font-style: italic;
+  background-color: #818181;
+  padding-top: 20px;
+  height: 50px;
+}
+
+/*overlays*/
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 30;
+}
+
+.overlay-content {
+  position: relative;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+#open-nav {
+  cursor: pointer;
+  padding-top: 0.5%;
+  font-size: 2.4em;
+  float: right;
+  color: white;
+}
+
+.overlay-content ul {
+  list-style-type: none;
+}
+
+.text-section>img {
+  width: 100%;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* Slideshow container */
+
+.slideshow-container {
+  width: 100%;
+  position: relative;
+}
+
+/* Hide the images by default */
+
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #333333;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.8s ease;
+  transition: background-color 0.8s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 2s;
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .6
+  }
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .6
+  }
+  to {
+    opacity: 1
+  }
+} */
+
+/* round images */
+
+.content-wrapper>img {
+  border-radius: 50%;
+  margin: 25px 0;
+}
+
+#dt1,
+#dt2,
+#dt3 {
+  padding-bottom: 5%;
+}

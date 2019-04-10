@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+	<!-- Page Info
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Unexpected Discoveries</title>
+    
+	<!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- Google Fonts
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->    
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700" rel="stylesheet">
+
+	<!-- CSS
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- NEWSPAPER IMAGE ATTRIBUTION
+	–––––––––––––––––––––––––––––––––––––––––––––––––– 
+    The newspaper images are selected randomly from 10 predetermined newspaper images.
+    They do not correspond to the referenced article.
+    Image citations:
+    (1859, May 19). The Age (Melbourne, Vic. : 1854 - 1954), p. 6. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page18219489
+    (1880, September 22). The Brisbane Courier (Qld. : 1864 - 1933), p. 4. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page75851
+    (1886, January 22). The Daily News (Perth, WA : 1882 - 1950), p. 3. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page7703229
+    (1884, March 4). The Daily Telegraph (Sydney, NSW : 1883 - 1923), p. 1. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page25771292
+    (1859, December 8). Geelong Advertiser (Vic. : 1859 - 1929), p. 2. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page17380041
+    (1875, May 15). Wagga Wagga Advertiser (NSW : 1875 - 1910), p. 4. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page10659841
+    (1883, November 29). Tasmanian News (Hobart, Tas. : 1883 - 1911), p. 2. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page19996801
+    (1842, November 2). The Sydney Morning Herald (NSW : 1842 - 1954), p. 1. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page1521771
+    (1858, July 17). The South Australian Advertiser (Adelaide, SA : 1858 - 1889), p. 2. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page3712
+    (1867, August 8). Queanbeyan Age (NSW : 1867 - 1904), p. 4. Retrieved October 30, 2017, from http://nla.gov.au/nla.news-page4533038 -->
+	
+</head>
+    
+<body>
+	    <!-- ---------- Intro ---------- -->    
+	    <section id="intro" class="center">
+            <div id="intro-container" class="container full-height">
+                
+                <div id="intro-row" class="row full-height">
+                    <div id="intro-centre" class="twelve columns">
+                        <h1 id="logo"><img src="images/unexpected-discoveries-logo-white.svg" alt="Unexpected Discoveries"></h1>
+                        <img id="powered" src="images/powered-by-trove.svg" alt="Powered by Trove">
+                    </div>
+                </div>
+                
+            </div> <!-- close .container div -->
+	    </section>
+	    
+	    
+	   <!-- ---------- Onboarding ---------- -->    
+	   <section id="onboard" class="hide">
+		    <div id="onboard-container" class="container">
+                
+                <!-- Text -->
+                <div id="onboard-row" class="row">
+                    <div class="eight columns offset-by-two center">
+                        <img src="images/handdrawn/say-what.svg" alt="">
+                        <p>Unexpected Discoveries searches through millions of items to show you images and historical newspaper articles about wherever you are in Australia.</p>
+                        <p class="bold">Go ahead, let’s find places near you and get discovering!</p>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="row">
+                    <div class="six columns offset-by-three center">
+                        <button id="got-it">Got it</button>
+                    </div>
+                </div>
+           
+            </div> <!-- close .container div -->
+	    </section>
+	    
+	    
+	    <!-- ---------- Home ---------- -->    
+		<section id="home" class="hide">
+            
+		    <!-- Navigation -->
+            <div class="nav-container">
+                <div class="row nav">
+                    <img class="logo back-link home" src="images/unexpected-discoveries-logo-black.svg">
+                    <a class="about-link">About</a>
+                </div>
+            </div>
+            
+		    <div class="row afternav">
+			    <div class="row main-row">
+				    <div class="six columns offset-by-three">
+				    	
+                        <!-- Icons -->
+                        <img class="icons" id="arrows-icon" src="images/handdrawn/location-icon-with-arrows.svg">
+
+                        <!-- Button -->					
+                        <button id="find-places">Find places nearby</button>
+                        <img class="icons" id="underline" src="images/handdrawn/grey-underline-home.svg">
+					</div>
+			    </div>
+			    
+			    <!-- Pointing guy -->
+                <div class="row">
+				    <div class="six columns offset-by-three">
+                        <img id="pointing-img" src="images/little-guy-pointing-up.svg" />
+                    </div>
+			    </div>
+		    </div>
+		    <div id="map"></div>
+	    </section>
+        
+    
+        <!-- ---------- About page ---------- -->    
+	    <section id="about" class="hide">
+            
+            <!-- Navigation -->
+            <div class="nav-container">
+                <div class="row nav">
+                    <a class="logo-small">UD &ndash; Home</a>
+                    <a class="back-link about" title="close">x</a>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row afternav">
+                    <div class="eight columns offset-by-two">
+                        <h2>About</h2>
+
+                        <h3>Why am I seeing these items?</h3>
+                        <p>Unexpected Discoveries uses your location to try to find items related to places near you. Unfortunately, this automated process doesn’t always get it right. Sometimes you might see items that aren’t quite about places near you, but might be about something with a similar name. We hope that you delight in whatever unexpected discoveries you make!</p>
+
+                        <h3>Where are these items from?</h3>
+                        <p>All the pictures and newspaper articles you see in Unexpected Discoveries are from Trove, a service provided by the National Library of Australia that brings together collections of items from all around Australia. Trove can connect you to hundreds of millions of items and Unexpected Discoveries accesses a selection of these.</p>
+
+                        <h3>How can I get involved?</h3>
+                        <p>Trove and Unexpected Discoveries are made even better by user contributions! Find out how you can <a href="http://help.nla.gov.au/trove/using-trove/creating-contributing/adding-images" target="_blank">upload your own images to Trove</a> or help <a href="http://help.nla.gov.au/trove/digitised-newspapers/text-correction-guidelines" target="_blank">correct newspaper text</a> that hasn’t been translated properly.</p>
+                        
+                        <!-- ---------- Disclaimer ---------- -->
+                        <h3>Disclaimer</h3>
+                        <p>Please be aware that some historical content may be culturally sensitive or may be considered inappropriate or offensive today. Members of Aboriginal, Torres Strait Islander and Maori communities are advised that Unexpected Discoveries may contain names and images of deceased people.</p>
+                    </div>
+                </div>
+            </div>
+	    </section>
+	
+	
+	    <!-- ---------- Loading: finding nearby places ---------- -->    
+	    <section id="loading" class="hide">
+	        <div class="row main-row">
+	        	<div class="eight columns offset-by-two">
+                    <div id="compass">
+                        <!-- Compass animation -->
+                        <!-- Compass base -->
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="compassBase" x="0px" y="0px" width="463.985px" height="463.985px" viewBox="19.007 18.008 463.985 463.985" enable-background="new 19.007 18.008 463.985 463.985" xml:space="preserve">
+                            <path fill="#303030" d="M251.3,18.008c-127.852,0-232.293,103.841-232.293,231.692S123.448,481.993,251.3,481.993
+                                c127.851,0,231.692-104.441,231.692-232.293S379.151,18.008,251.3,18.008z M260.293,465.584c0.385-1.001,0.61-2.128,0.61-3.398
+                                c0-10.805,0-21.009,0-31.813c-0.6-12.006-19.207-12.006-19.207,0c0,10.804,0,21.008,0,31.813c0,1.271,0.226,2.397,0.61,3.398
+                                c-112.271-4.657-203.125-96.027-206.951-208.501c0.864,0.267,1.813,0.42,2.86,0.42c10.804,0,21.608,0,32.413,0
+                                c12.005,0,12.005-19.207,0-19.207c-10.805,0-21.609,0-32.413,0c-0.992,0-1.894,0.142-2.722,0.383
+                                C41.09,127.997,130.501,38.615,241.901,33.83c-0.133,0.681-0.205,1.408-0.205,2.185c0,11.404,0,22.209,0,33.613
+                                c0,12.005,19.207,12.005,19.207,0c0-11.404,0-22.209,0-33.613c-0.037-0.777-0.144-1.506-0.309-2.187
+                                c110.986,4.759,200.983,94.257,206.519,205.05c-0.984-0.367-2.088-0.582-3.328-0.582c-10.805,0-21.009,0-31.813,0
+                                c-12.604,0-12.604,19.207,0,19.207c10.805,0,21.009,0,31.813,0c1.3,0,2.45-0.236,3.468-0.638
+                                C463.536,369.439,372.637,460.924,260.293,465.584z"/>
+                        </svg>
+                         <!-- Compass needle -->
+                        <svg id="compassNeedle" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="compass" x="0px" y="0px" width="463.985px" height="463.985px" viewBox="19.007 18.008 463.985 463.985" enable-background="new 19.007 18.008 463.985 463.985" xml:space="preserve">
+                            <path id="compassNeedle" fill="#303030" d="M239.366,351.279c-0.611,0-0.611,0-0.611,0c-2.446,0-9.172-1.834-12.229-12.229l-14.064-45.25
+                                c-1.835-6.114-9.173-12.841-14.676-14.676l-44.638-14.675c-10.396-3.669-11.618-9.784-12.23-12.842
+                                c0-2.445,0.612-9.172,9.784-14.063l172.437-86.219c9.784-4.891,14.676-1.834,17.122,0.612c2.445,2.445,5.503,7.949,0.611,17.122
+                                l-88.054,172.437C248.538,350.056,242.424,351.279,239.366,351.279z M242.424,336.603L242.424,336.603L242.424,336.603z
+                                 M161.097,250.385l40.969,13.453c11.007,3.668,21.402,14.675,25.071,25.682l12.841,41.58l82.55-162.042L161.097,250.385z
+                                 M155.594,248.551L155.594,248.551L155.594,248.551z"/>
+                        </svg>
+                    </div>
+                    <p id="find-places-load">Finding places near you...</p>
+                </div>
+	        </div>
+	    </section>
+	
+
+	    <!-- ---------- Make a discovery ---------- -->    
+		<section id="select" class="hide">
+            
+            <!-- Navigation -->
+            <div class="nav-container">
+                <div class="row nav">
+                    <a class="back-link select" title="go back">&lt;</a>
+                    <a class="logo-small">UD &ndash; Home</a>
+                    <a class="about-link">About</a>
+                </div>
+            </div>
+            
+		    <div class="row afternav">
+			    <div class="eight columns offset-by-two">
+					<h2>Make a discovery</h2>
+                    <p id="loc-denied" class="error-message hide">Uh oh, we couldn't find you. Next time, please make sure we can access your location. In the meantime... here are some places near Canberra.</p>
+                    <p id="api-fail" class="error-message hide"><img src="images/error-icon.svg" alt="Error."><br>Uh oh, there seem to be some connection problems. Please try again.</p>
+                    <div id="places"></div>
+			    </div>
+		    </div>
+            
+            <div class="row">
+                <div id="google-strip" class="twelve columns">
+                    <img id="google" src="images/powered_by_google_on_non_white.png" alt="Powered by Google.">
+                </div>
+            </div>
+	    </section>
+
+	
+	    <!-- ---------- Loading: discovering artifacts ---------- -->    
+	    <section id="discovering" class="hide">
+            
+            <div id="top-stars">
+                <div id="star-one">
+                    <img id="star1" src="images/handdrawn/star1.png" alt="">
+                </div>
+                <div id="star-two">
+                    <img id="star2" src="images/handdrawn/star2.png" alt="">
+                </div>
+                <div id="star-three">
+                    <img id="star3" src="images/handdrawn/star3.png" alt="">
+                </div>
+                <div id="star-four">
+                    <img id="star4" src="images/handdrawn/star4.png" alt="">
+                </div>
+                <div id="star-five">
+                    <img id="star5" src="images/handdrawn/star5.png" alt="">
+                </div>
+                <div id="star-six">
+                    <img id="star6" src="images/handdrawn/star6.png" alt="">
+                </div>
+                <div id="star-seven">
+                    <img id="star7" src="images/handdrawn/star7.png" alt="">
+                </div>
+            </div>
+            
+	        <div class="row main-row">
+	        	<div class="eight columns offset-by-two">
+
+				    <img id="discovering-guy" src="images/little-guy-discovering.svg" alt="">
+				    
+				    <!-- Append place name to this p tag -->
+					<p id="load-artefacts">Discovering images and articles about<br/><span id="loading-place"></span></p>
+	        	</div>
+	        </div>
+            
+            <div id="bottom-stars">
+                <div id="star-eight">
+                    <img id="star8" src="images/handdrawn/star7.png" alt="">
+                </div>
+                <div id="star-nine">
+                    <img id="star9" src="images/handdrawn/star6.png" alt="">
+                </div>
+                <div id="star-ten">
+                    <img id="star10" src="images/handdrawn/star4.png" alt="">
+                </div>
+                <div id="star-eleven">
+                    <img id="star11" src="images/handdrawn/star1.png" alt="">
+                </div>
+                <div id="star-twelve">
+                    <img id="star12" src="images/handdrawn/star2.png" alt="">
+                </div>
+            </div>
+	    </section>
+    
+        
+        <!-- ---------- Error (oops) screen ---------- -->    
+	    <section id="location-error" class="hide">
+            
+            <!-- Navigation -->
+            <div class="nav-container">
+                <div class="row nav">
+                    <a class="back-link error" title="go back">&lt;</a>
+                    <a class="logo-small">UD &ndash; Home</a>
+                    <a class="about-link">About</a>
+                </div>
+            </div>
+           
+            <div class="row afternav">
+                <div class="main-row">
+                    <div class="eight columns offset-by-two">
+                        <img id="little-guy-oops" src="images/little-guy-embarassed.svg" alt="">
+                        <p>Oops, this is embarrassing,<br>we can't find anything about<br> <span id="errorPlace"></span>.</p>
+                        <p>How about you upload some images<br> to Trove?</p>
+                    </div>
+                </div>
+            </div>
+	    </section>
+	
+	
+	    <!-- ---------- Results list / grid ---------- -->    
+	    <section id="results" class="hide">
+            
+            <!-- Navigation -->
+            <div class="nav-container">
+                <div class="row nav">
+                    <a class="back-link results" title="go back">&lt;</a>
+                    <a class="logo-small">UD &ndash; Home</a>
+                    <a class="about-link">About</a>
+                </div>
+            </div>
+            
+            <div class="container results-container">
+                <div class="row afternav">
+                    <div class="twelve columns center" id="resultsList">
+                        <!-- Placename gets appended here -->
+                        <img class="marker" src="images/location-icon-inverse.svg">
+                        <h2 id="place-name"></h2>
+
+                        <!-- Results get appended here -->		        	
+                        <div class="all-results"></div>
+                    </div>
+                </div>
+            </div>
+	    </section>
+	
+	
+	    <!-- ---------- Individual artifact: Flickr ---------- -->
+	    <section id="flickr" class="hide">
+            
+            <!-- Navigation -->
+            <div class="nav-container">
+                <div class="row nav">
+                    <a class="back-link flickr" title="go back">&lt;</a>
+                    <a class="logo-small">UD &ndash; Home</a>
+                    <a class="about-link">About</a>
+                </div>
+            </div>
+            
+            <div id="flickr-content" class="full-height">
+                <div id="img-container" class="container">
+                    <div class="row">
+                        <div class="ten columns offset-by-one">
+                            <!-- Artefact image -->
+                            <img src="" class="artefact-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div id="flickr-text" class="ten columns offset-by-one">
+
+                            <!-- Artefacts details -->
+                            <h2 id="artefact-title"></h2>
+                            <p id="contributor"></p>
+                            <p id="desc"></p>
+
+                        </div>
+                        
+                        <div class="six columns offset-by-three">
+                            <a href="" target="_blank" class="result-button button">Open this in Trove</a>
+                            <img class="line" id="underline" src="images/handdrawn/grey-underline-home.svg">
+                        </div>
+                    </div>
+                </div>
+                
+            </div> <!-- close #flickr-content div -->
+	    </section>
+	
+	
+	    <!-- ---------- Individual artifact: Newspaper ---------- -->
+		<section id="newspaper" class="hide">
+            
+            <!-- Navigation -->
+            <div class="nav-container">
+                <div class="row nav">
+                    <a class="back-link newspaper" title="go back">&lt;</a>
+                    <a class="logo-small">UD &ndash; Home</a>
+                    <a class="about-link">About</a>
+                </div>
+            </div>
+            
+            <div id="newspaper-content">
+                <div id="newspaper-container" class="container">
+                    <div class="row">
+                        <div class="ten columns offset-by-one">
+                            <div id="grey-wrap">
+
+                                <!-- Artefacts details -->
+                                <h2 id="newspaper-title"></h2>
+                                <p id="news-name" class="center"></p>
+                                <p id="date" class="center"></p>
+                                <p id="newspaper-desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="ten columns offset-by-one">
+                            <p id="doozy">Are there errors in this text? If there are, what a doozy! Help us correct them by opening this article in Trove!</p>
+                        </div>
+                        <div class="six columns offset-by-three">
+                            <a href="" target="_blank" id="news-open" class="result-button button">Open this in Trove</a>
+                            <img class="line" id="underline" src="images/handdrawn/grey-underline-home.svg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    </section>
+        
+	
+	<!-- Scripts
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->    
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/scripts.js"></script>
+    
+</body>
+</html>

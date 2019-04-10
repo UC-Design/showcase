@@ -1,0 +1,84 @@
+input:not([type="range"]),
+select {
+    display: block;
+    width: 100%;
+    border-radius: $border-radius;
+    font-family: $font-family;
+    font-size: em($base-font-size);
+    color: inherit;
+    border: 1px solid get-colour('white');
+    padding: calc-em($input-padding-v, $base-font-size) calc-em($input-padding-h, $base-font-size);
+    -webkit-appearance: none;
+    background: transparent;
+    outline: none;
+    &::placeholder {
+        color: rgba(get-colour('grey-blue'), 0.25);
+    }
+    &.invalid {
+        border-color: get-colour('warning');
+    }
+}
+
+select {
+    background-image: url('./images/chevron-down.svg');
+    background-repeat: no-repeat;
+    background-position: top 50% right 0;
+    padding-right: calc-em(30px, $base-font-size);
+}
+
+label {
+    font-size: calc-em($label, $base-font-size);
+    margin: 0 0 em(5px);
+    display: block;
+    line-height: 1;
+    text-transform: uppercase;
+    color: inherit;
+}
+
+.input-group {
+    margin-bottom: em(30px);
+    & + .form-actions {
+        margin-top: em(35px);
+    }
+    .form-group-help {
+        margin: em(5px) 0 em(30px);
+        font-size: calc-em($label, $base-font-size);
+        line-height: 1;
+        color: rgba(get-colour('grey-blue'), 0.75);
+    }
+}
+
+.form-actions {
+    margin-top: em($input-padding-h);
+    padding-top: em($input-padding-h);
+    border-top: 1px solid get-colour('border');
+    text-align: right;
+}
+
+.input-group.dial {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .input-dial {
+        margin-bottom: em(5px);
+        .dial {
+            width: em(25px);
+            height: em(25px);
+            border-radius: 50%;
+            background: get-colour('white');
+            position: relative;
+            display: inline-block;
+            &:after {
+                content: '';
+                position: absolute;
+                width: em(2px);
+                height: em(12px);
+                top: 50%;
+                left: 50%;
+                background: get-colour('highlight');
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

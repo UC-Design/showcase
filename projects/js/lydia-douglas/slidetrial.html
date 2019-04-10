@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>slide initially hidden margin left</title>
+     <!--fonts -->
+     <link href="https://fonts.googleapis.com/css?family=Cedarville+Cursive|Gochi+Hand|Short+Stack" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Caveat|Handlee|Indie+Flower|La+Belle+Aurore|League+Script|Sacramento"
+         rel="stylesheet">
+
+    <script>document.documentElement.className = 'js';</script>
+    <style type="text/css">
+        .slide {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .slide .inner {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: pink;
+        }
+
+        .js .slide .inner {
+            display: none;
+        }
+
+        .b-action {
+            cursor: pointer;
+            background-color: rgba(107, 91, 149, 0.315);
+            border: 2px solid #17a7ac;
+            color: #17a7ac;
+            font-size: 24px;
+            font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-width: 110px;
+            transition: background-color 0.5s, color 0.8s, transform 0.5s;
+            padding-top: 5px;
+            z-index: 2;
+        }
+
+        .b-action:hover {
+            background-color: #4d9da0;
+            /* #1b75f7;*/
+            color: #415c4d;
+            transform: scale(1.1) translate(1px, 1px);
+        }
+
+        .b-action:active {
+            outline: none;
+            border: none;
+        }
+
+        .b-action:focus {
+            outline: 0;
+        }
+
+        #app-name {
+            float: right;
+            padding-right: 1%;
+            /* background-color: #4d9da0; */
+        }
+
+        #app-name a {
+            font-size: 3.5em;
+            /* padding: 1.5%; */
+            color: var(--text-color-dark);
+            /* background-color: blanchedalmond; */
+        }
+
+
+        .b-slide {
+            cursor: pointer;
+            background-color: transparent;
+            /* border: 2px solid #17a7ac; */
+            border:none;
+            color: #17a7ac;
+            font-size: 24px;
+            font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-width: 110px;
+            transition: background-color 0.5s, color 0.8s, transform 0.5s;
+            padding-top: 5px;
+            z-index: 4;
+        }
+
+        .b-slide:hover {
+            background-color: #4d9da0;
+            /* #1b75f7;*/
+            color: #415c4d;
+            transform: scale(1.1) translate(1px, 1px);
+        }
+
+        .b-slide:active {
+            outline: none;
+            border: none;
+        }
+
+        .b-slide:focus {
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide" id="slidemarginleft">
+
+        <div class="inner">
+            <!-- <div id="orient-panel"> -->
+            <button id="b-small" class="b-action">Small</button>
+            <button id="b-hole" class="b-action">Hole</button>
+            <button id="b-tall" class="b-action">Tall</button>
+            <button id="b-colour" class="b-action">Colour Call</button>
+            <button id="b-troll" class="b-action">Troll</button>
+            <button id="b-hall" class="b-action">Hall</button>
+            <button id="b-repeat" class="b-action">Repeat All</button>
+            <!-- </div> -->
+        </div>
+        <div id="app-name">
+                <button class="b-slide animated shake">Ball/Call</button>
+            </div>
+        <!-- <button class="b-slide"> Ball/Call</button> -->
+    </div>
+
+    <script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var $marginLefty = $('#slidemarginleft div.inner');
+            $marginLefty.css({
+                marginLeft: $marginLefty.outerWidth() + 'px',
+                display: 'block'
+            });
+
+            $('.b-slide').click(function () {
+                $marginLefty.animate({
+                    marginLeft: parseInt($marginLefty.css('marginLeft'), 10) == 0 ?
+                        $marginLefty.outerWidth() : 0
+                });
+            });
+        });    
+    </script>
+</body>
+</html>

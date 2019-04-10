@@ -1,0 +1,1 @@
+If you are not viewing this project on a HTTP server (i.e. locally), you must use Firefox. Chrome doesn't seem to like reading JSON files locally or something.

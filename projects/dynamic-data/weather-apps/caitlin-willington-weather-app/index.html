@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Weather App</title>
+</head>
+
+<body>
+
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  
+<script src="moment.js"></script>
+
+  
+  
+  <script type="text/javascript">
+	
+	$(document).ready(function() {
+		
+		//change background image depending on time of day
+		var currentTime = new Date().getHours();
+		//5am to 10am
+		if (5 <= currentTime && currentTime < 10) {
+    		if (document.body) {
+			document.getElementById('dailyInfo').style.backgroundImage="url(backgrounds/morning.png)";
+			document.getElementById('weekly').style.backgroundColor="#c8eae3";
+			console.log("the time is morning!");
+			}
+}
+		//10 am to 3pm
+		else if (10 <= currentTime && currentTime < 15) {
+    		if (document.body) {
+			document.getElementById('dailyInfo').style.backgroundImage="url(backgrounds/midday.png)"; 
+			document.getElementById('weekly').style.backgroundColor="#f4f0a7";
+			console.log("the time is midday!");
+			}
+}
+		//3pm to 6pm afternoon
+		else if (15 <= currentTime && currentTime < 18) {
+    		if (document.body) {
+			document.getElementById('dailyInfo').style.backgroundImage="url(backgrounds/afternoon.png)";
+			document.getElementById('weekly').style.backgroundColor="#f2ddde";
+			console.log("the time is evening!");
+			}
+}
+		//rest of the day aka night
+		else {
+    		if (document.body) {
+			document.getElementById('dailyInfo').style.backgroundImage="url(backgrounds/night.png)";
+			document.getElementById('weekly').style.backgroundColor="#b2a7b6";
+			console.log("the time is night!");
+			}
+    }
+
+
+		//var to hold location data
+		var newLocation = '';
+		
+		if (navigator.geolocation) {
+			
+			//log to console
+			console.log(navigator.geolocation);
+			
+			function success(pos) {
+				
+				//create cariable holding the coordinate info from the api object
+				var crds = pos.coords; 
+				
+				console.log(pos);
+				console.log('My current position is: ')
+				console.log('latitude: ' + crds.latitude);
+				console.log('longitude: ' + crds.longitude);
+				console.log('More or less: ' + crds.accuracy + 'meters.');
+				
+				newLocation = crds.latitude + ',' + crds.longitude;
+				
+				getWeatherData(newLocation);
+				
+				var locName = crds.latitude + '+' + crds.longitude;
+				//feed separate coords to new function
+				getLocationName(locName);
+				
+			}
+			
+			function error (err) {
+				console.log(err);
+				
+				//set default location to canberra
+				var defaultLocation = '-35.343784,149.082977';
+				
+				//run getweatherdata function with default location
+				getWeatherData(defaultLocation);
+			}
+			
+			navigator.geolocation.getCurrentPosition(success, error);
+		};
+		
+		
+		
+		
+		
+	});
+	  
+	  //get location name
+	  //using opencage api
+	  function getLocationName (locName){
+		  
+		  	var apiKey = '9aebdd2fd11041c9bfe5604e053cf484';
+		  	var geoCodeUrl = 'http://api.opencagedata.com/geocode/v1/json?q=' + locName + '&key=' + apiKey;
+		  
+		  	$.getJSON(geoCodeUrl, function(locationData) {
+				
+				console.log(locationData);
+				
+				//get location suburb and state
+				var locString = locationData.results[0].components.suburb + ', ' + locationData.results[0].components.state_code;
+				
+				console.log(locString);
+				
+				//put it on the page
+				
+				var location = $("<h1>").text(locString);
+				
+				//add to body
+				$("#location").append(location);
+			});
+
+		  
+	  }
+	  
+		//function to get api data with current location
+		function getWeatherData(currentLocation) {
+	
+			
+			
+			
+		//Set API Key from dark sky
+		var key = "0a6009db83bbd52d398c4469e8b12292";
+			
+		
+		
+		//set URL for API call
+		var url = "https://api.darksky.net/forecast/" + key + "/" + currentLocation + "?units=si";
+		
+		$.get(url, function(data){
+			  	console.log(data);
+				
+				//create new date object
+				var now = new Date(data.currently.time*1000);
+				
+				//log it
+				console.log(now);
+
+			
+		//moon phase
+		//empty image string for later
+		var moonImage = '';
+		// get the moon phase number
+		var moonPhase = data.daily.data[0].moonPhase;
+		console.log(moonPhase);
+			
+		//set moon phase icons
+		var newMoon = 'images/Moon-New.svg';
+		var waxingCrescent = 'images/Moon-Waxing-Crescent.svg';
+		var firstQuarter = 'images/Moon-First-Quarter.svg';
+		var waxingGibbous = 'images/Moon-Waxing-Gibbous.svg';
+		var fullMoon = 'images/Moon-Full.svg';
+		var waningGibbous = 'images/Moon-Waning-Gibbous.svg';
+		var lastQuarter = 'images/Moon-Last-Quarter.svg';
+		var waningCrescent = 'images/Moon-Waning-Crescent.svg';
+			
+		if (moonPhase > 0 && moonPhase < 0.1) {
+			moonImage = newMoon;
+		}	else if (moonPhase >= 0.12 && moonPhase <= 0.25) {
+			moonImage = waxingCrescent;
+		} else if (moonPhase >= 0.26 && moonPhase <= 0.37) {
+			moonImage = firstQuarter;
+		} else if (moonPhase >= 0.38 && moonPhase <= 0.49) {
+			moonImage = waxingGibbous;
+		} else if (moonPhase >= 0.50 && moonPhase <= 0.60) {
+			moonImage = fullMoon;
+		} else if (moonPhase >= 0.61 && moonPhase <= 0.74) {
+			moonImage = waningGibbous;
+		} else if (moonPhase >= 0.75 && moonPhase <= 0.86) {
+			moonImage = lastQuarter;
+		} else if (moonPhase >= 0.87 && moonPhase <= 0.99) {
+			moonImage = waningCrescent;
+		} else if (moonPhase >= 0 && moonPhase <= 0) {
+			moonImage = waningCrescent;
+		}
+			
+		//add icon image to HTML
+		$('.moon').html('<img class="moon" src="' + moonImage + '">');	
+			
+			
+	// climacons
+		var cIcon = data.currently.icon; //shortcut for data
+		var iconImage = getIcon(cIcon);
+		//add icon image to HTML
+		$('.icons').html('<img class="svg" src="' + iconImage + '">');
+		//end climacons
+			
+			
+				
+				//get date object and convert it to a date string and a time string
+				var time = $("<h1>").text("At: " + now.toDateString() + "," + now.toTimeString() );
+			
+				//append new variable time to page
+				//commented because i dont think you need to know time when phone already tells you
+				//$("#currently").append(time);
+				
+				//get summary from API
+				var summary = $("<h1>").text("Currently " + data.currently.summary);
+				
+				//append summary to page
+				$("#summary").append(summary);
+			
+				//round temperature
+				var niceTemp = Math.round(data.currently.temperature);
+				
+				//get temp
+				var temp = $("<h1>").html(niceTemp + "&deg;C");
+				
+				//append temp
+				$("#currentlyTemp").append(temp);
+			
+				//get min and max temps
+			
+				var minIcon = "<img src=\"images/Thermometer-Zero.svg\" >";
+				var maxIcon = "<img src=\"images/Thermometer-100.svg\">";
+			
+				var minTemp = Math.round(data.daily.data[0].apparentTemperatureMin);
+				var maxTemp = Math.round(data.daily.data[0].apparentTemperatureMax);
+				var minMax = $("<h3>").html( minIcon + minTemp + "&deg;C " + maxIcon + maxTemp + "&deg;C");
+				//append
+				$("#minMax").append(minMax);
+			
+			
+				//get daily summary from API
+				var dailySummary = $("<h2>").text(data.daily.summary);
+				
+				//append summary to page
+				$("#dailySummary").append(dailySummary);
+				
+			//loop through data and add it to the table
+			//new row for each new item
+			
+			for (var i = 0; i < data.daily.data.length; i++) {	
+				var f = data.daily.data[i]; //data for one day in the forcast
+				
+				console.log(f);
+				
+				var row = $("<tr>");
+				
+				//first decale the js date object
+				var jsdate = new Date(f.time*1000);
+				//then convert it to a moment.js date and format it properly
+				var date = moment(jsdate).format('ddd');
+				
+				var hi = getIcon(f.icon);
+				
+				var dailyIcon = '<img class="weekimg" src="' + hi + '">';
+				
+				
+				row.append("<td>" + date + "</td>");
+				//row.append("<td>" + f.summary  + "</td>");
+				row.append("<td>" + dailyIcon  + "</td>");
+				row.append("<td>" + Math.round(f.temperatureMin) + "&deg;" + "</td>");
+				row.append("<td>" + Math.round(f.temperatureMax) + "&deg;" + "</td>");
+				
+				//append the tr info to table
+				$("#weeklyForecast").append(row);
+				
+				};
+			
+			
+				var row = $("<ul>");				
+
+			// list for hourly data			
+			for (var i = 0; i < data.hourly.data.length; i++) {	
+				if (i==24) {break;} // so there isnt 48 hours of forcast, instead 24
+				var f = data.hourly.data[i]; //data for one day in the forcast
+				
+				console.log(f);
+
+				//first decale the js date object
+				var jsdate = new Date(f.time*1000);
+				//then convert it to a moment.js date and format it properly
+				var date = moment(jsdate).format('ha');
+				
+				var hi = getIcon(f.icon);
+				
+				var hourlyIcon = '<img class="hourimg" src="' + hi + '">';
+
+				row.append("<li>" + date + ' </br>' + hourlyIcon + '<br>' + Math.round(f.temperature) + "&deg;"  +  "</li>");
+			
+				//append the tr info to table
+				$("#hourForecast").append(row);
+				
+				};
+			
+				
+			
+		});
+	};
+	  //new function for climacons so can use multiple times
+	  function getIcon(cIcon) {
+		  console.log('here');
+		  //climacons
+			//display relevant climacon image in HTML according to forecast icon
+
+			var iconImage = ''; //set empty image string
+			
+
+			//icon image files to variables
+			var sunIcon = 'images/Sun.svg';
+			var cloudSunIcon = 'images/Cloud-sun.svg';
+			var cloudMoonIcon = 'images/Cloud-moon.svg';
+			var moonIcon = 'images/Moon.svg';
+			var rainIcon = 'images/Cloud-rain.svg';
+			var windyIcon = 'images/Wind.svg';
+			var cloudyIcon = 'images/Cloud.svg';
+			var coldIcon = 'images/Cloud-Snow-Alt.svg';
+			var fogIcon = 'images/Cloud-Fog-Alt.svg';
+			var hailIcon = 'images/Cloud-Hail.svg';
+			var thunderIcon = 'images/Cloud-Lightening.svg';
+
+			//mega if statement 
+			// cIcon relates to the API icon & replace with my files, added so that theres ones for all occasions
+			if (cIcon === 'clear-day') {
+				iconImage = sunIcon;				
+			} else if (cIcon === 'cloudy') {
+				iconImage = cloudyIcon;		
+			} else if (cIcon === 'rain') {
+				iconImage = rainIcon;
+			} else if (cIcon === 'clear-night') {
+				iconImage = moonIcon;
+			} else if (cIcon === 'partly-cloudy-night') {
+				iconImage = cloudMoonIcon;
+			} else if (cIcon === 'partly-cloudy-day') {
+				iconImage = cloudSunIcon;
+			} else if (cIcon === 'snow') {
+				iconImage = coldIcon;
+			} else if (cIcon === 'wind') {
+				iconImage = windyIcon;
+			} else if (cIcon === 'fog') {
+				iconImage = fogIcon;
+			} else if (cIcon === 'hail') {
+				iconImage = hailIcon;
+			} else if (cIcon === 'thunderstorm') {
+				iconImage = thunderIcon;
+			} else {
+				iconImage= sunIcon
+				}//incase theres an icon i didnt know about, though there shouldnt according to docs
+		  
+		  return iconImage;
+		  
+	  }
+	</script>
+	
+	<!-- html bit -->
+	
+		<div id="dailyInfo">
+			<div class="top">
+				<div class="moon"></div>
+			</div>
+			<div class="padding">
+				<div id="location">
+					<img src="backgrounds/locationwhite.png" style="width:30px">
+				</div>
+				<div class="icons"></div>
+				<div id="currentlyTemp"></div>
+				<div id="summary"></div>
+				<div id="minMax"></div>
+				<div id="dailySummary"></div>
+			</div>
+			<div id="hourForecast"></div>
+		</div>
+
+		<div id="weekly">
+			<h1>Weekly Forecast</h1>
+			<table id="weeklyForecast">
+				<tr><th>day</th><th>summary</th><th>min</th><th>max</th></tr>
+			</table>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- Colour Quiz by Lydia Douglas -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--styles-->
+    <link href="css/styles_reset.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <!--scripts-->
+    <script src="scripts/jquery-3.3.1.min.js"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
+
+    <!--fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Amaranth|Fredericka+the+Great|Nothing+You+Could+Do" rel="stylesheet">
+    <!-- vue -->
+    <script type="text/javascript" src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+
+    <title>Ball / Call</title>
+</head>
+
+<body>
+    <header>Ball / Call</header>
+    <div class="drawing-area">
+        <div class="text-area">Lets take a ball...</div>
+        <div class="circle"> </div>
+    </div>
+
+    <div id="app">
+        <h1>{{msg}}</h1>
+
+        <input type="number" v-model="myFontSize">
+        <div :style="{border: 'solid 2px black', 'margin-bottom': '30px', fontSize: myFontSize + 'px'}">
+            JS object literal bound to style attribute
+        </div>
+
+        <div :style="fancyDiv">
+            object literal in data bound to style attribute
+        </div>
+
+        <div :style="[fancyDiv, fancierDiv]" @mouseover="fancierDiv.border = 'dashed 1px blue'" @mouseout="fancierDiv.border = 'solid 1px black'">
+            multiple objects bound to style attribute
+        </div>
+
+        <input type="number" v-model="radiusNumber">
+        <input type="number" v-model="sizeNumber">
+        <!-- <div  :style="{ 'background-color': 'hsl( ' + hueNumber + '%, 50%, 80%)' ,  'margin-bottom' :'30px' ,'width':'100px', 'height' : '100px' }"> </div> -->
+        <div :style="{ 'background-color':'red', 'width': sizeNumber+ 'px', 'height' : sizeNumber + 'px', 'border-radius': radiusNumber+'px'}">
+        hi</div>
+        <input type="number" v-model="hueNumber">
+        <input type="number" v-model="satNumber">
+        <input type="number" v-model="lightNumber">
+        <div :style="{ 'width':'100px' , 'height':'100px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }"></div>
+        <!-- 'hsl(' +hueNumber+', '+'100 %, 66%)' -->
+        <div class="square" :class="{blue: cold, red: hot}"></div>
+        <div :class="cssClasses"></div>
+        <input type="text" v-model="bgColorClass">
+        <div :class="[squareClass, bgColorClass, {'dashed-border': selected}]"></div>
+
+    </div>
+
+
+
+
+    <footer id="footer" role="contentinfo">
+        <p>&copy; copyright Lydia Douglas. 2018</p>
+    </footer>
+
+
+</body>
+
+</html>

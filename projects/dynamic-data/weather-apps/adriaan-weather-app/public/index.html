@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Weekend Weather</title>
+        <link href="https://fonts.googleapis.com/css?family=Muli:700,900" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="loading">
+            <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+                <g fill="none" fill-rule="evenodd" stroke-width="2">
+                    <circle cx="22" cy="22" r="1">
+                        <animate attributeName="r"
+                            begin="0s" dur="1.8s"
+                            values="1; 20"
+                            calcMode="spline"
+                            keyTimes="0; 1"
+                            keySplines="0.165, 0.84, 0.44, 1"
+                            repeatCount="indefinite" />
+                        <animate attributeName="stroke-opacity"
+                            begin="0s" dur="1.8s"
+                            values="1; 0"
+                            calcMode="spline"
+                            keyTimes="0; 1"
+                            keySplines="0.3, 0.61, 0.355, 1"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="22" cy="22" r="1">
+                        <animate attributeName="r"
+                            begin="-0.9s" dur="1.8s"
+                            values="1; 20"
+                            calcMode="spline"
+                            keyTimes="0; 1"
+                            keySplines="0.165, 0.84, 0.44, 1"
+                            repeatCount="indefinite" />
+                        <animate attributeName="stroke-opacity"
+                            begin="-0.9s" dur="1.8s"
+                            values="1; 0"
+                            calcMode="spline"
+                            keyTimes="0; 1"
+                            keySplines="0.3, 0.61, 0.355, 1"
+                            repeatCount="indefinite" />
+                    </circle>
+                </g>
+            </svg>
+            <p class="label">Loading</p>
+        </div>
+        <div id="mood-bar"></div>
+        <header class="appbar">
+            <div class="container">
+                <div class="details">
+                    <div class="details-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left back-arrow"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                        <svg class="feather target"></svg>
+                    </div>
+                    <div class="datetime-location">
+                        <p class="label" data-datetime>09 AUG 2018 // 12:35pm</p>
+                        <p class="fw-black tt-upper city" data-city>Canberra</p>
+                    </div>
+                </div>
+                <div class="temp c-blue fs-heading"><span>6</span>&deg;</div>
+            </div>
+        </header>
+
+        <main>
+            <div id="app" class="page">
+                <div class="container">
+                    <h2 data-name="false" class="welcome-msg">
+                        Welcome back,<br><span class="c-orange">Adriaan</span>
+                        <div class="input-group">
+                            <input name="personal-name" id="personal-name" placeholder="Name" />
+                            <button id="save-name"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-save"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg></button>
+                        </div>
+                    </h2>
+                    <div class="app-options">
+                        <div class="option">
+                            <div id="hourly-info">
+                                <span class="label">48hr Forecast</span>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <span class="label">Weekend Planner</span>
+                            <div class="card weekend-planner">
+                                <h3 class="tt-upper">Weekend Wooooo!!!</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page--weekend-planner" class="page"></div>
+            
+            <div id="location-selection" class="page">
+                <div class="container">
+                    <input type="text" name="location" id="location" placeholder="Canberra" />
+                    <div id="results"></div>
+                    <div class="search-loading">
+                        <svg width="44" height="44" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke="#7161EF">
+                            <g fill="none" fill-rule="evenodd" stroke-width="2">
+                                <circle cx="22" cy="22" r="1">
+                                    <animate attributeName="r"
+                                        begin="0s" dur="1.8s"
+                                        values="1; 20"
+                                        calcMode="spline"
+                                        keyTimes="0; 1"
+                                        keySplines="0.165, 0.84, 0.44, 1"
+                                        repeatCount="indefinite" />
+                                    <animate attributeName="stroke-opacity"
+                                        begin="0s" dur="1.8s"
+                                        values="1; 0"
+                                        calcMode="spline"
+                                        keyTimes="0; 1"
+                                        keySplines="0.3, 0.61, 0.355, 1"
+                                        repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="22" cy="22" r="1">
+                                    <animate attributeName="r"
+                                        begin="-0.9s" dur="1.8s"
+                                        values="1; 20"
+                                        calcMode="spline"
+                                        keyTimes="0; 1"
+                                        keySplines="0.165, 0.84, 0.44, 1"
+                                        repeatCount="indefinite" />
+                                    <animate attributeName="stroke-opacity"
+                                        begin="-0.9s" dur="1.8s"
+                                        values="1; 0"
+                                        calcMode="spline"
+                                        keyTimes="0; 1"
+                                        keySplines="0.3, 0.61, 0.355, 1"
+                                        repeatCount="indefinite" />
+                                </circle>
+                            </g>
+                        </svg>
+                        <p class="label">Loading</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>Powered by <a href="https://darksky.net/" target="_blank" rel="noopener noreferrer">Dark Sky</a> & <a href="https://www.mapbox.com/" target="_blank" rel="noopener noreferrer">Mapbox</a></p>
+            </div>
+        </footer>
+
+        <script async src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,417 @@
+/*Custom fonts*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*Custom CSS file begins here */
+
+/*Colour RBA used in this stylesheet*/
+
+/*colour1 #000000 
+colour2 #f9f9f9 
+colour3 #ffffff 
+colour4 #ce4528 
+colour5 rgba(0, 0, 0, .3) */
+
+/* Heading/Text syles - font, size, colour and body line height*/
+
+/* h1 styles */
+
+h1 {
+	font-family: 'Playfair Display', serif;
+	font-size: 32px;
+	color: #000000;
+}
+/* h2 styles */
+
+h2 {
+	font-family: 'Playfair Display', serif;
+	font-size: 28px;
+	color: #000000;
+}
+/* h3 styles */
+
+h3 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 22px;
+	line-height: 1.8em;
+	color: #000000;
+}
+/* Body text styles */
+
+body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 16px;
+	line-height: 1.8em;
+	color: #666666;
+}
+/* Link Styles*/
+
+/*Removes default link underline and sets colour*/
+
+a:link {
+	color: #000000;
+	text-decoration: none;
+}
+/*Sets the colour of used links - in this case it is set to black so the colour will not change*/
+
+a:visited,
+a:hover {
+	color: #000000;
+}
+/*Sets the colour of a particular link - the 'back to the top' link, so it stands out*/
+
+a.top-link {
+	color: #ce4528;
+}
+/*Header styles*/
+
+/*Sets the background colour and padding in the header - behind the menu and site name*/
+
+header {
+	background: #ffffff;
+	padding: 40px 20px;
+}
+/*Sets the position and padding of the site name*/
+
+header h1 {
+	display: inline-block;
+	padding: 60px;
+}
+/*Primary navigation styles*/
+
+/*Sets the menu to the right of the page and adds padding*/
+
+nav {
+	float: right;
+	padding-top: 60px;
+}
+/*Sets the position of the menu items within the header - removes default stacking*/
+
+nav ul li {
+	display: inline;
+}
+/*Sets navigation styles including font, colour, background, padding and margins*/
+nav ul li  a {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	color: #000000;
+	background: #ffffff;
+	margin: 5px;
+	padding: 10px;
+	text-transform: uppercase;
+}
+    
+    
+/*Sets hover styles of menu items - underline on hover*/
+
+nav ul li a:hover {
+	border-bottom: 1px solid #000000;
+}
+/*Body styles*/
+
+/*Wrapper - sets the width and position of the site - 1200px fixed to the middle*/
+
+.wrapper {
+	width: 1200px;
+	margin: 0 auto;
+}
+/*Main - sets background colour to the full width of the page*/
+
+main {
+	background: #ffffff;
+}
+/*Sets h2 styles for page name*/
+
+main h2 {
+	font-size: 50px;
+	line-height: 1em;
+	padding: 0px 10px 20px 0;
+	text-align: center;
+}
+
+/*Sets the width and position of the text on pages with a sidebar*/
+
+.text-wrapper {
+	float: right;
+	width: 70%;
+}
+/*Sidebar styles*/
+
+/*Sets the size and position of the sidebar*/
+
+aside {
+	float: left;
+	width: 30%;
+}
+/*Sets sidebar page link padding and margins*/
+
+.side-nav {
+	padding-top: 50px;
+	margin-bottom: 70px;
+}
+
+.side-nav ul li a:hover {
+	color: #ce4528;
+}
+/*Sets sidebar image size and styles including rotate image to the left or right*/
+
+/*Rotate image left*/
+
+.sidebar1 img {
+	width: 200px;
+	border: 30px solid #f9f9f9;
+	margin-top: 50px;
+	-moz-transition: transform .2s;
+	/*This is enables the animation. Transitions allow smooth property value changes and the duration */
+	-webkit-transition: transform .2s;
+	/*This is enables the animation. Transitions allow smooth property value changes and the duration */
+	transition: transform .2s;
+	/*This is enables the animation. Transitions allow smooth property value changes and the duration */
+	-moz-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-moz-transform: rotate(-10deg);
+	/*transform: rotate; allows the element to change position. The image is rotated anti-clockwise */
+	-webkit-transform: rotate(-10deg);
+	/*transform: rotate; allows the element to change position. The image is rotated anti-clockwise */
+	transform: rotate(-10deg);
+	/*transform: rotate; allows the element to change position. The image is rotated anti-clockwise */
+}
+/*Rotate image right*/
+
+.sidebar2 img {
+	width: 200px;
+	border: 30px solid #f9f9f9;
+	margin-top: 50px;
+	-mox-transition: transform .2s;
+	/*This is enables the animation. Transitions allow smooth property value changes and the duration */
+	-webkit-transition: transform .2s;
+	/*This is enables the animation. Transitions allow smooth property value changes and the duration */
+	transition: transform .2s;
+	/*This is enables the animation. Transitions allow smooth property value changes and the duration */
+	-moz-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-moz-transform: rotate(10deg);
+	/*transform: rotate; allows the element to change position. The image is rotated clockwise */
+	-webkit-transform: rotate(10deg);
+	/*transform: rotate; allows the element to change position. The image is rotated clockwise */
+	transform: rotate(10deg);
+	/*transform: rotate; allows the element to change position. The image is rotated clockwise */
+}
+/*Increase image size by 150% on hover*/
+
+.sidebar1 img:hover,
+.sidebar2 img:hover {
+	-moz-transform: scale(1.5);
+	/*transform: scale; allows the element to change size. The image will incease in size by 150% on hover */
+	-webkit-transform: scale(1.5);
+	/*transform: scale; allows the element to change size. The image will incease in size by 150% on hover */
+	transform: scale(1.5);
+	/*transform: scale; allows the element to change size. The image will incease in size by 150% on hover */
+}
+/*Sets two columns - for home and social life pages*/
+
+/*Left column size*/
+
+.divide-left {
+	float: left;
+	width: 500px;
+}
+/*Sets left image styles in column including size, border, angle and box-shadow*/
+
+.divide-left img {
+	width: 100%;
+	border: 30px solid #f9f9f9;
+	-moz-transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+	transform: rotate(10deg);
+	margin-top: -50px;
+	margin-left: 50px;
+	-moz-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+}
+/*Right column size*/
+
+.divide-right {
+	float: right;
+	width: 500px;
+}
+/*Sets right image styles in column including size, border, angle and box-shadow*/
+
+.divide-right img {
+	width: 100%;
+	border: 30px solid #f9f9f9;
+	-moz-transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	transform: rotate(-10deg);
+	margin-left: -60px;
+	-moz-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+}
+/*Hero content styles*/
+
+/*Sets size, border and box-shadow of hero images*/
+
+.hero img {
+	width: 1140px;
+	max-height: 600px;
+	border: 30px solid #f9f9f9;
+	-moz-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+}
+/*Home page black border colour and height*/
+
+.border {
+	background: #000000;
+	height: 50px;
+	clear: both;
+}
+/*Sets the styles for the text area including backgorund, padding and margins*/
+
+section {
+	background: #f9f9f9;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 50px;
+}
+/*Sets additional styles for the h2 content within the section such as line height and padding*/
+
+section.content h2 {
+	font-size: 26px;
+	line-height: 1em;
+	padding-bottom: 20px;
+}
+/*Sets the position of the section so they are cleared beneath the floating elements*/
+
+section.content {
+	clear: both;
+}
+/*Image frames styles*/
+
+/*Sets the image background, the padding/margins and the three columns for the images in frames on the home and about page including colour and box-shadow*/
+
+.images {
+	background: #000000;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding: 50px;
+	-moz-column-count: auto;
+	/*sets the three columns of images*/
+	-webkit-column-count: auto;
+	/*sets the three columns of images*/
+	column-count: auto;
+	/*sets the three columns of images*/
+	-moz-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+	box-shadow: -5px -5px 10px rgba(0, 0, 0, .3);
+}
+/*Sets the image sizes and padding for the three column image section*/
+
+.images img {
+	width: 300px;
+	height: 230px;
+	padding: 30px;
+}
+/* Footer styles*/
+
+/*Sets background colour, height and bottom position of the footer*/
+
+footer {
+	background: #000000;
+	height: 150px;
+	clear: both;
+}
+/*Sets the paragraph styles of the footer including font, size, colour and alignment*/
+
+footer p {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 12px;
+	color: #ffffff;
+	text-align: center;
+	padding: 30px 0 20px 0;
+}
+/* Footer Menu */
+
+/*Sets alignment and padding of the menu*/
+
+.footer-menu {
+	text-align: center;
+	padding-top: 40px;
+}
+/*Sets the position of the menu items within the footer*/
+
+.footer-menu ul li {
+	display: inline;
+}
+/*Sets footer menu styles including font, colour, background, padding and magins*/
+
+.footer-menu ul li a {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	text-decoration: none;
+	color: #ffffff;
+	background: #000000;
+	margin: 5px;
+	padding: 10px;
+	text-transform: uppercase;
+}
+/*Sets the hover colour for the footer menu items*/
+
+.footer-menu ul li a:hover {
+	color: #ce4528;
+}

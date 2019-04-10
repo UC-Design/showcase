@@ -1,0 +1,41 @@
+{
+  "name": "pide",
+  "version": "1.0.0",
+  "description": "Spotify data but cool",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start:cumin": "concurrently \"gulp\" \"cd cumin && ng serve\"",
+    "start:paprika": "concurrently \"gulp\" \"cd paprika && npm run start\"",
+    "start:masala": "concurrently \"npm start\" \"gulp\" \"cd masala && npm run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HurricaneInteractive/pide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HurricaneInteractive/pide/issues"
+  },
+  "homepage": "https://github.com/HurricaneInteractive/pide#readme",
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "nodemon": "^1.18.4",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
+    "morgan": "^1.9.1"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}

@@ -1,0 +1,92 @@
+/*Colours #CCDBDC #003249 #FFF8F0 #212922 #BA2D0B*/
+#favourite {
+    border-style: solid;
+    border-width: thin;
+    border-color: #003249;
+    border-top-color: #003249;
+    border-top-width: thick;
+    border-radius: 5px;
+    padding: 5px;
+    color: #003249;
+    margin-top: 5px;
+}
+#deleteprofile {
+    display: flex;
+    flex-direction: column;
+}
+#deleteprofile button a {
+    text-decoration: none;
+    color: #003249;
+}
+#deleteprofile h2 {
+    margin-top: 0px;
+}
+#favourite form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#favourite form h3 {
+    margin: 5px;
+    text-align: center;
+}
+#favourite form div > *{
+    margin: 2px 0px;
+}
+#favourite form div {
+    margin: 2px 0px;
+    display: flex;
+    flex-direction: column;
+    grid-column: repeat(2, 1fr);
+}
+#mainContent h2 {
+    font-size: 1em;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+/*Colours #CCDBDC #003249 #FFF8F0 #212922 #BA2D0B*/
+#centerprofile {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+}
+#profileStatus {
+    max-width: 330px;
+    margin:auto;
+    color: #BA2D0B;
+}
+
+@media(min-width:270px) {
+    #favourite {
+        padding: 5px;
+        max-width: 300px;
+        justify-self: center;
+        margin-top: 0px;
+    }
+    #favourite form div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+    #favourite form div select{
+        max-width: 144px;
+        justify-self: end;
+    }
+    #favourite form > * {
+        max-width: 300px;
+    }
+    #centerprofile {
+    display: grid;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+    }
+    #deleteprofile {
+    min-height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    }
+}

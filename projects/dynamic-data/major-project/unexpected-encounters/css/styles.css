@@ -1,0 +1,836 @@
+/* TABLE OF CONTENTS
+
+    Base styles
+    Launch
+    Onboarding
+    Home
+    About
+    Navigation
+    Loading
+    Select place
+    Results
+    Location error (oops)
+    Individual artefacts - Flickr
+    Individual artefacts - Newspaper
+
+*/
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+* {
+    box-sizing: border-box; }
+
+html, body {
+    height: 100%; }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #303030;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300; /* light: 300, regular: 400 */ }
+
+/* to extend all to the height and width of the screen */
+section {
+    height: 100%;
+    width: 100%; }
+
+h2 {
+    text-align: center;
+    color: #303030;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 2em; }
+
+h3 {
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 0.02em; }
+
+.hide {
+    display: none; }
+    
+.show {
+    display: block; }
+
+/* quick way of centering divs holding content to be centered */
+.center {
+    text-align: center; }
+
+/* quick way to give an element a full height */
+.full-height {
+    height: 100%; }
+
+button,
+.button {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: #619741;
+    background-color: #fff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    line-height: 1.4em;
+    border: #619741 2.5px solid;
+    transition: all .3s ease;
+    cursor: pointer;}
+
+    button:hover,
+    .button:hover {
+	    color: #fff;
+	    background-color: rgba(97,151,65,1); }
+    	    	    
+.bold {
+	font-weight: 400; }
+	
+a {
+	color: rgba(97,151,65,1); }
+
+@media screen and (min-width: 550px) {
+    h2 {
+        margin-bottom: 3em; }
+}
+
+@media screen and (min-width: 550px) and (max-width: 950px) {
+    button,
+    .button {
+        width: 100%; }
+}
+
+
+
+/* Launch
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#intro {
+    background-color: rgba(97,151,65,1);
+    color: #fff; }
+
+	#intro-row {
+	    position: relative; }
+	
+	#intro-centre {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%); }
+	
+		#intro-centre:after {
+		    content: url(../images/handdrawn/launch-explosion-white.svg);
+		    position: absolute;
+		    opacity: 0.15;
+		    width: 90%;
+		    max-width: 390px;
+		    min-width: 280px;
+		    top: 30%;
+		    left: 46%;
+		    transform: translate(-50%,-50%); }
+
+#logo img {
+    width: 50%;
+    min-width: 200px;
+    max-width: 300px; }
+
+#powered {
+    width: 10%;
+    min-width: 80px;
+    max-width: 150px; }
+
+/* Onboarding
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#onboard {
+    position: relative; }
+
+	#onboard-container {
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate(-50%,-50%); }
+	
+	#onboard-row img {
+	    width: 70%;
+	    max-width: 300px; }
+	
+	#onboard-row p {
+	    text-align: left;
+	    width: 85%; }
+	
+	    #onboard-row p:first-of-type {
+	        margin: 4rem auto 2rem; }
+	
+	    #onboard-row p:last-of-type {
+	        margin: 0 auto 4rem; }
+
+#got-it:after {
+    content: url(../images/handdrawn/curved-arrow-up.svg);
+    position: absolute;
+    width: 5rem;
+    top: 88%;
+    left: 75%; }
+
+@media screen and (min-width: 550px) {
+    #got-it:after {
+        top: 90%;
+        left: 63%; }
+}
+
+
+/* Home
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.icons-div {
+	margin-bottom: 2rem; }
+	
+	.icons {
+		left: 50%;
+		transform: translateX(-50%);
+		position: relative;
+		width: 90%;
+		vertical-align: bottom;
+        max-width: 300px; }
+
+    #arrows-icon {
+        height: 20rem;
+        margin-bottom: 2rem; }
+
+	#location-icon {
+	    width: 8rem;
+        display: block;
+        margin: 0 auto; }
+
+#find-places {
+	width: 70%; }
+
+#underline {
+    max-width: 200px; }
+
+#pointing-img {
+    width: 50%;
+    max-height: 7rem;
+    position: absolute;
+    bottom: -1.5%;
+    right: 0; }
+
+@media screen and (min-height: 600px) {
+    #pointing-img {
+        max-height: 10rem;
+    }
+}
+
+
+/* About
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#about {
+    background: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    overflow: scroll;
+    z-index: 10; }
+
+    #about h2 {
+        margin-bottom: 4rem;
+    }
+    
+    #about .afternav p {
+	    margin-bottom: 3rem; }
+
+    #about .afternav p:last-of-type {
+        margin-bottom: 4rem; }
+
+@media screen and (min-height: 800px) {
+    #about .afternav p:last-of-type {
+        max-height: 10rem;
+    }
+}
+
+
+/* Navigation
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.nav-container {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.nav {
+    height: 7rem;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem;
+    z-index: 1;
+    background: #fff; }
+    
+    .back-link {
+        float: left;
+        font-size: 2em;
+        color: #303030;
+        cursor: pointer;
+        font-weight: 400; }
+
+    .logo {
+        height: 3rem;
+        margin: 0 auto;
+        cursor: pointer;
+        top: 2.5rem;
+        left: 2.5rem; }
+        
+    .logo-small {
+        background: url(../images/ud-logo-black.svg) no-repeat center center;
+        background-size: 95%;
+        text-indent: -9999px;
+		font-size: 0;
+		width: 50px;
+        height: 100%;
+        margin: -1rem auto 0;
+        cursor: pointer;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); }
+		
+    .about-link {
+        float: right;
+        margin-top: 1.5rem;
+        font-size: .95em;
+        cursor: pointer;
+        font-weight: 400;
+        color: #303030;
+        letter-spacing: 0.06em;
+        text-transform: uppercase; }
+        
+    .back-link.about {
+        float: right;
+        margin-right: 1rem; 
+    }
+
+.afternav {
+    padding-top: 10rem; }
+
+.main-row {
+	margin: 0 auto;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%; }
+
+@media screen and (min-width: 550px) {
+    .afternav {
+    }
+}
+
+@media screen and (min-width: 1401px) {
+    .nav:before {
+        content: '';
+        height: 7rem;
+    }
+}
+
+
+/* Loading
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#loading,
+#discovering,
+#location-error {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    text-align: center; }
+
+.stillLooking {
+    margin-top: 2rem;
+    color: #619741;
+}
+
+#compass {
+    display: inline; }
+   
+    #compassBase {
+        position: absolute;
+        height: 10rem;
+        width: 10rem; }
+        
+    #compassNeedle {
+        height: 8.5rem;
+        width: 8.5rem;
+        margin: 1rem;
+        -webkit-animation: compassSpin 5s linear infinite;
+        -moz-animation: compassSpin 5s linear infinite;
+        animation: compassSpin 5s linear infinite;
+        -webkit-transform-origin: 50% 50%;
+        -moz-transform-origin: 50% 50%;
+        transform-origin: 50% 50%; }
+
+        @-webkit-keyframes compassSpin {
+            0%   { -webkit-transform: rotate(0deg); }
+            20%  { -webkit-transform: rotate(-60deg); }
+            40%  { -webkit-transform: rotate(20deg); }
+            60%  { -webkit-transform: rotate(-40deg); }
+            80%  { -webkit-transform: rotate(40deg); }
+            100% { -webkit-transform: rotate(0deg); }
+        }
+        @-moz-keyframes compassSpin {
+            0%   { -moz-transform: rotate(0deg); }
+            20%  { -moz-transform: rotate(-60deg); }
+            40%  { -moz-transform: rotate(20deg); }
+            60%  { -moz-transform: rotate(-40deg); }
+            80%  { -moz-transform: rotate(40deg); }
+            100% { -moz-transform: rotate(0deg); }
+        }
+        @keyframes compassSpin {
+            0%   { transform: rotate(0deg); }
+            20%  { transform: rotate(-60deg); }
+            40%  { transform: rotate(20deg); }
+            60%  { transform: rotate(-40deg); }
+            80%  { transform: rotate(40deg); }
+            100% { transform: rotate(0deg); }
+        }
+        
+#find-places-load {
+    margin-top: 2rem;
+    font-weight: 500; }
+        
+#discovering-guy {
+    height: 10rem; }
+        
+#load-artefacts {
+    margin-top: 2rem;
+    font-weight: 400; }
+    
+#loading-place,
+#errorPlace {
+    font-weight: 600; }
+
+div#top-stars,
+div#bottom-stars {
+    height: 50vh; }
+
+div#star-one {
+    margin: 10rem 0 0 -25rem; }
+
+#star1 {
+    height: 3rem;
+    -webkit-animation: glowing-star2 0.8s infinite;
+    -moz-animation: glowing-star2 0.8s infinite;
+    animation: glowing-star2 0.8s infinite; }
+
+div#star-two {
+    margin: -7rem 0 0 0; }
+
+#star2 {
+    height: 3.75rem;
+    -webkit-animation: glowing-star2 1.2s infinite;
+    -moz-animation: glowing-star2 1.2s infinite;
+    animation: glowing-star2 1.2s infinite; }
+
+div#star-three {
+    margin: 4rem 0 0 -13rem; }
+
+#star3 {
+    height: 5rem;
+    -webkit-animation: glowing-star1 1s infinite;
+    -moz-animation: glowing-star1 1s infinite;
+    animation: glowing-star1 1s infinite; }
+
+div#star-four {
+    margin: -9rem 0 0 23rem; }
+
+#star4 {
+    height: 3.5rem;
+    -webkit-animation: glowing-star2 0.6s infinite;
+    -moz-animation: glowing-star2 0.6s infinite;
+    animation: glowing-star2 0.6s infinite; }
+
+div#star-five {
+    margin: 1rem 0 0 7rem; }
+
+#star5 {
+    height: 2.8rem;
+    -webkit-animation: glowing-star1 0.8s infinite;
+    -moz-animation: glowing-star1 0.8s infinite;
+    animation: glowing-star1 0.8s infinite; }
+
+div#star-six {
+    margin: 2rem 0 0 21rem; }
+
+#star6 {
+    height: 2.75rem;
+    -webkit-animation: glowing-star1 1.2s infinite;
+    -moz-animation: glowing-star1 1.2s infinite;
+    animation: glowing-star1 1.2s infinite; }
+
+div#star-seven {
+    margin: -2rem 0 0 -23rem; }
+
+#star7 {
+    height: 3rem;
+    -webkit-animation: glowing-star2 0.5s infinite;
+    -moz-animation: glowing-star2 0.5s infinite;
+    animation: glowing-star2 0.5s infinite; }
+
+div#star-eight {
+    margin: 2rem 0 0 15rem;
+    transform: rotate(180deg); }
+
+#star8 {
+    height: 2.5rem;
+    -webkit-animation: glowing-star2 0.8s infinite;
+    -moz-animation: glowing-star2 0.8s infinite;
+    animation: glowing-star2 0.8s infinite; }
+
+div#star-nine {
+    margin: -2rem 0 0 -10rem;
+    transform: rotate(180deg); }
+
+#star9 {
+    height: 3.5rem;
+    -webkit-animation: glowing-star2 0.6s infinite;
+    -moz-animation: glowing-star2 0.6s infinite;
+    animation: glowing-star2 0.6s infinite; }
+
+div#star-ten {
+    margin: 2rem 0 0 -25rem;
+    transform: rotate(180deg); }
+
+#star10 {
+    height: 4rem;
+    -webkit-animation: glowing-star1 0.8s infinite;
+    -moz-animation: glowing-star1 0.8s infinite;
+    animation: glowing-star1 0.8s infinite; }
+
+div#star-eleven {
+    margin: -2rem 0 0 20rem;
+    transform: rotate(180deg); }
+
+#star11 {
+    height: 3.5rem;
+    -webkit-animation: glowing-star2 1s infinite;
+    -moz-animation: glowing-star2 1s infinite;
+    animation: glowing-star2 1s infinite; }
+
+div#star-twelve {
+    margin: -3rem 0 0 -5rem;
+    transform: rotate(180deg); }
+
+#star12 {
+    height: 5rem;
+    -webkit-animation: glowing-star1 0.7s infinite;
+    -moz-animation: glowing-star1 0.7s infinite;
+    animation: glowing-star1 0.7s infinite; }
+
+    /* first type of glowing star animation */
+    @-webkit-keyframes glowing-star1 {
+        0%   { -webkit-transform: scale(1); }
+        50%  { -webkit-transform: scale(0.6); }
+        100% { -webkit-transform: scale(1); }
+    }
+
+    @-moz-keyframes glowing-star1 {
+        0%   { -moz-transform: scale(1); }
+        50%  { -moz-transform: scale(0.6); }
+        100% { -moz-transform: scale(1); }
+    }
+
+    @keyframes glowing-star1 {
+        0%   { transform: scale(1); }
+        50%  { transform: scale(0.6); }
+        100% { transform: scale(1); }
+    }
+
+    /* second type of glowing star animation */
+    @-webkit-keyframes glowing-star2 {
+        0%   { -webkit-transform: scale(0.6); }
+        50%  { -webkit-transform: scale(1); }
+        100% { -webkit-transform: scale(0.6); }
+    }
+
+    @-moz-keyframes glowing-star2 {
+        0%   { -moz-transform: scale(0.6); }
+        50%  { -moz-transform: scale(1); }
+        100% { -moz-transform: scale(0.6); }
+    }
+
+    @keyframes glowing-star2 {
+        0%   { transform: scale(0.6); }
+        50%  { transform: scale(1); }
+        100% { transform: scale(0.6); }
+    }
+
+@media screen and (min-height: 750px) {
+    div#top-stars {
+        height: 30vh;
+        margin-top: 17rem; }
+    
+    div#bottom-stars {
+        margin-top: 12rem; }
+}
+
+@media screen and (min-height: 1250px) {
+    div#top-stars {
+        margin-top: 40rem; }
+    
+    div#bottom-stars {
+        margin-top: 0; }
+}
+
+
+
+/* Select Place
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.place {
+    cursor: pointer;
+    margin-bottom: 2rem; }
+
+#places {
+	margin-bottom: 5rem; }
+
+.error-message {
+	padding: 1.3rem 3rem;
+	width: 80%;
+	margin: 0 auto 3rem;
+	text-align: center;
+    font-weight: 500;
+    color: #fff; }
+
+#api-fail {
+    background-color: #619741; }
+
+#api-fail img {
+    height: 2.5rem; }
+
+#loc-denied {
+    background-color: #303030; }
+	
+#google-strip {
+    position: fixed;
+    bottom: 0;
+    background-color: #303030;
+    text-align: center; }
+
+img#google {
+	vertical-align: middle;
+    padding: .9rem 0; }
+
+@media screen and (min-width: 550px) {
+    .error-message {
+        padding: 1.3rem 5rem; }
+}
+
+@media screen and (min-width: 550px) and (max-width: 950px) {
+    .error-message {
+        width: 100%; }
+}
+
+
+/*  Results
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.result {
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+	padding: 0;  }
+    
+    .img-wrap {
+	    height: 200px;
+	    overflow: hidden; }
+	    
+	.result-img {
+	    width: 100%;
+	    margin: 0;
+	    padding: 0;
+        height: 200px;
+        object-fit: cover; }
+	    
+    .result-title {
+	    text-transform: uppercase;
+	    text-align: left;
+	    font-size: .9em;
+	    color: #fff;
+	    letter-spacing: 0.03em;
+	    width: 100%;
+	    background-color: rgba(48,48,48,0.85);
+	    padding: 10px 20px;
+	    position: absolute;
+	    bottom: 0px;
+	    font-weight: 500;
+	    margin-bottom: 0; }
+    
+    #place-name {
+	    display: inline-block; }
+	    
+	.marker {
+		width: 18px;
+		padding-right: 5px;
+		display: inline-block;
+		vertical-align: bottom;
+		margin-bottom: 2.5em; }
+
+.newsArticle {
+    display: inline-block;
+    width: 30%;
+    margin-left: 1%;
+    margin-bottom: 1rem;
+    background-color: #cfcfcf;
+    padding: 2rem;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    text-align: justify; }
+
+	.newsArticleHead {
+	    margin-top: 0;
+	    font-weight: 700;
+	    text-align: center;
+	    font-size: 1.5em; }
+	
+    .newsArticle p:first-of-type {
+        text-align: center;
+        font-size: 1.2em;
+        font-style: italic; }
+
+@media screen and (min-width: 550px) {
+    .img-wrap,
+    .result-img {
+        height: 300px; }
+    
+    .marker {
+        margin-bottom: 3.85em; }
+    
+    .result-title {
+        text-align: center; }
+}
+
+@media screen and (min-width: 800px) {
+    .result-title {
+        font-size: 1.1em;
+        padding: 20px 20px; }
+}
+
+
+/*  Location error (oops)
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+section#location-error p {
+    margin-bottom: 1rem; }
+
+img#little-guy-oops {
+    height: 10rem;
+    margin-bottom: 2rem; }
+
+@media screen and (min-width: 550px) {
+    section#location-error br {
+        display: none; }
+}
+
+
+/*  Individual Artifacts - Flickr
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/*
+K - Not sure why we need this?
+div#flickr-content,
+div#newspaper-content {
+    overflow: scroll; }
+*/
+
+img.artefact-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    padding-top: 7rem; }
+
+div#flickr-text,
+div#flickr-text h2 {
+    text-align: left; }
+
+div#flickr-text h2 {
+    margin: 2rem 0; }
+
+p#contributor {
+    margin-bottom: 2rem; }
+
+p#desc {
+    margin-bottom: 3rem; }
+
+a.button {
+    text-decoration: none;
+    text-align: center; }
+
+img.line {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0.65rem auto 2rem; }
+
+@media screen and (max-width: 550px) {
+    #img-container,
+    #newspaper-container,
+    .results-container {
+        padding: 0;
+        width: 100%; }
+}
+
+@media screen and (min-width: 551px) {
+    img.artefact-img {
+        height: 600px;
+        padding-top: 12rem; }
+    
+    img.line {
+        margin: 0.65rem auto 5rem; }
+}
+
+
+/*  Individual artefacts - Newspaper
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+div#grey-wrap {
+    font-family: 'Merriweather', serif;
+    background-color: #EAEAEA;
+    padding: 4rem 4rem 4rem;
+    line-height: 1.8; }
+
+h2#newspaper-title {
+    margin: 5rem 0 2rem; }
+
+p#news-name {
+    font-weight: bold; }
+
+p#date {
+    margin: 2rem 0; }
+
+p#newspaper-desc {
+    text-align: justify; }
+
+p#doozy {
+    margin: 3rem 0 4rem; }
+
+#news-open:after {
+    content: url(../images/handdrawn/curved-arrow-down.svg);
+    position: absolute;
+    width: 5rem;
+    top: 30%;
+    left: 77%; }
+
+@media screen and (min-width: 551px) {
+    div#grey-wrap {
+        margin-top: 10rem; }
+    
+    h2#newspaper-title {
+        margin: 3rem 0 2rem; }
+}

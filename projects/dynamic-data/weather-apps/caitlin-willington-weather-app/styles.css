@@ -1,0 +1,201 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Raleway:900');
+
+body, html {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+
+h1 {
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	-webkit-margin-before: 0em;
+
+}
+
+#weekly h1 {
+	text-align: center;
+	margin: 0px;
+	padding-top:30px;
+	padding-bottom:30px;
+	color: gray;
+
+}
+
+#currentlyTemp h1 {
+	font-size: 4em;
+}
+
+h2 {
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-size: 1.5em;
+}
+
+h3 {
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-size: 2em;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+#dailyInfo {
+	text-align: center;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.padding {
+	padding: 40px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+	font-size: 1.2em;
+	color: gray;
+
+}
+
+th {
+	font-family: 'Raleway', sans-serif;
+	color: gray;
+	font-size: 1.5em;
+}
+
+th, td {
+    padding: 15px;
+}
+
+table tr {
+	border-bottom: 1px solid white !important;
+}
+
+
+.svg{
+	fill: white;
+	color: white;
+	width: 200px;
+
+}
+
+
+.weekly {
+	text-align: center;
+	padding:40px;
+}
+
+ul {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+		text-align: center;
+	white-space: nowrap;
+	float: left;
+}
+
+
+li {
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-size: 1.5em;
+	display: inline-block;	
+	margin-right: 20px;
+	
+}
+
+.hourimg {
+	width: 60px;
+}
+
+
+
+
+#hourForecast {
+	width: 100%;
+	overflow-x: auto;
+}
+
+#hourlyForecast {
+	color: white;
+}
+
+#weeklyForecast {
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.top {
+	height: 50px;
+	padding:0;
+}
+
+.moon {
+	clear:both;
+	width:35px;
+	float:right;
+	margin-right:5px;
+	margin-top:6px;
+	padding-bottom: 6px;
+}
+
+#minMax img {
+	width: 30px;
+}
+
+
+
+@media screen and (max-width:340px) {
+	table {
+		width:90%;
+		font-size: 70%;
+	}
+	.weekimg {
+		width: 50px;
+	}
+}
+
+@media screen and (min-width: 341px) and (max-width: 1000px) {
+		table {
+		width: 90%;
+		font-size: 80%;
+	}
+
+	
+	.weekimg {
+	width: 80px;
+}
+	
+}
+
+@media screen and (max-width: 1000px){
+	
+	#hourForecast {
+			margin-left:10px;
+	}
+}
+
+@media screen and (min-width: 1000px){
+	
+	#hourForecast {
+		width: 975px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-bottom: 50px;
+	}
+	.weekimg {
+	width: 80px;
+}
+}

@@ -1,0 +1,42 @@
+/**
+    Base styling for the project. Should only contain declarations for HTML elements.
+    Should not also include classes
+    ONLY exception:
+        label, .label
+    
+    We may want a different items to share the label styling but not a label element.
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: $base-font-size;
+    font-family: $font-family;
+}
+
+* {
+    box-sizing: border-box;
+    &:focus, &:active, &:hover {
+        outline: none;
+    }
+}
+
+input {
+    font-family: $heebo;
+    font-size: 14px;
+    color: white;
+    padding: 0 10px;
+    background: transparent;
+    margin: 15px 0 30px;
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 3px solid white;
+    @include placeholder(rgba(255, 255, 255, 0.65));
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,138 @@
+:root{
+  --font-playful: 'Gochi Hand';
+  --font-cursive: 'Caveat';
+  --font-choppy: 'Short Stack';
+  --color-backgrd: rgb(250, 184, 179);
+  font-size:18px;
+}
+
+
+/* font-family: 'Caveat', cursive;
+
+font-family: 'La Belle Aurore', cursive;
+
+font-family: 'League Script', cursive;
+
+font-family: 'Sacramento', cursive;
+
+font-family: 'Indie Flower', cursive;
+
+font-family: 'Handlee', cursive; */
+
+
+html, body{
+  height: 100%;
+  width:100%;
+  font-family: var(--font-choppy), Var(--font-playful), cursive,'Courier New', Courier, monospace;
+}
+header{
+  font-size:3.1em;
+  padding-top:2.5%;
+  padding-right:1%;
+  color:lightcoral;
+  text-align: right;
+  height:10vh;
+  background-color: var( --color-backgd);
+}
+
+div{
+  height: 600px;
+  background-color:lightblue;
+}
+
+#welcome-section{
+width:100%;
+height:90%;
+background-color: var(--color-backgrd) ;
+}
+.lets-text{
+  font-family: var(--font-choppy);
+  font-size: 4.0em;
+  letter-spacing: 0.1em;
+  text-align:center;
+}
+.action-call-text{
+  font-family:var(--font-cursive);
+  font-size:3.5em;
+  color : red;
+  font-weight:600;
+  text-align: right;
+  padding-right:10%;
+}
+
+
+#welcome-section{
+  width:100%;
+  min-height:20%;
+}
+#jball-wrapper{
+  display:flex; 
+  width:100%;
+
+}
+#jball{
+  align-self: center;
+  width:300px;
+  height:300px;
+  border-radius: 150px;
+  background-color: rgb(200, 167, 216);
+}
+.tocircle{
+  background:radial-gradient( circle at 100px 100px, transparent, black); 
+  border-radius: 150px;
+ 
+}
+.allhide {
+  display:none;
+}
+/* 
+#trollball {
+  position: relative;
+  border:1px solid #222;
+  border-radius: 50%;
+  width:505px;
+  height:505px;
+  background-image: url("/assets/images/troll.png" );
+}
+
+#anotherball{
+  position: absolute;
+  top:0;
+  left:0;
+  display:none;
+  border:1px solid #222;
+   background-color: lightcoral; 
+  border-radius: 50%;
+  width:505px;
+  height:505px;
+} */
+
+
+#trollball2 {
+  position: relative;
+  border-radius: 50%;
+  width:405px;
+  height:405px;
+
+}
+#pictroll {
+  position: absolute;
+  border-radius: 50%;
+  left: -19%;
+  bottom:-10%;
+  width:575px;
+  height:575px;
+}
+
+
+/* #anotherball2{
+  position: absolute;
+  top:0;
+  left:0;
+  display:none;
+  border:1px solid #222;
+   background-color: lightcoral; 
+  border-radius: 50%;
+  width:405px;
+  height:405px;
+} */

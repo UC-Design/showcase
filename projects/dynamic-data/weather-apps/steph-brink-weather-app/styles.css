@@ -1,0 +1,921 @@
+/*
+    Stephanie Brink 3072445
+
+    TABLE OF CONTENTS:
+    Default styles
+    Clock ring
+    Bottom section
+    Media queries
+*/
+
+/* ----------------------- DEFAULT STYLES ----------------------- */
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+}
+
+h1 {
+    font-weight: 100;
+    font-size: 3.5em;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 1.3em;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 0;
+}
+
+div#change-to-portrait {
+    width: 100%;
+    height: 100%;
+    background: -moz-linear-gradient(45deg, #bfaa9f 0%, #a5948b 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #bfaa9f), color-stop(100%, #a5948b)); /* safari4+,chrome */
+    background: -webkit-linear-gradient(45deg, #bfaa9f 0%, #a5948b 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(45deg, #bfaa9f 0%, #a5948b 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(45deg, #bfaa9f 0%, #a5948b 100%); /* ie10+ */
+    background: linear-gradient(45deg, #bfaa9f 0%, #a5948b 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a5948b', endColorstr='#bfaa9f',GradientType=1 ); /* ie6-9 */
+    display: none;
+}
+
+div#change-inner {
+    text-align: center;
+    padding-top: 20%;
+}
+
+    div#change-to-portrait img {
+        height: 3.5em;
+    }
+
+    div#change-to-portrait p {
+        color: #fff;
+        font-weight: 200;
+        letter-spacing: 1px;
+        font-size: 1.2em;
+    }
+
+div#wrapper {
+    height: 100%;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+div#temp-wrapper {
+    text-align: center;
+}
+
+div#current-temp {
+    padding-top: 10%;
+}
+
+div#feels-like {
+    font-size: 0.875em;
+}
+
+.daytime {
+    background-color: #fcf3d0;
+    -webkit-box-shadow: 0px 0px 15px rgba(252, 243, 208, 0.8);
+    -moz-box-shadow: 0px 0px 15px rgba(252, 243, 208, 0.8);
+    box-shadow: 0px 0px 15px rgba(252, 243, 208, 0.8);
+}
+
+.nightime {
+    background-color: #304856;
+    -webkit-box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+.hide,
+.desktop {
+    display: none;
+}
+
+.right {
+    text-align: right;
+    padding-left:1em;
+}
+
+.centre {
+    text-align: center;
+}
+
+img.xl-icon {
+    height: 6em;
+}
+
+img.l-icon {
+    height: 5.8em;
+}
+
+img.m-icon {
+    height: 5.5em;
+}
+
+img.s-icon {
+    height: 5em;
+}
+
+.no-after-element:after,
+.no-before-element:before {
+  content: none !important;
+}
+
+.adjust-left-05em-after:after {
+    left: -0.5em !important;
+}
+
+.adjust-width30em:before {
+    width: 30em !important;
+}
+
+.adjust-width20em:before {
+    width: 20em !important;
+}
+
+/* ----------------------- CLOCK RING ----------------------- */
+
+div#clock {
+    border-radius: 50%;
+    background: #d9d2c9;
+    height: 15em;
+    width: 15em;
+    display: inline-flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 3em auto 0;
+}
+
+div#ring {
+    border-radius: 50%;
+    height: 13.7em;
+    width: 13.7em;
+    position: relative;
+    margin: auto;
+    background: linear-gradient(180deg, #fff 100%, transparent 100%) 0 0;
+}
+
+div.blue-fill {
+    border-radius: 50%;
+    height: 13.7em;
+    width: 13.7em;
+    position: absolute;
+    margin: auto;
+}
+
+/* to ensure fill reaches to centre of circle */
+div.blue-fill:after {
+    position: absolute;
+    top: 51%;
+    width: 1.5em;
+    height: 5em;
+    background: #3c5667;
+    content: '';
+}
+
+div.fill-extend {
+    width: 100vw;
+    height: 10em;
+    position: absolute;
+    background-color: #3c5667;
+    z-index: -1;
+}
+
+    div.fill-extend:before {
+        position: absolute;
+        bottom: 100%;
+        height: 30em;
+        background: #fff;
+        content: '';
+    }
+
+div#sunrise-fill {
+    background: linear-gradient(-36deg, transparent 0%, #3c5667 0%) 0 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
+
+    div#sunrise-fill:after {
+        left: 39.5%;
+    }
+
+div#sunrise-fill-extend {
+    margin-left: -50vw;
+    right: 50%;
+    top: 50%;
+    transform-origin: top right;
+}
+
+    div#sunrise-fill-extend:before {
+        width: 40em;
+    }
+
+div#sunset-fill {
+    background: linear-gradient(36deg, transparent 0%, #3c5667 0%) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+}
+
+    div#sunset-fill:after {
+        right: 39.5%;
+    }
+
+div#sunset-fill-extend {
+    margin-right: -50vw;
+    left: 50%;
+    top: 50%;
+    transform: rotate(0deg);
+    transform-origin: top left;
+}
+
+    div#sunset-fill-extend:before {
+        width: 50em;
+    }
+
+div#remainder-fill {
+    background: linear-gradient(0deg, transparent 0%, #3c5667 0%) 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    border-radius: 50%;
+    height: 13.73em;
+    width: 13.73em;
+    position: absolute;
+    margin: auto;
+    transform: rotate(225deg);
+}
+
+div#icon {
+    position: absolute;
+    width: 50%;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+    z-index:2;
+}
+
+    div#icon p {
+        margin: 0.5em 0 0 0;
+        padding: 0;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 100;
+        letter-spacing: 2px;
+        font-size: 0.8em;
+    }
+
+div#ring > p {
+    text-align: center;
+    top: 89%;
+    left: 43%;
+    position: absolute;
+    font-size: 0.5em;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+    div#ring > p:after {
+        position: absolute;
+        height: 4em;
+        width: 3.2em;
+        top: -10em;
+        left: 0;
+        background: #3c5667;
+        content: '';
+        z-index: 0;
+    }
+
+div#time-container {
+    width: 17em;
+    height: 17em;
+    border-radius: 50%;
+    position: absolute;
+    top: -1em;
+    left: -1em;
+}
+
+div#time {
+    height: 2.8em;
+    width: 2.8em;
+    border-radius: 50%;
+    position: absolute;
+    top: 42%;
+}
+
+div.temp-container {
+    width: 16.5em;
+    height: 16.5em;
+    border-radius: 50%;
+    position: absolute;
+    top: -0.7em;
+    left: -0.7em;
+}
+
+div.temp {
+    width: 2.2em;
+    height: 2.2em;
+    background-color: #a5948b;
+    position: absolute;
+    border-radius: 0.5em;
+    top: 7.25em;
+}
+
+    div.temp p {
+        color: #fff;
+        text-align: center;
+        margin-top: 0.55em;
+        font-weight: 100;
+    }
+
+
+/* ----------------------- BOTTOM SECTION ----------------------- */
+
+div#bottom {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    z-index: -2;
+    background: -moz-linear-gradient(90deg, rgba(75,111,130,1) 0%, rgba(60,86,103,1) 46%, rgba(60,86,103,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(60,86,103,1)), color-stop(54%, rgba(60,86,103,1)), color-stop(100%, rgba(75,111,130,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(90deg, rgba(75,111,130,1) 0%, rgba(60,86,103,1) 46%, rgba(60,86,103,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(90deg, rgba(75,111,130,1) 0%, rgba(60,86,103,1) 46%, rgba(60,86,103,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(90deg, rgba(75,111,130,1) 0%, rgba(60,86,103,1) 46%, rgba(60,86,103,1) 100%); /* ie10+ */
+    background: linear-gradient(0deg, rgba(75,111,130,1) 0%, rgba(60,86,103,1) 46%, rgba(60,86,103,1) 100%); /* w3c */
+}
+
+div#location {
+    position: absolute;
+    top: 58%;
+    text-align: center;
+    margin: 2em auto;
+    width: 100%;
+    font-weight: 200;
+    color: #fff;
+}
+
+div#stats-container {
+    width:100%;
+    font-weight: 100;
+    text-align: center;
+    position: absolute;
+    top: 74%;
+    color: #fff;
+    font-size: 1.35em;
+}
+
+    div#stats-container div {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    div#stats-container div#rain-desktop {
+        display: none;
+    }
+
+    div#stats-container p {
+        font-size: 1.1em;
+        margin: 0.5em 0 0 0;
+        line-height: 1;
+    }
+
+    div#stats-container img {
+        height: 1.5em;
+    }
+
+    div#stats-container span {
+        font-size: 0.65em;
+    }
+
+        div#stats-container div:nth-child(2) {
+            margin: 0 2.5em;
+        }
+
+div#rain-desktop {
+    display: none;
+}
+
+div#rain-chance {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #304856;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 100;
+    position: absolute;
+    top: 70%;
+}
+
+div#close {
+    height: 4.24em;
+    position: fixed;
+    padding: 3.4em 0.6em 0;
+    background-color: #a5948b;
+}
+
+img#close-icon {
+    height: 1.1em;
+}
+
+div#inner-rain img {
+    height: 1.4em;
+}
+
+div#inner-rain span {
+    font-size: 0.8em;
+}
+
+div#inner-rain ul {
+    list-style-type: none;
+    margin: 0;
+    line-height: 1.6em;
+    float: left;
+    white-space: nowrap;
+    padding: 1.3em 2em 1.3em 3.7em;
+}
+
+div#inner-rain ul li {
+    display: inline-block;
+    text-align: center;
+    padding: 0 1.05em;
+}
+
+    div#inner-rain ul li:first-of-type {
+        padding-left: 0;
+    }
+
+    div#inner-rain ul li:last-of-type {
+        padding-right: 0;
+    }
+
+div#more {
+    position: absolute;
+    top: 93%;
+    padding: 1em;
+    width: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+div#forecast {
+    background-color: #304856;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+}
+
+div#close-forecast {
+    height: 2em;
+    background-color: #a5948b;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+    div#close-forecast img {
+        width: 3em;
+        padding-top:0.7em;
+    }
+
+table#daily-forecast {
+    list-style-type: none;
+    color: #fff;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 75%;
+    margin: 0 auto;
+    font-size: 1.1em;
+}
+
+table#daily-forecast td {
+    padding: 1.35em 0;
+}
+
+    table#daily-forecast td:first-child {
+        width: 45%;
+    }
+
+    table#daily-forecast td:nth-child(2) {
+        width: 15%;
+    }
+
+    table#daily-forecast td:nth-child(3) {
+        width: 20%;
+    }
+
+    table#daily-forecast td:last-child {
+        width: 15%;
+    }
+
+table#daily-forecast img {
+    height: 1.55em;
+}
+
+
+/* ----------------------- MEDIA QUERIES ----------------------- */
+
+/*@media all and (orientation: landscape) {
+    div#change-to-portrait {
+         display: block;
+    }
+}*/
+
+@media screen and (max-width: 373px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h2 {
+        font-size: 1.15em;
+    }
+    
+    div#clock {
+        height: 12em !important;
+        width: 12em !important;
+    }
+    
+    div#ring,
+    div.blue-fill {
+        height: 10.8em !important;
+        width: 10.8em !important;
+    }
+    
+        div#ring > p {
+            left: 45%;
+        }
+    
+    div#ring > p:after {
+        top: -8.25em !important;
+        left: -2.2em !important;
+        border-left: 25px solid transparent !important;
+        border-right: 25px solid transparent !important;
+        border-bottom: 40px solid #3c5667 !important;
+    }
+    
+    div#remainder-fill {
+        height: 10.83em !important;
+        width: 10.83em !important;
+    }
+    
+    div#time-container {
+        height: 14em !important;
+        width: 14em !important;
+    }
+    
+    div#max-temp-container,
+    div#min-temp-container {
+        height: 13.5em !important;
+        width: 13.5em !important;
+    }
+    
+    img.xl-icon {
+        height: 4.7em !important;
+    }
+
+    img.l-icon {
+        height: 4.3em !important;
+    }
+
+    img.m-icon {
+        height: 4.2em !important;
+    }
+
+    img.s-icon {
+        height: 3.7em !important;
+    }
+    
+    div#location {
+        margin: 2.5em auto;
+    }
+    
+    div#stats-container {
+        top: 76%;
+    }
+    
+        div#stats-container div:nth-child(2) {
+            margin: 0 1.8em;
+        }
+    
+        div#stats-container p,
+        table#daily-forecast {
+            font-size: 0.85em;
+        }
+}
+
+@media screen and (max-width: 412px) {
+    div#clock {
+        height: 13em;
+        width: 13em;
+    }
+    
+    div#ring,
+    div.blue-fill {
+        height: 11.8em;
+        width: 11.8em;
+    }
+    
+    div#remainder-fill {
+        height: 11.83em;
+        width: 11.83em;
+    }
+    
+    div#time-container {
+        height: 15em;
+        width: 15em;
+    }
+    
+    div#max-temp-container,
+    div#min-temp-container {
+        height: 14.5em;
+        width: 14.5em;
+    }
+    
+    div#icon {
+        top: 22.5%;
+    }
+    
+    img.xl-icon {
+    height: 5em;
+    }
+
+    img.l-icon {
+        height: 4.8em;
+    }
+
+    img.m-icon {
+        height: 4.5em;
+    }
+
+    img.s-icon {
+        height: 4em;
+    }
+    
+    div#ring > p {
+        top: 86%;
+        font-size: 0.4em;
+    }
+    
+    div#ring > p:after {
+        top: -9em;
+        left: -1.9em;
+        width: 0;
+        height: 0;
+        border-left: 29px solid transparent;
+        border-right: 21px solid transparent;
+        border-bottom: 40px solid #3c5667;
+        background: none;
+    }
+}
+
+@media screen and (min-width: 675px) and (max-width: 749px) {    
+    div#location {
+        margin: 3em auto;
+    }
+    
+    div#stats-container div:nth-child(2) {
+        margin: 0 4em;
+    }
+    
+    table#daily-forecast {
+        width: 55%;
+        margin: 5em auto;
+    }
+    
+    div#close-forecast {
+        height: 3em;
+    }
+    
+        div#close-forecast img {
+            padding-top: 1.2em;
+        }
+}
+
+/* handles resizing on desktop better */
+@media screen and (min-width: 500px) and (max-width: 749px) and (max-height: 750px) {
+    div#clock {
+        height: 13em;
+        width: 13em;
+    }
+    
+    div#ring,
+    div.blue-fill {
+        height: 11.8em;
+        width: 11.8em;
+    }
+    
+    div#remainder-fill {
+        height: 11.83em;
+        width: 11.83em;
+    }
+    
+    div#time-container {
+        height: 15em;
+        width: 15em;
+    }
+    
+    div#max-temp-container,
+    div#min-temp-container {
+        height: 14.5em;
+        width: 14.5em;
+    }
+    
+    div#icon {
+        top: 22.5%;
+    }
+    
+    img.xl-icon {
+    height: 5em;
+    }
+
+    img.l-icon {
+        height: 4.8em;
+    }
+
+    img.m-icon {
+        height: 4.5em;
+    }
+
+    img.s-icon {
+        height: 4em;
+    }
+    
+    div#ring > p {
+        top: 86%;
+        font-size: 0.4em;
+    }
+    
+    div#ring > p:after {
+        top: -9em;
+        left: -1.9em;
+        width: 0;
+        height: 0;
+        border-left: 29px solid transparent;
+        border-right: 21px solid transparent;
+        border-bottom: 40px solid #3c5667;
+        background: none;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    body {
+        height: auto;
+    }
+    
+    html {
+        overflow: auto;
+    }
+    
+    div#wrapper {
+        margin: 5em auto 0;
+        height: auto;
+        padding-bottom: 7em;
+    }
+    
+    div#current-temp {
+        padding-top: 5em !important;
+    }
+    
+    div#temp-wrapper {
+        margin-bottom: 4em;
+    }
+    
+    div#temp-wrapper,
+    div#location,
+    div#stats-container{
+        text-align: left;
+    }
+    
+    div#location {
+        top: 0;
+    }
+    
+    div#clock {
+        left: auto;
+        margin: 0 !important;
+        top: 5.8em;
+    }
+    
+    div#location,
+    div#stats-container {
+        color: #000;
+    }
+    
+    div#stats-container {
+        width: auto;
+        position: initial;
+    }
+    
+        div#stats-container div {
+            display: inherit;
+        }
+
+        div#stats-container div > img,
+        div#stats-container > p {
+            float: left;
+        }
+
+        div#stats-container p {
+            margin: 1.3em 0 0 2.6em;
+            padding-top: 0.2em;
+        }
+
+        div#stats-container span {
+            padding-left: 0.35em;
+        }
+
+        div#stats-container img.desktop {
+            height: 1.65em;
+        }
+
+        div#stats-container img#wind-icon {
+            width: 1.6em;
+        }
+
+        div#stats-container img#humid {
+            width: 1.15em;
+        }
+
+        div#stats-container img#rain-down {
+            height: 0.2em;
+            vertical-align: middle;
+            margin-left: 0.5em;
+        }
+    
+    div#rain-chance {
+        display: block !important;
+        float: left;
+        background-color: inherit;
+        color: #000;
+        position: initial;
+        overflow: initial;
+        top: 0;
+    }
+    
+    div#inner-rain ul {
+        padding: 0;
+        white-space: normal;
+        display: flex;
+        justify-content: space-between;
+        width: 700px;
+    }
+    
+    div#inner-rain ul li {
+        padding: 0;
+    }
+    
+    div#forecast {
+        display: block !important;
+        background-color: initial;
+        width: auto;
+        height: auto;
+        position: relative;
+        margin-top: 8.5em;
+    }
+    
+    table#daily-forecast {
+        color: #000;
+        width: auto;
+        margin: 0;
+        text-transform: none;
+    }
+    
+    table#daily-forecast td {
+        padding: 1em 0;
+    }
+    
+    div#launch,
+    div.fill-extend,
+    div#bottom,
+    div#stats-container br,
+    div#stats-container div#rain,
+    .mobile,
+    div#close-forecast {
+        display: none;
+    }
+    
+    div#stats-container div#rain-desktop,
+    .desktop {
+        display: block;
+    }
+}

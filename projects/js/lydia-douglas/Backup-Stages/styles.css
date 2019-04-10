@@ -1,0 +1,104 @@
+ :root{
+    --color-backgd: hsl(180, 22%, 66%);
+    --color-backgd-dk: hsl(180, 22%, 36%) ;
+    --color-border: black;
+    --color-ball: pink;
+    --text-color: black;
+    --ball-gradient-lt: rgb(202, 170, 161);
+    --ball-gradient-dk: rgb(139, 37, 71) ;
+    --ball-shadow:hsl(180, 22%, 26%);
+    --color-footer: darkgrey;
+    --font-size: 44px;
+    --color-header:transparent;
+} 
+
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: var(--font-size);
+}
+
+header{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size:1.1em;
+    padding-top:1%;
+    padding-right:1%;
+    color:lightcoral;
+    text-align: right;
+    height:10vh;
+    background-color: var( --color-backgd);
+}
+
+.drawing-area{
+    position: relative;
+    width: 1280px;
+    height:80vh;
+    /* background-color:var(--color-backgd); */
+    background:linear-gradient( var(--color-backgd), var(--color-backgd-dk)); 
+}
+
+.text-area{
+    margin-top:1%;
+    position:absolute;
+    text-align: center;
+    width:100%;
+    font-size:1.8em;
+}
+
+.circle{
+    
+    top:40%;
+    left:40%;
+    position: absolute;
+    z-index:1; 
+    width:250px;
+    height:250px;
+    border-radius: 150px;
+    background-color: var(--color-ball);
+    border-color: var(--color-border);
+    /* background:radial-gradient(transparent, pink); */
+    background:radial-gradient(var(--ball-gradient-lt),var(--ball-gradient-dk) );  
+    box-shadow: 3px 3px 3px var(--ball-shadow) ;
+}
+
+
+#colortry {
+    background-color: hsl(180, 50%, 50%);
+    color: hsl(0, 0%, 100%);
+    widows: 100%;
+    height:100px;
+}
+
+
+footer{
+    height:10vh;
+   background-color: var(--color-footer);
+}
+
+
+/* experiments */
+    .square {
+         width: 200px;
+         height: 200px;
+         margin-bottom: 20px;
+    }
+
+    .expcircle {
+        width: 200px;
+        height: 200px;
+        border-radius:100px;
+        margin-bottom: 20px;
+   }
+
+    .blue {
+        background-color: blue;
+    }
+    .red {
+        background-color: red;
+    }
+	.yellow {
+        background-color: yellow;
+    }
+    .dashed-border {
+        border: dashed 4px black;
+    }

@@ -1,0 +1,741 @@
+/* CSS Styles for Weather API Sketch 
+	by Lauren Schilling (u3117702)
+	
+	
+Table of Contents:
+
+01. Base Styles
+02. Typography
+03. Layout
+04. Lists
+05. Icons
+05. Weekly Forecast Table
+07. Location Search – Form
+08. CSS Shapes
+09. CSS Shapes – Media Queries
+10. Background Gradients
+11. Mobile Landscape Orientation – Media Queries
+
+
+*/
+
+
+/* Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html { 
+	height: 100%;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat; }
+
+body,
+button,
+input {
+	font-family: 'questrial', Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	color: #fff; }  
+
+body, input, textarea, button {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+	
+.container {
+	margin: 0 auto;
+	padding: 20px;
+	clear: both; 
+	text-align: center;
+	height: 95vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; }	
+
+main {
+	padding: 30px 0; }
+	
+	
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+h1 {
+	font-size: 1.3em; /* 1.3 x 16 = 20.8px */
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	padding-bottom: 13px;
+	text-align: center; }
+	
+	#location h1 {
+		padding-bottom: 30px; }
+
+h3 {
+	letter-spacing: 0.04em;
+	padding-bottom: 5px;
+	font-size: .9em; /* .95 x 16 15.2px */ }
+
+.bigger {
+	font-size: 1.3em; }
+			
+.lil-big {
+	font-size: 1.1em; }
+
+.loc-intro {
+	padding-bottom: 5px; }
+	
+.city-name {
+	text-align: right;
+	padding-right: 35px;
+	position: fixed;
+	right: 20px;
+	top: 28px;
+	font-size: .95em; }
+
+	
+/* Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.currently {
+	display: block; }
+		
+#rain-forecast,
+#sunrise,
+#location,
+#week {
+	display: none;
+	position: relative;
+	vertical-align: middle;
+	top: 5vh;
+	z-index: 5;
+	height: 1em; }
+	
+	#location {
+		top: -4vh;	}
+
+	#location-found {
+		position: relative;
+		top: -1vh;	}		
+		
+		@media screen and (max-width: 500px) {
+			#location {
+				top: -10vh;	}
+		}
+		
+	#week {
+		height: 10em; }	
+	
+	#rain-forecast {
+		top: 6vh; }
+		
+	#rain-chance {
+		position: relative;	}
+
+#rise,
+#set {
+	display: inline-block;
+	padding-bottom: 4px; }
+
+
+/* Lists	
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#temps li,
+#menu li {
+	display: inline-block;
+	padding-bottom: 20px; }
+
+	#menu li:not(:last-child) {
+		padding-right: 3.5%; }
+	
+	#temps li:not(:last-child) {
+		padding-right: 2%; }
+		
+		#temp {
+			font-size: 2em; /* 2 x 16 = 32px */
+			font-weight: 700;
+			padding-right: 1% !important; }	
+			
+		#min-temp,
+		#max-temp {
+			font-size: 1.2em; /* 1.2 x 16 = 19.2px */ }
+	
+	
+/* Icons	
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.icon {
+	background-size: 100%;
+	color: #fff;
+	text-indent: -9999px;
+	font-size: 0;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	opacity: .7;
+	cursor: pointer; }
+	
+	.icon:hover,
+	.icon-active {
+		opacity: 1; }	
+
+	.compass-icon {
+		display: block;
+		position: fixed; /*-- or absolute --*/
+		right: 20px;
+		top: 20px;
+		background: url(../images/Compass-North.svg) no-repeat center top;
+		z-index: 1;
+		background-size: 100%;
+		-webkit-animation: roll 1.5s infinite; 
+		-moz-animation: roll 1.5s infinite; 
+		-o-animation: roll 1.5s infinite; 
+		animation: roll 1.5s infinite; }
+		
+	.close-icon {
+		display: none;
+		position: fixed; /*-- or absolute --*/
+		right: 20px;
+		top: 20px;
+		background: url(../images/Cross.svg) no-repeat center top;		
+		z-index: 1;
+		background-size: 100%; }
+		
+		.close-icon:hover {
+			-webkit-animation: roll 4s infinite; 
+			-moz-animation: roll 4s infinite; 
+			-o-animation: roll 4s infinite; 
+			animation: roll 4s infinite; }
+
+		@keyframes roll {
+		  0% {
+		    transform: rotate(0); }
+		  100% {
+		    transform: rotate(360deg); }
+		}
+		
+	#rain-icon {
+		background: url(../images/Cloud-Rain.svg) no-repeat center top;
+		background-size: 90%; }
+		
+	#sun-icon {
+		background: url(../images/Sun-Low.svg) no-repeat center top;
+		padding-bottom: 4px; }
+		
+	#cal-icon {
+		background: url(../images/Calendar.svg) no-repeat center top;
+		background-size: 90%; }
+
+#sunrise div {
+	margin-bottom: 1%; }
+	
+	.icon2 {
+		background-size: 100%;
+		color: #fff;
+		text-indent: -9999px;
+		font-size: 0;
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		text-align: center; 
+		padding-right: 2%;
+		vertical-align: bottom; }
+	
+	#sunrise-icon {
+		background: url(../images/Sunrise.svg) no-repeat left bottom;
+		padding-right: 15px; }
+	
+	#sunset-icon {
+		background: url(../images/Sunset.svg) no-repeat left bottom;
+		padding-right: 16.5px; }
+
+
+/* Weekly Forecast Table	
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+table {
+	margin: 0 auto; }
+	
+	th {
+		display: none; }
+		
+		tr {
+			padding-bottom: 10px; }
+			
+		td {
+			line-height: 1.5em; }
+				
+			.left {
+				text-align: left;
+				padding-right: 40px; }
+			
+			.right {
+				text-align: right; }		
+				
+				.right:not(:last-child) {
+					padding-right: 30px; }
+	
+			.caps {
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				font-size: 1.1em;
+				line-height: 1.5em;
+				padding-bottom: 5px; }	
+	
+			.temp {
+				font-size: 1.1em; }	
+	
+			.weekly-icons {
+				width: 23px;
+				height: 23px;
+				opacity: 1;
+				color: #fff;
+				text-align: right;
+				vertical-align: top; }
+				
+		@media screen and (max-width: 770px) {
+			#week {
+				height: 6em; }
+			
+			td,
+			.caps,
+			.temp {
+				padding: 0px;
+				font-size: .9em; }
+			
+			.left,
+			.right:not(:last-child) {
+				padding-right: 10px; }
+		}
+		
+		@media screen and (max-width: 330px) {
+			.weekday {
+				display: none; }
+			
+			#week {
+				height: 1em;
+				top: -1vh; }	
+		}
+
+
+/* Location Search – Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+	
+label {
+	display: block;
+	letter-spacing: 0.02em; }
+
+	@media screen and (max-width: 500px) {
+		label,
+		#rain-forecast {
+			width: 90%;
+			margin: 0 auto;
+			line-height: 1.2em; }
+	}	
+		
+input {
+	background: none;
+	border: none;
+	border-bottom: 1px solid #fff;
+	width: 250px;
+	margin: 10px 0 0 0; 
+	letter-spacing: 0.02em;
+	font-size: 2.5em;
+	padding: 5px;
+	text-align: center; }	
+	
+	input:focus {
+	    outline:none; }
+
+.go-btn,
+#submit {
+	display: none; }
+	
+	.btn {
+		margin-top: 30px; }		
+	
+	.btn a {
+		border: 1px solid #fff;
+		padding: 7px 20px;
+		border-radius: 5px;			
+		cursor: pointer; }		
+		
+		.btn:hover {
+			-webkit-animation: pulse .5s cubic-bezier(0.445, 0.050, 0.550, 0.950) alternate infinite; 
+			-moz-animation: pulse .5s cubic-bezier(0.445, 0.050, 0.550, 0.950) alternate infinite; 
+			-o-animation: pulse .5s cubic-bezier(0.445, 0.050, 0.550, 0.950) alternate infinite; 
+			animation: pulse .5s cubic-bezier(0.445, 0.050, 0.550, 0.950) alternate infinite; }	
+	
+			@keyframes pulse {
+			  0% {
+			    transform: translateY(0px); }
+			  100% {
+			    transform: translateY(-4px); }
+			}
+
+/* --- was not able to complete loading screen,
+		should be shown before location success screen --- */
+	#loading {
+		display: none; }
+		
+		.searching span {
+			font-size: 2em;
+		}
+	
+	@keyframes blink {
+	    0% {
+	      opacity: .2;
+	    }
+	    20% {
+	      opacity: 1;
+	    }
+	    100% {
+	      opacity: .2;
+	    }
+	}
+	
+	.searching span {
+	    animation-name: blink;
+	    animation-duration: 1.4s;
+	    animation-iteration-count: infinite;
+	    animation-fill-mode: both; }
+	
+	.searching span:nth-child(2) {
+	    animation-delay: .2s; }
+	
+	.searching span:nth-child(3) {
+	    animation-delay: .4s; }
+	
+		
+/* CSS Shapes
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.anim {
+	display: inline-block; 
+/*
+	position: relative;
+	top: 4vh;
+	height: 11em;
+*/
+	-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	-moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	-o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+
+.layer {
+	display: inline-block;
+	position: relative;
+	margin: 0 auto;
+	clear: both;
+	text-align: center;
+	border-radius: 100%;
+	vertical-align: middle; }
+
+.sun {
+	display: none;
+	float: right;
+	-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	-moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	-o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+
+	.sun1 {
+		width: 120px;
+		height: 120px;
+		background-color: rgba(255,255,255,.3);
+		transform: translate(45px); }
+	
+	.sun2 {
+		width: 90px;
+		height: 90px;
+		background-color: rgba(255,255,255,.85);
+		transform: translate(-63px); }
+
+		/* --- sun animations --- */
+		.sun-move {
+			transform: translate(-45vw, -35vh);
+			-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+			-moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+			-o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	        transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+						
+.moon {
+	display: none;
+	margin: 5% 0; 
+	-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	-moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	-o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+
+	.moon1 {
+		width: 100px;
+		height: 100px;
+		background-color: rgba(255,255,255,.85);
+		transform: translate(42px); }
+	
+	.moon2 {
+		width: 90px;
+		height: 90px;
+		background-color: rgba(15,39,52,.90); 
+		transform: translate(-30px); }
+
+		/* --- moon animations --- */
+		.moon-move {
+			transform: translate(-35vw, -35vh);
+			-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+			-moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+			-o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	        transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+
+.clouds {
+	display: none;
+	margin: 5% 0;
+	transform: translateX(18px); }
+
+	.clouds-left,
+	.clouds-right {
+		display: inline-block;
+		-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+		-moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+		-o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+		
+		/* --- left to right --- */
+		.cloud1 {
+			width: 70px;
+			height: 70px;
+			background-color: rgba(255,255,255,.9);
+			transform: translateX(45px);
+			vertical-align: baseline; }
+	
+		.cloud2 {
+			width: 120px;
+			height: 120px;
+			background-color: rgba(255,255,255,.85);
+			vertical-align: baseline;
+			-webkit-transition: all 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+			-moz-transition: all 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+			-o-transition: all 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+	        transition: all 1000ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+			
+		.cloud3 {
+			width: 45px;
+			height: 45px;
+			background-color: rgba(255,255,255,.8);
+			transform: translate(-45px); 
+			vertical-align: baseline; }		
+		
+		.cloud4 {
+			width: 75px;
+			height: 75px;
+			background-color: rgba(255,255,255,.9);
+			transform: translate(-70px); 
+			vertical-align: baseline; }	
+	
+			/* --- cloud animations --- */
+			.clouds-move-left {
+				transform: translateX(-18vw); }
+			
+			.clouds-move-right {
+				transform: translateX(20vw); }
+				
+			.cloud2-move {
+				transform: translateX(-8vw); }
+		
+.rain {
+	display: none;
+	margin: 5% 0;
+	transform: translateX(18px); }
+
+	.rain-left,
+	.rain-right {
+		-webkit-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+		-moz-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+		-o-transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition: all 500ms cubic-bezier(0.445, 0.050, 0.550, 0.950); }
+
+		/* --- left to right --- */
+		.rain1 {
+			width: 15px;
+			height: 15px;
+			background-color: rgba(255,255,255,.9);
+			transform: translate(-70px, 3px);
+			vertical-align: baseline; }
+	
+		.rain2 {
+			width: 12px;
+			height: 12px;
+			background-color: rgba(255,255,255,.85);
+			transform: translate(-48px, -10px);
+			vertical-align: baseline; }
+
+		.rain3 {
+			width: 9px;
+			height: 9px;
+			background-color: rgba(255,255,255,.8);
+			transform: translate(8px, -18px); 
+			vertical-align: baseline; }		
+		
+		.rain4 {
+			width: 15px;
+			height: 15px;
+			background-color: rgba(255,255,255,.9);
+			transform: translate(30px, -23px); 
+			vertical-align: baseline; }	
+	
+			/* --- rain animations --- */
+			.rain-move-left {
+				transform: translateX(-18vw); }
+			
+			.rain-move-right {
+				transform: translateX(20vw); }
+
+
+/* CSS Shapes – Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (min-width: 795px) {
+	.sun-move,
+	.moon-move {
+		transform: translate(-20vw, -25vh); }
+}
+
+@media screen and (min-width: 2000px) {
+	.cloud2-move {
+		transform: translateX(-4vw); }
+}
+		
+@media screen and (max-width: 795px) {
+	.clouds-move-left {
+		transform: translateX(-32vw); }
+	
+	.clouds-move-right {
+		transform: translateX(35vw); }
+	
+	.cloud2-move {
+		transform: translateX(-18vw); }
+		
+	.rain-move-left {
+		transform: translateX(-30vw); }
+	
+	.rain-move-right {
+		transform: translateX(28vw); }
+}
+
+@media screen and (max-width: 380px) {
+	#rain-chance {
+		width: 70%;
+		margin: 0 auto; }
+	
+	.clouds {
+		width: 110%;
+		transform: translateX(15px); }
+						
+	.clouds-move-left {
+		transform: translateX(-34vw); }
+	
+	.clouds-move-right {
+		transform: translateX(29vw); }
+		
+	.cloud2-move {
+		transform: translateX(-30vw); }
+}
+
+@media screen and (max-width: 330px) {
+	#rain-chance {
+		width: 70%;
+		margin: 0 auto; }
+	
+	.clouds {
+		width: 130%;
+		transform: translateX(-20px); }
+		
+	.clouds-move-left {
+		transform: translateX(-20vw); }
+	
+	.clouds-move-right {
+		transform: translateX(20vw); }
+	
+	.cloud2-move {
+		transform: translateX(-35vw); }
+}
+
+
+/* Background Gradients	
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.day {
+	background: -webkit-linear-gradient(160deg,#8dafc3 20%, #9bbbce 53%, #94a9ad 100%);
+    background: -moz-linear-gradient(160deg,#8dafc3 20%, #9bbbce 53%, #94a9ad 100%);
+    background: -ms-linear-gradient(160deg,#8dafc3 20%, #9bbbce 53%, #94a9ad 100%);
+    background: -o-linear-gradient(160deg,#8dafc3 20%, #9bbbce 53%, #94a9ad 100%);
+    background: linear-gradient(160deg,#8dafc3 20%, #9bbbce 53%, #94a9ad 100%); }
+	
+.day-sunset {
+	background: -webkit-linear-gradient(160deg, #765ac5 20%, #b768e0 59%, #de92ab 100%);
+    background: -moz-linear-gradient(160deg, #765ac5 20%, #b768e0 59%, #de92ab 100%);
+    background: -ms-linear-gradient(160deg, #765ac5 20%, #b768e0 59%, #de92ab 100%);
+    background: -o-linear-gradient(160deg, #765ac5 20%, #b768e0 59%, #de92ab 100%);
+    background: linear-gradient(160deg, #765ac5 20%, #b768e0 59%, #de92ab 100%); }	   
+
+.rain-bg {
+	background: -webkit-linear-gradient(160deg, #052355 20%, #0a4089 100%);
+    background: -moz-linear-gradient(160deg, #052355 20%, #0a4089 100%);
+    background: -ms-linear-gradient(160deg, #052355 20%, #0a4089 100%);
+    background: -o-linear-gradient(160deg, #052355 20%, #0a4089 100%);
+    background: linear-gradient(160deg, #052355 20%, #0a4089 100%); }
+    
+.night {
+	background: -webkit-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: -moz-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: -ms-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: -o-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: linear-gradient(160deg, #0d2633 20%, #26323a 100%); }
+
+.night-sunset {
+	background: -webkit-linear-gradient(160deg, #2f01b2 20%, #7e07bc 66%, #b85777 100%);
+    background: -moz-linear-gradient(160deg, #2f01b2 20%, #7e07bc 66%, #b85777 100%);
+    background: -ms-linear-gradient(160deg, #2f01b2 20%, #7e07bc 66%, #b85777 100%);
+    background: -o-linear-gradient(160deg, #2f01b2 20%, #7e07bc 66%, #b85777 100%);
+    background: linear-gradient(160deg, #2f01b2 20%, #7e07bc 66%, #b85777 100%); }
+
+.night-sunset-moon {
+	background-color: rgba(47,1,178,.90); }	
+
+
+/* Mobile Landscape Orientation – Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#landscape {
+	display: none;
+	height: 100vh;
+	width: 100vw;	
+	text-align: center;
+	vertical-align: middle;	
+	background: -webkit-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: -moz-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: -ms-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: -o-linear-gradient(160deg, #0d2633 20%, #26323a 100%);
+    background: linear-gradient(160deg, #0d2633 20%, #26323a 100%); }
+
+	#landscape div {
+		position: relative;
+		top: 45vh; }
+		
+	#landscape p {
+		padding-bottom: 10px; }
+	
+	/* --- for the purpose of the sketch, this media query is set to max-width
+			to correctly display on the safari responsive design mode;
+			if the sketch was produced, it would be changed to max-device-width	--- */
+	@media screen and (max-width: 750px) and (orientation: landscape) {
+		#landscape {
+			display: block; }		
+			
+		.container {
+			display: none; }	
+	}
+	
