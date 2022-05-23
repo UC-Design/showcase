@@ -12,4 +12,4 @@ Search and experiment with the frequency of words in lyrics to create our own mu
 - SCSS
 
 ## Link
-Create new songs by experimenting with the frequency of song lyrics https://app-lyrical.herokuapp.com/
+Create new songs by experimenting with the frequency of song lyrics. Go here: [https://app-lyrical.herokuapp.com/](https://app-lyrical.herokuapp.com/)
