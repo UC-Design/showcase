@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Rufina:400,700&display=swap');
+/*font family imported from google fonts*/
+
+body {
+    background-color: #F8F9F9;
+    /*shade warmer than white to be easier on the eye*/
+    color: #212121;
+    /*shade warmer than black to be easier on the eye*/
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav {
+    font-family: 'Rufina', serif;
+    /*all share the same font family*/
+}
+
+.wrapper {
+    height: 100%;
+}
+
+/*HEADER STYLING*/
+
+h1 {
+    margin-left: .5vw;
+    margin-right: .5vw;
+    /*slight margin either side for space*/
+    margin-top: 10px;
+    margin-bottom: 100px;
+    text-align: right;
+    font-size: 2.5vw;
+    /*font size as percentage of view width for flex*/
+    font-size-adjust: auto;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #212121;
+    text-decoration: none;
+}
+
+h1 a {
+    color: #212121;
+    text-decoration: none;
+}
+
+h1 a:hover {
+    color: #977942;
+    /*colour pulled from boyd foundation logo to help create link*/
+}
+
+header {
+    background-color: #F8F9F9;
+    float: left;
+    width: 20%;
+    height: 100vh;
+    /*floated header left and stretched to height to create a sidebar hybrid*/
+    position: -webkit-sticky;
+    /*header stays static while content scrolls*/
+    position: sticky;
+    bottom: 0;
+    top: 0;
+    z-index: 90;
+    min-width: 200px;
+}
+
+header a img {
+    width: 100%;
+    z-index: 90;
+    margin-top: 15vh;
+    background-color: #F8F9F9;
+}
+
+nav {
+    text-align: right;
+    font-size: 1vw;
+    /*font size as percentage of view width for flex - used throughout with rules in place to stop shrinking down too far*/
+    margin-left: .5vw;
+    margin-right: .5vw;
+    line-height: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+nav ul li a {
+    color: #212121;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #977942;
+}
+
+/*DIVS FOR MAIN CONTAINER STYLING*/
+
+.index {
+    background: url(../images/churchillhouse.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    /*pinned to right of page so text stays on dark part of picture when screen size adjusted*/
+}
+
+.contentpage {
+    background: url(../images/churchillhousetwo.jpg);
+    /*div used for different background images for index/content*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+}
+
+main {
+    min-height: 100vh;
+    /*main always stretches to full height*/
+}
+
+/*TYPOGRAPHY WITHIN MAIN CONTAINER*/
+
+h2 {
+    text-align: right;
+    color: #977942;
+    padding-right: 10%;
+    font-size: 6vw;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h3 {
+    text-align: right;
+    color: #F8F9F9;
+    font-size: 16px;
+    padding-top: 10vw;
+    padding-right: 10%;
+    padding-bottom: 10vw;
+    margin-left: 50%;
+}
+
+h4 {
+    text-align: left;
+    color: #977942;
+    margin-left: 21%;
+    margin-bottom: 10px;
+    padding-top: 10%;
+    font-size: 4vw;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/*MAIN CONTENT*/
+
+main p {
+    text-align: justify;
+    color: #F8F9F9;
+    padding-left: 21%;
+    padding-right: 20%;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+main p a {
+    text-decoration: underline;
+    color: #F8F9F9;
+
+}
+
+.contentlist {
+    text-align: justify;
+    color: #F8F9F9;
+    padding-left: 21%;
+    padding-right: 20%;
+    /*margins to keep text from flowing behind header*/
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 30px
+}
+
+/*IMAGE STYLING DIVS*/
+
+.gallery {
+    position: static;
+    margin-left: 21%;
+}
+
+.gallery img {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #977942;
+    max-width: 100%;
+    display: inline;
+    height: 16vw;
+    /*height as percentage of view width to flex images*/
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery2 {
+    position: static;
+    margin-left: 21%;
+}
+
+.gallery2 img {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #977942;
+    max-width: 100%;
+    display: inline;
+    height: 27.5vw;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.portrait {
+    margin-left: 21%;
+    margin-right: 20%;
+}
+
+.portrait img {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #977942;
+    height: 30vw;
+    max-height: 300px;
+}
+
+.drawings {
+    margin-left: 21%;
+}
+
+.drawings img {
+    height: 18vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #977942;
+}
+
+/*FOOTER STYLING*/
+
+footer {
+    z-index: 100;
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    border-top-style: solid;
+    border-width: 3px;
+    border-color: gainsboro;
+    background-color: #977942;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    /*Footer locked to bottom and always at bottom of window. Used stick plus z-index.*/
+}
+
+/*FLEX STYLING*/
+
+/*Selected break points based on styling needs rather than common device dimensions as I aimed to make everything as flexible as possible*/
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 25px;
+    }
+
+    nav {
+        font-size: 10px;
+    }
+
+    main p {
+        padding-left: 210px;
+    }
+
+    .contentlist {
+        padding-left: 210px;
+    }
+
+    .portrait {
+        margin-left: 210px;
+    }
+
+    h4 {
+        margin-left: 210px;
+    }
+
+    .drawings {
+        margin-left: 210px;
+    }
+
+    .gallery {
+        margin-left: 210px;
+    }
+
+    .gallery2 {
+        margin-left: 210px;
+    }
+}
+
+/*header bar min width 200px - margins needed to be changed from percentage of full width to definite px value and font sizes locked so as not to shrink too small in relation to vw*/
+
+/*-----header moved-----*/
+@media (max-width: 535px),
+(max-height: 350px) {
+    header {
+        background-color: #F8F9F9;
+        float: none;
+        width: 100%;
+        height: auto;
+        position: relative;
+        bottom: 0;
+        top: 0;
+        z-index: 90;
+        /*when width of window too narrow for header and content, header moves to top and spans the width of the page. also for when screen not tall enough*/
+
+    }
+
+    h1 {
+        margin-left: .5vw;
+        margin-right: .5vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-size-adjust: auto;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #212121;
+        text-decoration: none;
+    }
+
+    nav {
+        text-align: center;
+        font-size: 10px;
+        word-wrap: break-word;
+        margin-left: .5vw;
+        margin-right: .5vw;
+        line-height: 28px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+
+    nav li {
+        display: inline;
+        border-color: #977942;
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-style: solid;
+        border-right-width: 1px;
+        padding-left: 5px;
+    }
+
+    /*with menu options now inline, border added to sides to help compartmentalise features*/
+
+
+    header a img {
+        display: none;
+    }
+
+    /*logo removed to ease clutter*/
+
+    h2 {
+        text-align: center;
+        color: #977942;
+        padding-right: 0%;
+        font-size: 10vw;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        text-align: center;
+        color: #F8F9F9;
+        font-size: 16px;
+        padding-top: 100px;
+        padding-right: 0px;
+        padding-bottom: 200px;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    main p {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    /*margin on content reduced for narrower space*/
+
+    .contentlist {
+        padding-left: 10%;
+    }
+
+    .portrait {
+        margin-left: 10%;
+    }
+
+    h4 {
+        margin-left: 10%;
+    }
+
+    .drawings {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .drawings img {
+        height: auto;
+        width: 80vw;
+    }
+
+    .gallery {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .gallery img {
+        display: block;
+        height: auto;
+        max-width: 80vw;
+
+    }
+
+    .gallery2 {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .gallery2 img {
+        display: block;
+        height: auto;
+        max-width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+
+
+    }
+
+    /*headings, images and text all centered to create a simplified viewing experience on narrower screens*/

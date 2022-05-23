@@ -1,0 +1,614 @@
+@import url("https://use.typekit.net/pxp5ydn.css");
+
+body
+{
+    overflow-x: hidden;
+    font-family: quiroh, sans-serif; /*Font selection for whole page*/
+    font-weight: 400; /*default weight for all text*/
+/*    font-style: normal;*/
+    line-height: 1.5em; /*increased space between lines for readability*/
+    font-size: 17.6px; /*default text height*/
+    color: #3D3C41; /*default text colour.*/
+}
+    
+*
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    
+    /*maintains overall box sizes when padding is applied – padding will push content inside box*/
+}
+
+h1 /*Page Title*/
+{
+    font-size: 2em;
+    color: black;
+    padding: 5px 0px;
+}
+
+h2 /*Content section heading*/
+{
+    color: black;
+    font-size: 1.5em;
+    line-height: 2em;
+    font-weight: 500;
+    clear: both;
+}
+
+h3 /*Content sub heading + Title */
+{
+    font-size: 1.2em;
+    clear: both;
+    font-weight: 500;
+}
+
+main h3
+{
+    padding-top: 20px;
+}
+
+#Title span
+{
+    font-size: 1.2em;
+    clear: both;
+    font-weight: 500;
+    padding-bottom:10px;
+    padding-top: 10px;
+    color: #3D3C41;
+}
+
+#Title
+{
+    padding: 10px; /*Padding is for background white*/
+    position: absolute; /*Allow Title to overlap other elements without moving them*/
+    margin: 50px; /*position title in from edges*/
+    background-color: rgba(255, 255, 255, 0.7); 
+}
+
+nav
+{
+/*    display: block;*/
+/*    overflow: hidden;*/
+    font-weight: 100;
+    z-index: 1; /*Ensures menu is above all other elements*/
+}
+
+a
+{
+    text-decoration: none; /*Removes default link underline*/
+    color: black;
+}
+
+main a
+{
+    color: #557a94; /*in text link colour*/
+    transition-duration: 0.5s; /*timing for hover effects*/
+    border-bottom: 2px solid white; /*Only while un-hovered – ensures width is consistent through transition*/
+}
+
+main a:hover
+{
+    border-bottom: 2px solid #557a94; /*applies a border "underline" when hovered*/
+}
+
+main
+{
+    background-image: url(../images/Essential-Concrete-3.png); /*Background texture*/
+    background-size: 400px;        
+}
+
+#menu_toggle
+{
+    display: none; /*Hides checkbox for menu button – label is used for graphic*/
+}
+
+#menu_toggle:checked ~ #menu /*Styling menu ul when checkbox is checked*/
+{
+    right: 0px; /*Moves menu onscreen from right*/
+    opacity: 1; /* Fade in menu*/
+    
+}
+
+/*The following is derived from Erik Terwan – CodePen https://codepen.io/erikterwan/pen/EVzeRP
+*/
+
+/*Only one span is written in the HTML. :before and :after place the additional lines
+ *Default styling for all three spans
+ *These use a background colour and border to "draw" a line
+*/
+
+label:before, 
+label:after,
+label span
+{
+    transition-duration: 0.4s;
+    background-color: black;
+    border-radius: 3px;
+    content: "";
+    display: block;
+    height: 7px;
+    margin: 7px 0; 
+}
+
+/*Styling for each span when the checkbox is checked*/
+
+#menu_toggle:checked ~ label:before
+{
+/*    Moves first line down to centre (-height and margin) and rotates to form half of the X*/
+     transform: translateY(14px) rotate(-45deg);
+}
+
+#menu_toggle:checked ~ label:after
+{
+     transform: translateY(-14px)rotate(45deg);
+}
+
+#menu_toggle:checked ~ label span
+{
+/*    Middle line – shrinks to zero while rotating*/
+     transform: scale(0)rotate(45deg);
+}
+
+label
+{
+    z-index: 1; /*Keeps the label above the menu*/
+    transition-duration: 0.5s;
+    right: -60px; /*Move menu icon off screen by default – comes on screen under media quiry*/
+    position: absolute;
+    width: 40px;
+    margin: 10px;
+}
+
+
+
+#landing_image
+{
+    height: 70vh; /*scales image to 70% of window height*/
+    background-image: url(../images/churchill-house-4.jpg);
+    background-size: cover; /*Ensures image will cover its container – Will crop sides as neccessary*/
+    
+    background-position: bottom; /*Anchors image to bottom when cropping – Chosen for specifc image*/
+}
+
+/*Show description when image is hovered*/
+#landing_image:hover ~ .img_desc
+{
+    opacity: 1;
+}
+
+/*Defaults for landing image description*/
+.img_desc
+{
+    transition-duration: 0.5s;
+    opacity: 0; /*Hidden by default. Shown on image hover*/
+    color: #928E94;
+    font-size: 0.9em;
+    position: absolute;
+    right: 20px;
+    background-color: white;
+}
+
+section
+{
+    width: 900px; /*default width for content. Later overidden by @media quiries*/
+/*    margin: auto; centres the content on the page*/
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: white;
+/*    overflow: auto; fixes floating elements overflowing container*/
+}
+
+section p, .img_container
+{
+/*    Vertical spacing between paragraphs and image containers*/
+    padding: 20px 0px;
+}
+
+/*Removes padding from image containers that immediately follow a wrapper div*/
+section + a .img_container
+{
+    padding: 0px;
+}
+
+.col_right
+{
+    width: 400px; /*Default width for column*/
+    float: right; /*Pushes element to the right
+    *and allows other float elements to sit next to it*/
+}
+
+.col_left
+{
+    width: 400px;
+    float: left;
+}
+
+.clear
+{
+    clear: both;
+}
+
+
+.full_width
+{
+    clear: both; /*Prevents other elements from sitting next to a full_width element*/
+}
+
+/*emphasis tag – strong is screen reader friendly*/
+strong
+{
+    font-weight: 500;
+    color: black;
+}
+
+.drop_cap
+{
+    color: black;
+    font-size: 3.5em;
+    float: left; /*Allows rest of line to sit at correct height*/
+    
+    /*create space around letter*/
+    padding-top: 18px;
+    padding-right: 6px;
+/*    padding-bottom: 11px;*/
+}
+
+main ul li
+{
+    list-style:circle;
+    padding: 10px 0px; 
+}
+
+.read_more_wrapper
+{
+    margin: 0 auto; /*Centre content*/
+    width: 600px; /*Max width for flex positioning*/
+    display:flex;
+    justify-content:space-between;
+}
+
+.read_more
+{
+    margin: 10px;
+}
+
+img
+{
+    filter:grayscale(1) brightness(1);
+    transition-duration: 1s;
+    width: inherit;
+}
+
+/*Remove link styling for image links*/
+.img_a, .img_a:hover
+{
+    border: none;
+}
+
+/*image tag inside image containers with full width class*/
+.img_container.full_width img
+{
+    width: 100%;  /*Set image width to container*/
+}
+
+
+.overlap
+{
+    position: relative;
+    top: -100px;
+}
+
+
+.img_container
+{
+    /*For images larger than container*/
+    overflow: hidden; 
+/*    max-height: 500px;*/
+    margin: 0 auto; /*Centre non full width images*/
+/*    display: inline-block;*/
+    position: relative;
+    max-height: 600px;
+}
+
+.tall
+{
+    max-height: none;
+    height: 600px;
+}
+
+.tall img
+{
+    height: inherit;
+    width: auto;
+}
+
+.right
+{
+    position: absolute;
+    right: 0;
+}
+
+.center
+{
+    position: absolute;
+    right: -50%;
+}
+
+.contain img
+{
+    width: 100%;
+}
+
+/*Image description and "View"*/
+.img_container .view, .img_container .desc
+{
+    color: white;
+    transition-duration: 0.5s;
+    opacity: 0;
+    position: absolute;
+}
+
+.img_container .view
+{
+    font-size: 1.4em;
+    
+    /*Position centre of text in centre of container*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img_container .desc
+{
+    bottom: 30px;
+    padding: 0px 10px;
+}
+
+
+.back_to_top
+{
+/*    Force div onto new line*/
+    clear: both;
+    margin-top: 50px;
+}
+    
+footer
+{
+/*    Ensures footer does not sit next to other elements*/
+    clear:both;
+    min-height: 70px;
+    background-color: gray;
+    
+}
+
+footer p
+{
+    color: black;
+    padding: 20px;
+    margin: auto;
+    width: 900px;
+}
+
+/*Styling when platform has a pointer that can hover*/
+@media (any-hover: hover)
+{
+    .img_container:hover img
+    {
+/*        opacity: 0.5;*/
+        filter:  grayscale(0);
+    }
+
+    .img_container:hover span, .img_container:hover p
+    {
+        opacity: 1;
+    }
+    
+    a .img_container:hover img
+    {
+        filter:grayscale(0) brightness(0.7);
+    }
+}
+
+/*Remove image hover effects on non-compatible devices*/
+@media (any-hover: none)
+{
+    .img_container img
+    {
+        filter: none;
+    }
+    
+    .img_container p
+    {
+        opacity: 1;
+        bottom: auto;
+        position: inherit;
+    }
+    
+    .img_desc
+    {
+        opacity: 1;
+    }
+}
+
+/*Styling specifically for larger displays – greater than 650px width*/
+@media screen and (min-width:650px)
+{
+    nav
+    {
+        display: flex;
+        justify-content: center; /*Centre menu list on page*/
+        
+    }
+
+    nav li
+    {
+        padding-bottom: 10px;
+        display: inline-block; /*Horizontal menu items*/
+        font-size: 0.9em;
+        margin:10px;
+    }
+    
+    nav li a
+    {
+        transition-duration: 0.5s; 
+        border-bottom: 2px solid white; /*default border to maintain width on hover animation*/
+        color: black;
+    }
+    
+    nav li a:hover
+    {
+        border-bottom: 2px solid #557a94;
+    }
+    
+#current_page a
+    {
+        color: #557a94;
+    }
+}
+
+@media screen and (min-width:1400px)
+{
+    section
+    {
+/*        margin-left: 0px;*/
+        width: 1200px;
+    }
+    
+    .col_left, .col_right
+    {
+        width: 550px;
+    }
+}
+
+/*Devices narrower than 950px*/
+@media screen and (max-width:950px)
+{
+    .col_left, .col_right
+    {
+        float: none;
+        width: 100%;
+    }
+    
+    section
+    {
+        width: 600px;
+    }
+    
+    .read_more_wrapper
+    {
+        width: 100%;
+    }
+    
+    footer p
+    {
+        width: 600px;
+        margin: auto;
+    }
+    
+    main
+    {
+        justify-content: center;
+    }
+    
+    .img_container
+    {
+/*        Make all images full width*/
+        width: 100%;
+    }
+}
+
+/*Devices narrower than 650px*/
+@media screen and (max-width:650px)
+{
+    #Title
+    {
+        margin: 10px;
+        font-size: .8em; /*Reduce text size by 20%*/
+    }
+    
+    .img_desc
+    {
+        font-size: 0.7em;   
+    }
+    nav label
+    {
+/*        display: inline;*/
+        right: 0px;
+    }
+    
+    nav li
+    {
+        padding: 10px 0px;
+    }
+    
+/*    Remove padding from top of first item*/
+    nav li:first-of-type
+    {
+        padding-top: 0px; 
+    }
+    
+    #current_page a
+    {
+        color: #AABDCA;
+    }
+    
+    #menu
+    {
+        width: 200px;
+        padding-left: 20px;
+        height: 100vh;
+        padding-top: 70px;
+        transition-duration: 0.7s;
+        position: absolute;
+/*        Default position and opacity before activation*/
+        right: -220px;
+        opacity: 0;
+        background-color: #5d5c61;
+    }
+
+    section
+    {
+        width: 350px;
+        padding: 20px 20px;
+    }
+    
+    body
+    {
+        font-size: 1em;
+    }
+    nav
+    {
+        position: fixed; /*Keeps location on screen while scrolling*/
+        width: 200px; 
+        right: 0px;
+        height:100vh;
+    }
+    
+    nav a
+    {
+        color: white;
+    }
+    
+    .read_more_wrapper
+    {
+        width:auto;
+        flex-direction: column;
+    }
+    
+    footer p
+    {
+        width: 350px;
+        padding-left: 0px;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width:650px)
+    
+{
+    section
+    {
+        width: 100%;
+    }
+}

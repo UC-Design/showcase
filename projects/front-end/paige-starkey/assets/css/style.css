@@ -1,0 +1,290 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+  font-family: 'Cardo', serif;
+  color: rgb(68, 68, 68);
+}
+html, body {
+  height: 100%;
+}
+/* TEXT STYLES */
+/* Below are all my styles relating to text changes */
+/*By setting the font-family for all my heading levels at the very top, I am able to easily override changes later to specific heading levels */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+}
+h1 {
+  font-size: 3em;
+  margin: 1em 0 0.2em auto;
+  font-weight: 600;
+}
+.toc {
+  color: rgb(68 68 68);
+  font-size: 1.6em;
+  font-weight: 500;
+  margin: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px rgb(68 68 68) solid;
+}
+.tagline {
+  font-size: 2em;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+.logo {
+  float: right;
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.content {
+  margin: 1em 2em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+/* Link styles */
+/* Animation styles inspired by https://cssdeck.com/labs/cool-and-easy-animated-underline-links */
+a, a:visited {
+  color: #BF9B7A;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 1.5px;
+}
+a:after, a:visited:after {
+  content: '';
+  height: 1.5px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background: rgb(68 68 68);
+  transition: 0.2s;
+}
+a:hover:after, a:visited:hover:after {
+  width: 100%;
+}
+/* End link styles */
+.copyright {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6em;
+}
+.caption {
+  text-align: right;
+}
+/* END TEXT STYLES */
+/* POSITIONING & LAYOUT ELEMENTS */
+p + ul {
+  margin-top: -10px;
+}
+.header-bar {
+  padding: 2em 2em 0 2em;
+}
+/* This is index.html specific css */
+.index-header {
+  padding: 2em 2em 0 2em;
+  /* position: absolute;
+  top: 55%;*/
+  color: white;
+}
+.img-container {
+  height: 100%;
+  background-image: url(../images/churchill-house-37.jpg);
+  background-repeat: no-repeat;
+  background-size: 180%;
+  background-position: center;
+  overflow: hidden;
+}
+/* End index.html positioning elements */
+.image-full-width {
+  width: 100%;
+}
+.image-half-width {
+  width: 48%;
+}
+/* I've added these as classes to have the images side by side, with spacing inbetween. I didn't like how adding margins (to create spacing between) resulted in the images not being centre*/
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+/* Means this element isn't allowed to float both sides */
+.clear-both {
+  clear: both;
+}
+hr {
+  border-top: 0.5px rgb(68 68 68) solid;
+}
+footer {
+  text-align: right;
+  padding: 1em 0;
+  margin: 0 2em;
+}
+/* END POSITIONG & LAYOUT ELEMENTS */
+/* INDEX.HTML NAVIGATION */
+.home-nav {
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  font-family: 'Inter', sans-serif;
+  background-color: white;
+}
+.home-nav ul {
+  padding-left: 0;
+}
+.home-nav li {
+  display: block;
+  margin: 0.6em 1em;
+  font-size: 1.5em;
+}
+/* NAVIGATION */
+/* This 'hamburger' navigation uses a checkbox to activate the menu. Ideally this would be managed in jQuery as I found it a lot harder (messy code) to put together a CSS-only solution. This menu is based off Brad Traversy's design https://codepen.io/bradtraversy/pen/vMGBjQ  however I will comment my understanding of what each entry is responsible for */
+/* Menu button */
+.menu-wrap {
+  position: absolute;
+  top: 5px;
+  z-index: 1;
+  /* margin: 0 0 1em 1em; */
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+/* The code below represents the checkbox, including location and size. In this instance, I have made the checkbox larger to accomdate the width of the 'menu' text */
+.menu-wrap .toggler {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  opacity: 0;
+}
+.menu-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 60px;
+  height: 40px;
+  padding: 1em 1em 0 0;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* This is my close button that will appear after the menu has opened */
+.close {
+  visibility: hidden;
+  opacity: 0;
+}
+/* Show Menu */
+.toggler:checked ~ .menu {
+  visibility: visible;
+}
+.toggler:checked ~ .menu > div > div {
+  opacity: 1;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu > div {
+  background: white;
+  width: 200vw;
+  height: 200vw;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+.menu > div > div {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+/* Removes unnecessary padding, allowing the list to sit centre */
+.menu > div > div > ul {
+  padding-left: 0;
+}
+.menu > div > div > ul > li {
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+/* combines siblings */
+.toggler:checked ~ .hamburger {
+  visibility: hidden;
+}
+/* combines siblings */
+.toggler:checked ~ .close {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.1s ease;
+}
+/* END NAVIGATION */
+.home-footer {
+  border-top: 1px solid rgb(68 68 68);
+  text-align: left;
+  margin: 0 1.6em;
+  padding: 0.5em 0.5em 1em 0.5em
+}
+/* Tablet+ media queries */
+@media (min-width: 601px) {
+  .img-container {
+    height: 100%;
+    width: 70%;
+  }
+  .hero-text {
+    width: 60%;
+    position: absolute;
+    bottom: 5%;
+  }
+  .home-nav {
+    width: 30%;
+    background-color: none;
+    position: absolute;
+    right: 0;
+    top: 30%;
+  }
+  .column-1 {
+    width: 25%;
+    float: left;
+    margin-right: 5%;
+  }
+  .column-2 {
+    width: 70%;
+    float: left;
+  }
+  .toc {
+    visibility: visible;
+    color: rgb(68 68 68);
+    font-size: 1.6em;
+    font-weight: 500;
+    margin: 1em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px rgb(68 68 68) solid;
+  }
+}
+/* Desktop media queries */
+@media (min-width: 1024px) {
+  body {
+    max-width: 1366px;
+    margin: auto;
+    align: center;
+    font-size: 1.05em;
+  }
+  #cover {
+    max-width: none;
+  }
+}

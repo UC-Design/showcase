@@ -1,0 +1,793 @@
+@import url('https://fonts.googleapis.com/css?family=B612+Mono:400,400i|Inconsolata:400,700|Expletus+Sans|Cedarville+Cursive: 400|Roboto:400,400i&display=swap');
+
+
+body {
+    background-color: white;
+    color: #ffffff;
+    /* make sure you set family and size on border */
+    font-family: 'B612 Mono', monospace;
+    font-size: 16px;
+    padding-bottom: 1.500em;
+
+}
+
+/* Typography */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: font-family: 'Roboto', sans-serif;
+    margin: 10px 0 1.000em 0;
+    color: dimgrey;
+}
+
+h1 {
+    background-color: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-top: 1.000em;
+    padding-bottom: 1.000em;
+    padding-right: 1.000em;
+    font-size: 2.000em;
+    font-family: font-family:'Ubuntu', sans-serif;
+    float: right;
+    margin-right: 1.000em;
+}
+
+
+
+@media screen and (min-device-width:375px) and (max-device-width:768px) {
+    .wrapper {
+        width: 90%;
+    }
+
+    img {
+        max-width: 90%;
+
+    }
+
+    h2 {}
+
+    p {
+
+        font-size: 1.10em;
+    }
+
+
+
+}
+
+
+@media screen and (min-device-width: 375px) {
+
+    img {
+        max-width: 100%;
+        max-height: inherit;
+    }
+
+}
+
+
+h2 {
+    font-size: 1.125em;
+    font-weight: none;
+    border-bottom: 1px solid white;
+    color: tan;
+    padding-top: 65px;
+
+
+}
+
+
+h3.oheading {
+    font-size: 1.125em;
+    border-bottom: 1px solid white;
+    color: tan;
+    padding-top: 65px;
+
+}
+
+
+h3.build {
+    color: tan;
+    padding-top: 2.188em;
+    font-size: 1.125em;
+
+}
+
+
+h3.north {
+    color: tan;
+    padding-top: 2.188em;
+    font-size: 1.125em;
+
+}
+
+
+p {
+    font-size: 1.125em;
+    line-height: 1.150em;
+    margin-bottom: 1.500em;
+    color: darkgrey;
+    padding-top: 1.000em;
+
+
+
+}
+
+/* about us page  */
+
+
+p.overview {
+    line-height: 1.150em;
+    margin-bottom: 1.500em;
+    color: darkgrey;
+    padding-top: 1.000em;
+
+
+}
+
+p.build {
+    font-size: px;
+    line-height: 1.150em;
+    margin-bottom: 1.500em;
+    color: darkgrey;
+    padding-top: 1.000em;
+    padding-bottom: 100px;
+
+
+}
+
+
+p.north {
+    padding-bottom: 150px;
+}
+
+
+p.big {
+    color: orange;
+    background: whitesmoke;
+    padding: 1.000em;
+
+}
+
+
+p.histpara {
+    line-height: 33px;
+}
+
+ul.histpara {
+    line-height: 1.150em;
+    margin-left: 60px;
+    padding-bottom: 60px;
+
+}
+
+
+ul {
+    color: darkgrey;
+
+}
+
+ul li {
+    margin-left: 2em;
+    list-style-type: disc;
+    color: darkgrey;
+    font-size: 1.125em;
+    margin-bottom: .2em;
+}
+
+
+ul li a {}
+
+
+/* anchor or link styles */
+
+h1 a,
+h1 a:visited {
+    color: darkslategray;
+    background-color: none;
+    text-decoration-line: none;
+}
+
+a {
+    color: cadetblue;
+    background-color: none;
+    text-decoration-line: none;
+}
+
+
+a:hover {
+
+    text-decoration: underline;
+}
+
+a:visited {}
+
+
+a:active {
+
+    color: coral;
+}
+
+
+
+/* main containers */
+
+
+.wrapper {
+    width: 980px;
+    margin: 0px auto;
+}
+
+/* media query for phone */
+
+
+
+header {
+    background-color: white;
+    height: 88px;
+    text-align: center;
+
+}
+
+nav {
+    background-color: white;
+    text-align: left;
+    float: left;
+    margin-top: 55px;
+
+}
+
+
+nav ul {
+    margin-left: 5px;
+    ;
+
+}
+
+nav ul li {
+    display: inline;
+    /*    padding: 10px;*/
+    font-size: 14px;
+    margin-left: 0;
+
+}
+
+nav ul li a {
+    color: midnightblue;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+nav ul li a:hover,
+a.currentpage {
+    background-color: wheat;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+}
+
+.subnav {
+    /*    border-top: 1px solid whitesmoke;*/
+    /*    border-bottom: 1px solid whitesmoke;*/
+    padding: 1.000em 0;
+    /*    background-color: whitesmoke;*/
+}
+
+.subnav ul {
+    margin-left: 0;
+
+}
+
+.subnav ul li {
+    list-style: none;
+
+    padding: 10px;
+    margin-top: -10px;
+}
+
+.subnav ul li a {
+    color: burlywood;
+    background-color: transparent;
+    text-decoration: none;
+    padding: 0 10px;
+    display: block;
+
+}
+
+.subnav ul li a:hover,
+.subnav a.currentpage {
+    background-color: wheat;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+}
+
+.subnav ul li:first-of-type {
+    /*    padding-left: 0;*/
+}
+
+
+
+.hero {
+    background: url(../images/j.front.jpg);
+    height: 650px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+.hero2 {
+    background: url(../images/front_facade.JPEG);
+    height: 650px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+
+.pool {
+    background: url(../images/pool.jpg);
+    height: 650px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.trees {
+    background: url(../images/trees.jpg);
+    height: 650px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+.hero.boyd {
+    background: url(../images/courtyard2.jpeg);
+    background-size: cover;
+
+}
+
+.hero-text {
+    /*    background: rgba(255, 255, 255, 0.7);*/
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    margin-left: 20px;
+
+
+}
+
+.hero.location {
+    background: none;
+}
+
+.hero-text h2 {
+    font-size: 35px;
+    font-family: 'Expletus Sans', cursive;
+    padding-left: 20px;
+    /*    set font size etc here*/
+}
+
+
+.sketch {
+    background: url(../images/front-sketch2.png);
+    background-size: cover;
+    height: 650px;
+    background-position: bottom;
+    max-height: 80%;
+}
+
+.mapimg {
+    max-height: 50%;
+    max-width: 80%;
+}
+
+.brutalist {
+    background: url(../images/2.jpg);
+    background-size: cover;
+    height: 650px;
+    background-position: bottom;
+    max-height: 80%;
+
+
+
+}
+
+.leftimg {
+    background: url(../images/hero-image.jpg);
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+
+.topimg {
+    background: url(../images/robin.jpg);
+    height: 650px;
+    background-position: top;
+    background-size: cover;
+
+}
+
+
+.hero3img {
+    background: url(../images/hero3.jpg);
+    height: 650px;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+}
+
+
+.bambooimg {
+    max-width: 40%;
+    margin-right: 1.000em;
+    padding-bottom: 1.000em;
+
+}
+
+.crtimg {
+    max-width: 80%;
+    object-position: center;
+    margin-right: 1.000em;
+    padding-bottom: 1.000em;
+}
+
+
+.nav-container {
+    width: 20%;
+    float: left;
+    margin-top: 4.35em;
+}
+
+
+.welcome-container {
+
+    padding: 100px 200px;
+
+}
+
+main {
+    background-color: white;
+    padding: 10px 15px;
+    overflow: auto;
+
+
+}
+
+main.spacing {
+    background-color: white;
+    padding: 10px 15px;
+    padding-bottom: 100px;
+    overflow: auto;
+    font-size: 1.00em;
+    line-height: 1.150em;
+
+
+}
+
+footer {
+    background-color: blanchedalmond;
+    padding: 1.000em;
+    margin-top: 5.0em;
+}
+
+footer p {
+    font-size: 60%;
+
+
+
+}
+
+
+ul.features {
+    font-size: 1.125em;
+
+
+}
+
+
+.map {
+    margin-top: -50px;
+    border: 0;
+
+}
+
+.frontimg {
+    padding-top: 1.000em;
+    padding-bottom: 2.000em
+}
+
+.sketchimg {}
+
+
+
+main img {
+    max-width: 100%;
+}
+
+main.gallery {
+    overflow: visible;
+}
+
+main.gallery .wrapper {
+    width: 100%;
+}
+
+main.spacing .gallery {
+    width: 100%;
+}
+
+.gallery img,
+.history img {
+    max-width: 300px;
+}
+
+/*mobile*/
+@media screen and (max-device-width:450px) {
+    header {
+        height: 160px;
+    }
+
+    h1 {
+        margin-bottom: 0;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    nav {
+        margin-top: 0;
+    }
+
+    nav ul li {
+        font-size: 140%;
+        padding: 0;
+        margin-left: 5px;
+    }
+
+    .nav-container {
+        width: 100%;
+        float: left;
+        margin-top: 0em;
+    }
+
+    .nav-container .subnav ul li {
+        display: inline-block;
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .map {
+        margin: 0;
+    }
+}
+
+/*between mobile and tablet*/
+@media screen and (min-device-width: 425px) and (max-device-width:1025px) {
+    h1 {
+        padding-right: 0;
+        margin-right: 0;
+    }
+}
+
+
+/*LIGHTBOX STYLES*/
+
+body.lb-disable-scrolling {
+    overflow: hidden;
+}
+
+.lightboxOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: black;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+    opacity: 0.8;
+    display: none;
+}
+
+.lightbox {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    text-align: center;
+    line-height: 0;
+    font-weight: normal;
+}
+
+.lightbox .lb-image {
+    display: block;
+    height: auto;
+    max-width: inherit;
+    max-height: none;
+    border-radius: 3px;
+
+    /* Image border */
+    border: 4px solid white;
+}
+
+.lightbox a img {
+    border: none;
+}
+
+.lb-outerContainer {
+    position: relative;
+    *zoom: 1;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 4px;
+
+    /* Background color behind image.
+     This is visible during transitions. */
+    background-color: white;
+}
+
+.lb-outerContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.lb-loader {
+    position: absolute;
+    top: 43%;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    line-height: 0;
+}
+
+.lb-cancel {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+    background: url(../images/loading.gif) no-repeat;
+}
+
+.lb-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+}
+
+.lb-container > .nav {
+    left: 0;
+}
+
+.lb-nav a {
+    outline: none;
+    background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+}
+
+.lb-prev,
+.lb-next {
+    height: 100%;
+    cursor: pointer;
+    display: block;
+}
+
+.lb-nav a.lb-prev {
+    width: 34%;
+    left: 0;
+    float: left;
+    background: url(../images/prev.png) left 48% no-repeat;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+    -o-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-prev:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+
+.lb-nav a.lb-next {
+    width: 64%;
+    right: 0;
+    float: right;
+    background: url(../images/next.png) right 48% no-repeat;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity 0.6s;
+    -moz-transition: opacity 0.6s;
+    -o-transition: opacity 0.6s;
+    transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-next:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
+
+.lb-dataContainer {
+    margin: 0 auto;
+    padding-top: 5px;
+    *zoom: 1;
+    width: 100%;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.lb-dataContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.lb-data {
+    padding: 0 4px;
+    color: #ccc;
+}
+
+.lb-data .lb-details {
+    width: 85%;
+    float: left;
+    text-align: left;
+    line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+.lb-data .lb-caption a {
+    color: #4ae;
+}
+
+.lb-data .lb-number {
+    display: block;
+    clear: left;
+    padding-bottom: 1em;
+    font-size: 12px;
+    color: #999999;
+}
+
+.lb-data .lb-close {
+    display: block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background: url(../images/close.png) top right no-repeat;
+    text-align: right;
+    outline: none;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    opacity: 0.7;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+.lb-data .lb-close:hover {
+    cursor: pointer;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}

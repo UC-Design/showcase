@@ -28,6 +28,10 @@ Grouped by the unit in which they were produced.
 *   [Lydia's Tocumwal Site](projects/wdp/lydia)
 *   [Natasha's Norfolk Island Site](projects/wdp/natasha)
 *   [Roger's Tocumwal Site](projects/wdp/roger)
+*	[Olly's Churchill House Site](projects/front-end/olly-hills)
+*	[Paige's Churchill House Site](projects/front-end/paige-starkey)
+*	[Bliss' Contour Site](projects/front-end/bliss-taylor)
+*	[Tom's Countour Site](projects/front-end/tom-neill)
 
 
 ## Back-end Web Development

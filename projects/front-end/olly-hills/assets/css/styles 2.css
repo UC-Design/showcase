@@ -1,0 +1,435 @@
+/* Universal Styles */
+body{
+    font-family: 'Sintony', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #FBFBF2;
+    color: #204B57;
+    width: 100%;
+}
+section{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 40%, rgba(152,182,177,0.2) 40%, rgba(152,182,177,0.2) 60%, rgba(0,0,0,0) 60%);
+}
+header{
+    width: 100%;
+    min-height: 80px;
+    background-color: #98b6b1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color:#98b6b1;
+    font-size: .8rem;
+}
+footer p{
+    padding: 0 0 1rem 0;
+}
+li a h4:hover{
+    color: #0D1821;
+}
+h1, h2, h3,h4{
+    font-family: 'Ovo', serif;
+}
+h4{
+    font-size: 1.5rem;
+    color: #FBFBF2;
+}
+h3{
+    font-size: 1.8rem;
+}
+h2{
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    padding: 1rem 0;
+    color: #204B57;
+}
+h1{
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+}
+p{
+padding: 0.5rem 0 1rem 0;
+line-height: 2rem;
+}
+a{
+    color: #0D1821;
+    text-decoration: none;
+}
+.sectionLeft img, .sectionRight img{
+    height: calc(100% - 2rem);
+    object-fit: cover;
+}
+section ul li{
+    margin: 1rem;
+    list-style: square;
+}
+
+
+/* Nav Selectors */
+nav ul{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.currentPage{
+    color: #808D8E;
+}
+
+/* Common Classes */
+.brand{
+    letter-spacing: 0.2rem;
+    color: #204B57;
+    font-size: 3rem;
+}
+.brand:hover{
+    filter: sepia(100%);
+}
+
+/* Home Page Classes */
+.homepageHero{
+    display: flex;
+    height: calc(100vh - 80px);
+    width: 100%;
+    justify-content:space-around;
+    align-items: flex-end;
+    padding: 0;
+    margin: 0;
+}
+.homepageHero-li{
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 0;
+}
+.homepageHero-link{
+    min-height: 100%;
+    color: #FBFBF2;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.homepageHero-link:hover{
+    filter: sepia(60%);
+    color: #204B57;
+}
+.homepageHero-link h4{
+    padding-bottom: 5rem;
+    color: inherit;
+}
+
+/* Hero Class Styles */
+.hero{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #808D8E;
+}
+.heroImage h1{
+    color: #FBFBF2;
+    letter-spacing: .2rem;
+    margin-bottom: 8rem;
+    padding: 1rem 0 1rem 5rem;
+    width: 75%;
+    background: linear-gradient(90deg, rgba(152,182,177,1) 50%, rgba(152,182,177,0) 100%);
+
+}
+.heroImage{
+    display: flex;
+    align-items: flex-end;
+    height: inherit;
+    width: inherit;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Section Styles */
+.sectionLeft, .sectionRight{
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+}
+.sectionRight{
+    width: 50%;
+}
+.sectionRight img{
+    width: 100%;
+    object-fit: cover;
+}
+.sectionLeft img{
+    width: 100%;
+    object-fit: cover;
+}
+ .textWrapper{
+    margin: 5rem;
+ }
+ .imageCaption{
+     font-size: .6rem;
+     text-align: center;
+ }
+/* Footer Classes */
+
+.footerTop{
+    width: 100%;
+    padding: 2rem 0;
+}
+.footerTop ul{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.footerBottom{
+    display: flex;
+    justify-content: space-around;
+}
+.footerBottom-right{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.footerBottom-right ul{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+
+/* Image Grid */
+
+.gallery{
+    flex-direction: column;
+    height: initial;
+}
+
+.imageGrid{
+    padding: 0  5rem 5rem 5rem;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.gridItem{
+    max-width: 22%;
+    height: initial;
+}
+.gridItem img{
+    object-fit: cover;
+    max-width: 100%;
+    padding-bottom: 3rem;
+}
+
+/* Homepage Images */
+#about{
+    background-image: linear-gradient(0deg, rgba(13,24,33,1) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 100%), 
+    url('../../assets/images/churchill-house-38m.jpg');
+}
+#gallery{
+    background-image: linear-gradient(0deg, rgba(13,24,33,1) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 100%), 
+    url('../../assets/images/churchill-house-36m.jpg');
+}
+#robynBoyd{
+    background-image: linear-gradient(0deg, rgba(13,24,33,1) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 100%), 
+    url('../../assets/images/extra2-robin boyd portrait-copyright-Mark-Strizicm.jpg');
+}
+#history{
+    background-image: linear-gradient(0deg, rgba(13,24,33,1) 0%, rgba(255,255,255,0) 75%, rgba(255,255,255,0) 100%), 
+    url('../../assets/images/churchill-house-5.jpg');
+}
+
+/* Page Hero Images */
+
+#historyCover{
+    background-image: url('../../assets/images/churchill-house-5.jpg');
+}
+
+#robynBoydCover{
+    background-image: url('../../assets/images/extra2-robin boyd portrait-copyright-Mark-Strizicm.jpg');
+}
+
+#aboutCover{
+    background-image: url('../../assets/images/churchill-house-38m.jpg');
+}
+
+#galleryCover{
+    background-image: url('../../assets/images/churchill-house-36m.jpg');
+}
+/* breakpoints */
+
+/* Base/small devices (phones, 767px and down) */
+@media only screen and (max-width: 767px) {
+    /* General Adjustments */
+
+    body{
+        font-size: 0.8rem;
+    }
+
+    /* Header Adjustments */
+    header{
+        padding-bottom: 1rem;
+    }
+    header nav ul{
+        flex-wrap: wrap;
+    }
+    nav ul li{
+        order: 2;
+        width: 50%;
+        padding: .5rem 0;
+
+    }
+    .brand{
+        order: 1;
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    /* Hero Adjustments */
+    .hero{
+        height: 50vh;
+    }
+
+    /* Section Adjustments */
+    section{
+     flex-direction: column; 
+     min-height: 50vh;  
+    }
+    .sectionLeft, .sectionRight{
+        width: 100%;
+        min-height: 0;
+        order: 1;
+    }
+    .textWrapper{
+        margin: 1rem;
+    }
+
+    .image{
+        order: 2;
+    }
+
+    /* Footer Adjustments */
+    .footerTop ul{
+        flex-wrap: wrap;
+    }
+    .footerTop li{
+        width: 50%;
+        order: 2;
+        padding: .5rem 0;
+    }
+    li.brand{
+        order: 1;
+        width: 100%;
+    }
+    .footerBottom{
+        flex-direction: column;
+    }
+    .footerBottom-left{
+        padding: 1rem;
+    }
+    .footerBottom-left p{
+        line-height: 1.2rem;
+        padding: 1rem;
+    }
+    .footerBottom-right{
+        width: 100%;
+        padding: 1rem 0;
+        justify-content: center;
+    }
+    .footerBottom-right ul{
+        justify-content: space-around;
+        width: 100%;
+    }
+    /* Gallery */
+    .imageGrid{
+        padding: 1rem;
+    }
+
+    .gridItem{
+        max-width: 80%;
+        height: initial;
+    }
+    /* homepage */
+    .homepageHero{
+        flex-direction: column;
+    }
+    .homepageHero-li{
+        width: 100%;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 767px) {
+    header nav ul{
+        flex-direction: row;
+    }
+    nav ul li{
+        order: 0;
+    }
+    .brand{
+        order: 0;
+    }
+    .imageGrid{
+        padding: 0 5rem 5rem 5rem;
+    }
+
+    .gridItem{
+        max-width: 30%;
+        height: initial;
+    }
+    .footerBottom-left p{
+        line-height: 1.2rem;
+        padding: 1rem;
+    }
+    .footerBottom-right ul{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    /* image grid */
+    .imageGrid{
+        padding: 5rem;
+    }
+
+    .gridItem{
+        max-width: 22%;
+        height: initial;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
