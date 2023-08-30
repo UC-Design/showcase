@@ -1,8 +1,5 @@
 Grouped by the year and unit in which they were produced.
 
-# 2023
-
-# 2022
 
 ## Front-end Web Design
 *	[Ezra's Canberra Modern site](projects/front-end/ezra/)
@@ -23,7 +20,6 @@ Grouped by the year and unit in which they were produced.
 *	[Olly's Churchill House Site](projects/front-end/olly-hills)
 *	[Paige's Churchill House Site](projects/front-end/paige-starkey)
 
-# Previous years
 
 <!-- ## Major Creative Production -->
 
@@ -36,10 +32,6 @@ Grouped by the year and unit in which they were produced.
 ### Major Project
 *   [Pide](projects/dynamic-data/major-project/pide) (by Tim, Adriaan, Luke)
 *   [Unexpected Encounters](projects/dynamic-data/major-project/unexpected-encounters) (by Kate, Lauren, Steph) -->
-
-
-## Front-end Web Design
-
 
 
 <!-- ## Back-end Web Development
